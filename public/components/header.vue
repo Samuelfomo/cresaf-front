@@ -23,7 +23,7 @@
         <div class="py-1">
           <div class="flex items-center hover:bg-green-100">
             <h1 class="text-2xl">🤍</h1>
-            <router-link to="#" class="flex flex-col font-semibold px-5 pb-2"
+            <router-link to="#" class="flex flex-col font-semibold text-lg px-5 pb-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h1>Nos valeurs</h1>
@@ -39,7 +39,7 @@
               <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
               <path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" />
             </svg>
-            <router-link to="#" class="flex flex-col font-semibold px-5 py-2"
+            <router-link to="#" class="flex flex-col font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h1>Nos atouts</h1>
@@ -53,7 +53,7 @@
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <path d="M3 21l17 -17" /><path d="M3 3v18h18" />
             </svg>
-            <router-link to="#" class="flex flex-col justify-start font-semibold px-5 py-2"
+            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h1>Notre vision</h1>
@@ -70,7 +70,7 @@
                .217 -.665l2.428 -.352l1.086 -2.193a.392 .392 0 0 1 .702 0l1.086 2.193l2.428
              .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
             </svg>
-            <router-link to="#" class="flex flex-col justify-start font-semibold px-5 py-2"
+            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
              <h1>Notre mission</h1>
@@ -101,13 +101,13 @@
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-user-circle">
+                  class="text-gray-400">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
               <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
               <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
             </svg>
-            <router-link to="#" class="flex flex-col font-semibold px-5 pb-2"
+            <router-link to="#" class="flex flex-col font-semibold text-lg px-5 pb-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h2>Compte chèque</h2>
@@ -115,15 +115,12 @@
             </router-link>
           </div>
           <div class="flex items-center hover:bg-green-100">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-briefcase text-gray-400">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
-              <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
-              <path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" />
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
+                  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
+                  class="text-gray-400"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z" /><path d="M19 16h-12a2 2 0 0 0 -2 2" /><path d="M9 8h6" />
             </svg>
-            <router-link to="#" class="flex flex-col font-semibold px-5 py-2"
+            <router-link to="#" class="flex flex-col font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h2>Bon de caisse</h2>
@@ -140,7 +137,7 @@
                .217 -.665l2.428 -.352l1.086 -2.193a.392 .392 0 0 1 .702 0l1.086 2.193l2.428
              .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
             </svg>
-            <router-link to="#" class="flex flex-col justify-start font-semibold px-5 py-2"
+            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h2>Dépôt à terme</h2>
@@ -158,7 +155,7 @@
                .217 -.665l2.428 -.352l1.086 -2.193a.392 .392 0 0 1 .702 0l1.086 2.193l2.428
              .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
             </svg>
-            <router-link to="#" class="flex flex-col justify-start font-semibold px-5 py-2"
+            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h2>Compte d'épargne</h2>
@@ -175,7 +172,7 @@
               6.008 0 0 1 -1.658 2.473v2.027a1.5 1.5 0 0 1 -3 0v-.583a6.04 6.04 0 0 1 -1 .083h-4a6.04 6.04 0 0 1 -1
              -.083v.583a1.5 1.5 0 0 1 -3 0v-2l0 -.027a6 6 0 0 1 4 -10.473h2.5l4.5 -3z" />
             </svg>
-            <router-link to="#" class="flex flex-col justify-start font-semibold px-5 py-2"
+            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h2>Collecte journalière</h2>
@@ -193,7 +190,7 @@
                .217 -.665l2.428 -.352l1.086 -2.193a.392 .392 0 0 1 .702 0l1.086 2.193l2.428
              .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
             </svg>
-            <router-link to="#" class="flex flex-col justify-start font-semibold px-5 py-2"
+            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h2>Carte VISA</h2>
@@ -283,10 +280,10 @@
     </div>
     </div>
     <div class="flex justify-between gap-x-2">
-      <button type="button" class="text-lg bg-gray-100 p-3 font-semibold border rounded-lg">
+      <button type="button" class="text-lg bg-gray-100 p-2 font-semibold border rounded-lg">
         Connexion
       </button>
-      <button type="button" class="text-lg bg-blue-950 p-3 text-white font-semibold border rounded-lg hover:text-green-600 hover:border-green-500">
+      <button type="button" class="text-lg bg-blue-950 p-2 text-white font-semibold border border-white rounded-lg hover:text-green-600 hover:border-green-500">
         Ouvrir un compte
       </button>
     </div>
