@@ -3,7 +3,7 @@
     <div class="text-xl font-bold text-blue-600">
       <img :src="logo" alt="Logo" class="lg:w-40 lg:h-12 w-16 h-6">
     </div>
-    <div class="flex justify-between gap-x-6 bg">
+    <div class="flex justify-between w-full max-w-xl">
     <div class="text-sm text-gray-700 flex relative">
       <div class="flex items-center space-x-2 cursor-pointer" @mouseover="toggleDropdown1" @mouseleave="closeDropdown1">
         <h2 class="hover:text-green-600 lg:text-lg text-xs flex"> Qui sommes-nous ?
@@ -216,7 +216,7 @@
       </div>
 
       <!-- Menu déroulant -->
-      <div v-if="isDropdownOpen3" class="absolute right-0 mt-12 min-w-72 bg-white rounded-md shadow-lg border p-5 z-50"
+      <div v-if="isDropdownOpen3" class="absolute right-0 mt-12 min-w-[385px] bg-white rounded-md shadow-lg border p-5 z-50"
            @mouseenter="toggleDropdown3"
            @mouseleave="closeDropdown3"
       >
@@ -242,8 +242,8 @@
             <router-link to="#" class="flex flex-col font-medium text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
-              <h2>Nos atouts</h2>
-              <span class="text-xs text-gray-500">Culture de la performance </span>
+              <h1>Financement de projets</h1>
+              <span class="text-xs text-gray-500">Sur mésure pour vos projets</span>
             </router-link>
           </div>
           <div class="flex items-center hover:bg-green-100">
@@ -256,8 +256,8 @@
             <router-link to="#" class="flex flex-col justify-start font-medium text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
-              <h2>Notre vision</h2>
-              <span class="text-xs text-gray-500">Misé sur l'avenir </span>
+              <h1>Financement de la trésorerie</h1>
+              <span class="text-xs text-gray-500">Financement des besions de trésorerie ponctuels</span>
             </router-link>
           </div>
           <div class="flex items-center hover:bg-green-100">
@@ -273,8 +273,8 @@
             <router-link to="#" class="flex flex-col justify-start font-medium text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
-              <h2>Notre mission</h2>
-              <span class="text-xs text-gray-500">Renforcer la solidarité</span>
+              <h1>Financement Import/Export</h1>
+              <span class="text-xs text-gray-500">Financer votre développement international</span>
             </router-link>
 
           </div>
@@ -321,18 +321,18 @@ const toggleDropdown3 = () => {
 const closeDropdown1 = () =>{
   timeout = setTimeout( ()=>{
     isDropdownOpen1.value = false
-  }, 300);
+  }, 100);
 }
 const closeDropdown2 = () =>{
   timeout = setTimeout(() =>{
     isDropdownOpen2.value = false
-  }, 300);
+  }, 100);
 
 }
 const closeDropdown3 = () =>{
   timeout = setTimeout(() => {
     isDropdownOpen3.value = false
-  }, 300);
+  }, 100);
 
 }
 
