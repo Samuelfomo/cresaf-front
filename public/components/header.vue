@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed bg-white p-5 lg:py-3 lg:px-14 flex justify-between items-center w-full flex-wrap">
+  <header class="bg-white p-5 lg:py-3 lg:px-14 flex justify-between items-center w-full flex-wrap border-b">
     <div class="text-xl font-bold text-blue-600">
       <img :src="logo" alt="Logo" class="lg:w-40 lg:h-12 w-16 h-6">
     </div>
@@ -9,7 +9,7 @@
         <h2 class="hover:text-green-600 lg:text-lg text-xs flex"> Qui sommes-nous ?
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
-                stroke-linejoin="round"  class="icon icon-tabler cons-tabler-outline icon-tabler-select">
+                stroke-linejoin="round">
             <path d="M9 9l6 8l7 -8" />
           </svg>
         </h2>
@@ -33,7 +33,7 @@
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-briefcase text-gray-400">
+                  class="text-gray-400">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
               <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
@@ -49,7 +49,7 @@
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-chart-covariate text-gray-400">
+                  class="text-gray-400">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <path d="M3 21l17 -17" /><path d="M3 3v18h18" />
             </svg>
@@ -63,7 +63,7 @@
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-file-star text-gray-400">
+                  class="text-gray-400">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" />
               <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
               <path d="M11.8 16.817l-2.172 1.138a.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a.389 .389 0 0 1
@@ -86,7 +86,7 @@
         <h2 class="hover:text-green-600 lg:text-lg text-xs flex"> Nos produits
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
-                stroke-linejoin="round"  class="icon icon-tabler cons-tabler-outline icon-tabler-select">
+                stroke-linejoin="round">
             <path d="M9 9l6 8l7 -8" />
           </svg>
         </h2>
@@ -124,13 +124,13 @@
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h2>Bon de caisse</h2>
-              <span class="text-xs text-gray-500">Bon plan pour votre épagne</span>
+              <span class="text-xs text-gray-500">Bon plan pour votre épargne</span>
             </router-link>
           </div>
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-file-star text-gray-400">
+                  class="text-gray-400">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" />
               <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
               <path d="M11.8 16.817l-2.172 1.138a.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a.389 .389 0 0 1
@@ -148,7 +148,7 @@
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-file-star text-gray-400">
+                  class="text-gray-400">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" />
               <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
               <path d="M11.8 16.817l-2.172 1.138a.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a.389 .389 0 0 1
@@ -165,8 +165,7 @@
           </div>
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-pig">
+                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 11v.01" />
               <path d="M16 3l0 3.803a6.019 6.019 0 0 1 2.658 3.197h1.341a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-1.342a6.008
               6.008 0 0 1 -1.658 2.473v2.027a1.5 1.5 0 0 1 -3 0v-.583a6.04 6.04 0 0 1 -1 .083h-4a6.04 6.04 0 0 1 -1
@@ -183,7 +182,7 @@
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-file-star text-gray-400">
+                  class="text-gray-400">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" />
               <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
               <path d="M11.8 16.817l-2.172 1.138a.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a.389 .389 0 0 1
@@ -206,7 +205,7 @@
         <h2 class="hover:text-green-600 lg:text-lg text-xs flex"> Nos solutions
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
-                stroke-linejoin="round"  class="icon icon-tabler cons-tabler-outline icon-tabler-select">
+                stroke-linejoin="round">
             <path d="M9 9l6 8l7 -8" />
           </svg>
         </h2>
@@ -219,22 +218,19 @@
       >
         <div class="py-1">
           <div class="flex items-center hover:bg-green-100">
-            <h1 class="text-2xl">🤍</h1>
-            <router-link to="#" class="flex flex-col font-medium text-lg px-5 pb-2"
-                         :class="[$route.name === '#' ? activeClass : inactiveClass]"
-            >
-              <h2>Nos valeurs</h2>
-              <span class="text-xs text-gray-500">Confiance, Intégrité et solidarité </span>
-            </router-link>
-          </div>
-          <div class="flex items-center hover:bg-green-100">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-briefcase text-gray-400">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
-              <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
-              <path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" />
+            <svg viewBox="-0.5 -0.5 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" id="Emoji--Streamline-Iconoir" height="24" width="24">
+              <path d="M7.5 14.337187499999999C3.7239375000000003 14.337187499999999 0.6628125 11.276062499999998 0.6628125 7.5 0.6628125
+              3.7239375000000003 3.7239375000000003 0.6628125 7.5 0.6628125c3.7760624999999997 0 6.837187500000001 3.061125 6.837187500000001
+              6.837187500000001 0 3.7760624999999997 -3.061125 6.837187500000001 -6.837187500000001 6.837187500000001Z" stroke="#000000"
+                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path><path d="M10.576749999999999 9.2093125S9.551187500000001
+                    10.576749999999999 7.5 10.576749999999999s-3.0767499999999997 -1.3674374999999999 -3.0767499999999997
+                     -1.3674374999999999" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+              <path d="M9.892999999999999 5.4488125c-0.18875 0 -0.3418125 -0.1530625 -0.3418125 -0.3418125s0.1530625 -0.34187500000000004
+              0.3418125 -0.34187500000000004 0.34187500000000004 0.1530625 0.34187500000000004 0.34187500000000004 -0.1530625 0.3418125
+              -0.34187500000000004 0.3418125Z" fill="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
+              <path d="M5.107 5.4488125c-0.1888125 0 -0.34187500000000004 -0.1530625 -0.34187500000000004 -0.3418125s0.1530625 -0.34187500000000004
+              0.34187500000000004 -0.34187500000000004 0.3418125 0.1530625 0.3418125 0.34187500000000004 -0.1530625 0.3418125 -0.3418125 0.3418125Z"
+                    fill="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
             </svg>
             <router-link to="#" class="flex flex-col font-medium text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
@@ -246,7 +242,7 @@
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-chart-covariate text-gray-400">
+                  class="text-gray-400">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <path d="M3 21l17 -17" /><path d="M3 3v18h18" />
             </svg>
@@ -254,13 +250,13 @@
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
             >
               <h1>Financement de la trésorerie</h1>
-              <span class="text-xs text-gray-500">Financement des besions de trésorerie ponctuels</span>
+              <span class="text-xs text-gray-500">Financement des besoins de trésorerie ponctuels</span>
             </router-link>
           </div>
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-file-star text-gray-400">
+                  class="text-gray-400">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" />
               <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
               <path d="M11.8 16.817l-2.172 1.138a.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a.389 .389 0 0 1
@@ -340,12 +336,12 @@ const inactiveClass = ref(
     '',
 )
 
-const handleLogout =  () => {
-  try {
-    // Appel API pour la déconnexion
-    console.log('Déconnexion');
-  } catch (error) {
-    console.error('Erreur lors de la déconnexion:', error);
-  }
-};
+// const handleLogout =  () => {
+//   try {
+//     // Appel API pour la déconnexion
+//     console.log('Déconnexion');
+//   } catch (error) {
+//     console.error('Erreur lors de la déconnexion :', error) ;
+//   }
+// };
 </script>
