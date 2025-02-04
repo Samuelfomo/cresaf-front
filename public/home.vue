@@ -67,6 +67,23 @@
           </div>
         </div>
       </div>
+      <div class="flex justify-between items-center w-full py-10 px-44">
+        <div class="flex p-2 items-center gap-2" v-for="(location2, index) in locations2" :key="index">
+          <div class="rounded-full h-4 w-4 flex justify-center items-center bg-green-500">
+            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
+                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" class="text-white">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" />
+            </svg>
+          </div>
+          <h3>{{location2.titre}}</h3>
+        </div>
+      </div>
+    </main>
+    <main class="bg-blue-950 px-8 flex flex-col min-h-screen py-20">
+
+    </main>
+    <main class="bg-white px-8 flex flex-col min-h-screen py-20">
+
     </main>
 
     <Footer />
@@ -155,6 +172,20 @@ const locations = ref([
     titre:'Investissement',
     description:'Profiter d\'un suivi et d\'un accompagnement de qualité, de la définition de votre stratégie à sa mise en œuvre',
     suite:'Start Investments'
+  },
+])
+const locations2 = ref([
+  {
+    titre:'24/7 account monitoring'
+  },
+  {
+    titre:'Protection & peace of mind'
+  },
+  {
+    titre:'Anytime, anywhere support'
+  },
+  {
+    titre:'Serious security'
   },
 ])
 
