@@ -3,7 +3,16 @@
     <div class="text-xl font-bold text-blue-600">
       <img :src="logo" alt="Logo" class="lg:w-40 lg:h-12 w-16 h-6">
     </div>
-    <div class="flex justify-between w-full max-w-xl">
+
+    <!-- Bouton pour afficher le menu mobile -->
+    <button class="lg:hidden text-gray-700" @click="isDrawerOpen = !isDrawerOpen">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12h18M3 6h18M3 18h18"></path>
+      </svg>
+    </button>
+
+    <div class="hidden lg:flex justify-between w-full max-w-xl">
     <div class="text-sm text-gray-700 flex relative">
       <div class="flex items-center space-x-2 cursor-pointer" @mouseover="toggleDropdown1" @mouseleave="closeDropdown1">
         <h2 class="hover:text-green-600 lg:text-lg text-xs flex"> Qui sommes-nous ?
@@ -143,7 +152,6 @@
               <h2>Dépôt à terme</h2>
               <span class="text-xs text-gray-500">Fructifier votre argent</span>
             </router-link>
-
           </div>
           <div class="flex items-center hover:bg-green-100">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
@@ -275,7 +283,7 @@
       </div>
     </div>
     </div>
-    <div class="flex justify-between gap-x-2">
+    <div class=" hidden lg:flex justify-between gap-x-2">
       <button type="button" class="text-lg bg-gray-100 p-2 font-semibold border rounded-lg">
         Connexion
       </button>
@@ -283,6 +291,24 @@
         Ouvrir un compte
       </button>
     </div>
+
+    <!-- Drawer (Menu latéral pour mobile) -->
+    <transition name="slide">
+      <div v-if="isDrawerOpen" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex">
+        <div class="bg-white w-64 p-5 shadow-lg transform transition-all">
+          <button class="mb-4 text-gray-700" @click="isDrawerOpen = false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6L6 18M6 6l12 12"></path>
+            </svg>
+          </button>
+          <nav class="flex flex-col space-y-4">
+            <router-link to="#" class="hover:text-green-600">Qui sommes-nous ?</router-link>
+            <router-link to="#" class="hover:text-green-600">Nos produits</router-link>
+          </nav>
+        </div>
+      </div>
+    </transition>
 
   </header>
 
@@ -329,12 +355,10 @@ const closeDropdown3 = () =>{
 
 }
 
-const activeClass = ref(
-    'bg-green-100',
-)
-const inactiveClass = ref(
-    '',
-)
+const isDrawerOpen = ref(false);
+
+const activeClass = ref('bg-green-100',)
+const inactiveClass = ref('',)
 
 // const handleLogout =  () => {
 //   try {
@@ -344,4 +368,5 @@ const inactiveClass = ref(
 //     console.error('Erreur lors de la déconnexion :', error) ;
 //   }
 // };
+
 </script>
