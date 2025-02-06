@@ -1,7 +1,7 @@
 <template>
-  <header class="bg-white p-5 lg:py-3 lg:px-14 flex justify-between items-center w-full flex-wrap border-b">
+  <header class="fixed bg-white p-5 lg:py-3 lg:px-14 flex justify-between items-center w-full flex-wrap border-b">
     <div class="text-xl font-bold text-blue-600">
-      <img :src="logo" alt="Logo" class="lg:w-40 lg:h-12 w-16 h-6">
+      <img :src="logo" alt="Logo" class="w-40 h-12 ">
     </div>
 
     <!-- Bouton pour afficher le menu mobile -->
@@ -30,16 +30,16 @@
            @mouseleave="closeDropdown1"
       >
         <div class="py-1">
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:bg-green-100"  :class="[$route.name === 'values' ? activeClass : inactiveClass]">
             <h1 class="text-2xl">🤍</h1>
-            <router-link to="#" class="flex flex-col font-semibold text-lg px-5 pb-2"
-                         :class="[$route.name === '#' ? activeClass : inactiveClass]"
+            <router-link to="/values" class="flex flex-col font-semibold text-lg px-5 pb-2"
+                         @click="scrollTo('section1')"
             >
               <h1>Nos valeurs</h1>
               <span class="text-xs text-gray-500">Confiance, Intégrité et solidarité </span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:bg-green-100"  :class="[$route.name === '#' ? activeClass : inactiveClass]">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -49,13 +49,13 @@
               <path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" />
             </svg>
             <router-link to="#" class="flex flex-col font-semibold text-lg px-5 py-2"
-                         :class="[$route.name === '#' ? activeClass : inactiveClass]"
+                         @click="scrollTo('section2')"
             >
               <h1>Nos atouts</h1>
               <span class="text-xs text-gray-500">Culture de la performance </span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:bg-green-100" :class="[$route.name === '#' ? activeClass : inactiveClass]">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -63,13 +63,13 @@
               <path d="M3 21l17 -17" /><path d="M3 3v18h18" />
             </svg>
             <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
-                         :class="[$route.name === '#' ? activeClass : inactiveClass]"
+                         @click="scrollTo('section3')"
             >
               <h1>Notre vision</h1>
               <span class="text-xs text-gray-500">Misé sur l'avenir </span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:bg-green-100" :class="[$route.name === '#' ? activeClass : inactiveClass]">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -80,7 +80,7 @@
              .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
             </svg>
             <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
-                         :class="[$route.name === '#' ? activeClass : inactiveClass]"
+                         @click="scrollTo('section4')"
             >
              <h1>Notre mission</h1>
               <span class="text-xs text-gray-500">Renforcer la solidarité</span>
@@ -317,6 +317,7 @@
 <script setup lang="ts">
 import {ref} from 'vue';
 import Logo from "@/assets/images/logo.png"
+// import Logo from "@/assets/images/svg/logo.svg"
 
 const isDropdownOpen1 = ref(false)
 const isDropdownOpen2 = ref(false)
@@ -359,6 +360,10 @@ const isDrawerOpen = ref(false);
 
 const activeClass = ref('bg-green-100',)
 const inactiveClass = ref('',)
+
+const scrollTo = (id)=> {
+  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
 
 // const handleLogout =  () => {
 //   try {
