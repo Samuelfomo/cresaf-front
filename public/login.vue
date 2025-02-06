@@ -1,125 +1,92 @@
 <template>
 
-  <div class="bg-gray-100 flex items-center justify-center min-h-screen ">
-    <div
-      v-if="isLoading"
-      class="fixed inset-0 flex items-center justify-center bg-gray-50 bg-opacity-50 backdrop-blur-sm">
-      <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-orange-500"></div>
-      <p class="ml-4 font-medium" style="color: #FF4200">Chargement...</p>
-    </div>
+  <div class="bg-blue-50 flex items-start justify-center min-h-screen p-10">
 
-    <div class="bg-gray-100 w-full max-w-md p-3 ">
-      <div class="flex flex-wrap h-14 shadow-lg shadow-gray-600">
-        <!-- Carte -->
-        <div class="bg-gray-800 p-1 flex-1 w-full">
-          <div class="text-lg mb-2">
-            <p class=" text-center text-white font-roboto pt-2 capitalize"> Creer mon compte croco+ </p>
+      <div class="bg-white px-5 rounded-xl shadow">
+        <header class="py-6 px-4 rounded-t-lg text-center w-full max-w-xs">
+          <img :src="logo" alt="Logo Cresaf App" class="max-w-40 mx-auto"/>
+        </header>
+        <div class="w-full h-px bg-black"></div>
+        <div class="py-6 px-5 w-full max-w-xs">
+          <p class="w-full text-lg font-semibold">Nous avons besoin de vos identifiants de connexion</p>
+          <div class="relative py-4">
+            <input
+                v-model="identify"
+                type="text"
+                placeholder="Votre identifiant ★"
+                class="w-full px-6 py-3 border rounded-xl
+                 focus:outline-none focus:border-black transition duration-300
+                 placeholder-black hover:placeholder-gray-400"
+            />
+            <p v-if="errors.identify" class="text-red-600 text-sm mt-1">{{ errors.identify }}</p>
           </div>
-        </div>
-      </div>
-        <div class="bg-white shadow-lg shadow-gray-600 w-full max-w-md p-3">
-          <header class="py-2 px-4 rounded-t-lg text-center">
-            <img :src="croco" alt="Croco" class="max-w-40 mx-auto mt-4"/>
-          </header>
-          <div class="p-4">
-            <p class="text-right"><span class="text-red-600 text-2xl" >⋆</span>champs obligatoires</p>
-            <p class="text-gray-600 mb-4"><span class="text-red-600 text-2xl" >⋆</span>Entrez votre email</p>
-            <div class="relative">
-              <input
-                v-model="email"
-                type="email"
-                placeholder="Votre adresse mail"
-                class="w-full px-6 py-2 text-lg border-2 border-gray-300 rounded-xl
-                 focus:outline-none focus:border-green-500 focus:ring-2
-                 focus:ring-green-200 transition duration-300
-                 placeholder-gray-400"
-              />
-              <p v-if="errors.email" class="text-red-600 text-sm mt-1">{{ errors.email }}</p>
-            </div>
-            <p class="text-gray-600 mb-4"><span class="text-red-600 text-2xl" >⋆</span>Entrez votre mot de passe</p>
-            <div class="relative">
-              <input
+          <div class="relative py-4">
+            <input
                 v-model="password"
                 type="password"
-                placeholder="Votre mot de passe"
-                class="w-full px-6 py-2 text-lg border-2 border-gray-300 rounded-xl
-                 focus:outline-none focus:border-green-500 focus:ring-2
-                 focus:ring-green-200 transition duration-300
-                 placeholder-gray-400"
-              />
-              <p v-if="errors.password" class="text-red-600 text-sm mt-1">{{ errors.password }}</p>
-            </div>
-            <p class="text-gray-600 mb-4"><span class="text-red-600 text-2xl" >⋆</span>Entrez à nouveau votre mot de passe</p>
-            <div class="relative">
-              <input
-                v-model="confirmed"
-                type="password"
-                placeholder="Confirmer votre mot de passe"
-                class="w-full px-6 py-2 text-lg border-2 border-gray-300 rounded-xl
-                 focus:outline-none focus:border-green-500 focus:ring-2
-                 focus:ring-green-200 transition duration-300
-                 placeholder-gray-400"
-              />
-                          <p v-if="errors.confirmed" class="text-red-600 text-sm mt-1">{{ errors.confirmed }}</p>
-            </div>
-
-            <button
+                placeholder="Your password ★"
+                class="w-full px-6 py-3 border rounded-xl
+                 focus:outline-none focus:border-black transition duration-300
+                 placeholder-black hover:placeholder-gray-400"
+            />
+            <p v-if="errors.password" class="text-red-600 text-sm mt-1">{{ errors.password }}</p>
+          </div>
+          <button
               @click="handleSubmit"
-              class="w-full bg-green-800 text-white font-bold py-3 mt-8 rounded-xl hover:bg-green-900
-            transition duration-300 lowercase"
-            >
-              Créer un compte
-            </button>
+              class="w-full text-purple-600 text-xl border-purple-500 font-semibold py-3 border rounded-xl
+              hover:bg-purple-500 hover:text-white transition duration-300 z-50 shadow"
+          >
+            Suivant
+          </button>
 
-            <div class="text-center text-sm text-gray-500 mt-4 mb-2">
-              Besoin d'aide ? <a href="#" class="text-green-700 hover:underline">Contactez-nous</a>
-            </div>
+          <div class="flex flex-col w-full pt-10 justify-center items-center">
+            <span class="text-lg font-light">Vous n'avez pas de compte ?</span>
+            <span @click="router.push('/')" class="text-purple-500 text-lg font-light hover:underline cursor-pointer">Demander votre compte ici</span>
           </div>
         </div>
-
-    </div>
+        <footer class="flex justify-center items-center px-5 pb-5 gap-2">
+          <span class="font-light">© 2020 – 2025</span>
+          <a href="https://imediatis.cm/" class="font-light text-purple-500 text-sm cursor-pointer">imediatis-team</a>
+        </footer>
+      </div>
   </div>
 
 </template>
 
 <script setup lang="ts" >
-import croco from "@/assets/images/croco.png"
 import { ref } from 'vue'
+import {useRouter} from "vue-router";
+import Logo from "@/assets/images/logo.png"
 
-const isLoading = ref(false);
-const email = ref('');
+const router = useRouter()
+const logo = Logo
+const identify = ref('');
 const password = ref('')
-const confirmed = ref('')
 
 const errors = ref({
-  email: '',
+  identify: '',
   password: '',
-  confirmed: ''
 });
 
 const handleSubmit = () => {
   // Reset errors
   errors.value = {
-    email: '',
+    identify: '',
     password: '',
-    confirmed: ''
   };
 
   // Validate fields
-  if (!email.value) {
-    errors.value.email = 'Veuillez entrer votre adresse email';
+  if (!identify.value) {
+    errors.value.identify = 'Veuillez entrer votre identifiant';
   }
   if (!password.value) {
     errors.value.password = 'Veuillez entrer votre mot de passe';
   }
-  if (!confirmed.value) {
-    errors.value.confirmed = 'Veuillez confirmer votre mot de passe';
-  }
 
   // If no errors, proceed with form submission
-  if (!errors.value.email && !errors.value.password && !errors.value.confirmed) {
+  if (!errors.value.identify && !errors.value.password) {
     // Add form submission logic here
-    const submit = confirmed.value
+    const submit = password.value
     console.log('Form submitted',submit);
   }
 };
@@ -127,128 +94,3 @@ const handleSubmit = () => {
 
 
 </script>
-
-<style scoped>
-/* Styles personnalisés supplémentaires si nécessaire */
-</style>
-
-<!--<template>-->
-<!--  <div class="bg-gray-100 flex items-center justify-center min-h-screen ">-->
-<!--    <div-->
-<!--      v-if="isLoading"-->
-<!--      class="fixed inset-0 flex items-center justify-center bg-gray-50 bg-opacity-50 backdrop-blur-sm">-->
-<!--      <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-orange-500"></div>-->
-<!--      <p class="ml-4 font-medium" style="color: #FF4200">Chargement...</p>-->
-<!--    </div>-->
-
-<!--    <div class="bg-gray-100 w-full max-w-md p-3 ">-->
-<!--      <div class="flex flex-wrap h-14 shadow-lg shadow-gray-600">-->
-<!--        <div class="bg-gray-800 p-1 flex-1 w-full">-->
-<!--          <div class="text-lg mb-2">-->
-<!--            <p class="text-center text-white font-roboto pt-2 capitalize">Creer mon compte croco+</p>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="bg-white shadow-lg shadow-gray-600 w-full max-w-md p-3">-->
-<!--        <header class="py-2 px-4 rounded-t-lg text-center">-->
-<!--          <img :src="croco" alt="Croco" class="max-w-40 mx-auto mt-4"/>-->
-<!--        </header>-->
-<!--        <div class="p-4">-->
-<!--          <p class="text-right"><span class="text-red-600 text-2xl">⋆</span>champs obligatoires</p>-->
-<!--          <p class="text-gray-600 mb-4"><span class="text-red-600 text-2xl">⋆</span>Entrez votre email</p>-->
-<!--          <div class="relative">-->
-<!--            <input-->
-<!--              v-model="email"-->
-<!--              type="email"-->
-<!--              placeholder="Votre adresse mail"-->
-<!--              class="w-full px-6 py-2 text-lg border-2 border-gray-300 rounded-xl-->
-<!--               focus:outline-none focus:border-green-500 focus:ring-2-->
-<!--               focus:ring-green-200 transition duration-300-->
-<!--               placeholder-gray-400"-->
-<!--            />-->
-<!--            <p v-if="errors.email" class="text-red-500 text-sm mt-1">{{ errors.email }}</p>-->
-<!--          </div>-->
-<!--          <p class="text-gray-600 mb-4"><span class="text-red-600 text-2xl">⋆</span>Entrez votre mot de passe</p>-->
-<!--          <div class="relative">-->
-<!--            <input-->
-<!--              v-model="password"-->
-<!--              type="password"-->
-<!--              placeholder="Votre mot de passe"-->
-<!--              class="w-full px-6 py-2 text-lg border-2 border-gray-300 rounded-xl-->
-<!--               focus:outline-none focus:border-green-500 focus:ring-2-->
-<!--               focus:ring-green-200 transition duration-300-->
-<!--               placeholder-gray-400"-->
-<!--            />-->
-<!--            <p v-if="errors.password" class="text-red-500 text-sm mt-1">{{ errors.password }}</p>-->
-<!--          </div>-->
-<!--          <p class="text-gray-600 mb-4"><span class="text-red-600 text-2xl">⋆</span>Entrez à nouveau votre mot de passe</p>-->
-<!--          <div class="relative">-->
-<!--            <input-->
-<!--              v-model="confirmed"-->
-<!--              type="password"-->
-<!--              placeholder="Confirmer votre mot de passe"-->
-<!--              class="w-full px-6 py-2 text-lg border-2 border-gray-300 rounded-xl-->
-<!--               focus:outline-none focus:border-green-500 focus:ring-2-->
-<!--               focus:ring-green-200 transition duration-300-->
-<!--               placeholder-gray-400"-->
-<!--            />-->
-<!--            <p v-if="errors.confirmed" class="text-red-500 text-sm mt-1">{{ errors.confirmed }}</p>-->
-<!--          </div>-->
-
-<!--          <button-->
-<!--            @click="handleSubmit"-->
-<!--            class="w-full bg-green-800 text-white font-bold py-3 mt-8 rounded-xl hover:bg-green-900-->
-<!--            transition duration-300 lowercase"-->
-<!--          >-->
-<!--            Créer un compte-->
-<!--          </button>-->
-
-<!--          <div class="text-center text-sm text-gray-500 mt-4 mb-2">-->
-<!--            Besoin d'aide ? <a href="#" class="text-green-700 hover:underline">Contactez-nous</a>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</template>-->
-
-<!--<script setup lang="ts">-->
-<!--import croco from "@/assets/images/croco.png"-->
-<!--import { ref } from 'vue'-->
-
-<!--const isLoading = ref(false);-->
-<!--const email = ref('');-->
-<!--const password = ref('');-->
-<!--const confirmed = ref('');-->
-<!--const errors = ref({-->
-<!--  email: '',-->
-<!--  password: '',-->
-<!--  confirmed: ''-->
-<!--});-->
-
-<!--const handleSubmit = () => {-->
-<!--  // Reset errors-->
-<!--  errors.value = {-->
-<!--    email: '',-->
-<!--    password: '',-->
-<!--    confirmed: ''-->
-<!--  };-->
-
-<!--  // Validate fields-->
-<!--  if (!email.value) {-->
-<!--    errors.value.email = 'Veuillez entrer votre adresse email';-->
-<!--  }-->
-<!--  if (!password.value) {-->
-<!--    errors.value.password = 'Veuillez entrer votre mot de passe';-->
-<!--  }-->
-<!--  if (!confirmed.value) {-->
-<!--    errors.value.confirmed = 'Veuillez confirmer votre mot de passe';-->
-<!--  }-->
-
-<!--  // If no errors, proceed with form submission-->
-<!--  if (!errors.value.email && !errors.value.password && !errors.value.confirmed) {-->
-<!--    // Add form submission logic here-->
-<!--    console.log('Form submitted');-->
-<!--  }-->
-<!--};-->
-<!--</script>-->

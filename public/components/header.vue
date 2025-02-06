@@ -1,6 +1,6 @@
 <template>
-  <header class="fixed bg-white p-5 lg:py-3 lg:px-14 flex justify-between items-center w-full flex-wrap border-b">
-    <div class="text-xl font-bold text-blue-600">
+  <header class="fixed bg-white p-5 lg:py-3 lg:px-14 flex justify-between items-center w-full flex-wrap border-b z-50">
+    <div class="text-xl font-bold text-blue-600 cursor-pointer" @click="router.push('/')">
       <img :src="logo" alt="Logo" class="w-40 h-12 ">
     </div>
 
@@ -62,7 +62,7 @@
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
               <path d="M3 21l17 -17" /><path d="M3 3v18h18" />
             </svg>
-            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
+            <router-link to="/values" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          @click="scrollTo('section3')"
             >
               <h1>Notre vision</h1>
@@ -79,7 +79,7 @@
                .217 -.665l2.428 -.352l1.086 -2.193a.392 .392 0 0 1 .702 0l1.086 2.193l2.428
              .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
             </svg>
-            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
+            <router-link to="/values" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          @click="scrollTo('section4')"
             >
              <h1>Notre mission</h1>
@@ -284,7 +284,7 @@
     </div>
     </div>
     <div class=" hidden lg:flex justify-between gap-x-2">
-      <button type="button" class="text-lg bg-gray-100 p-2 font-semibold border rounded-lg">
+      <button type="button" class="text-lg bg-gray-100 p-2 font-semibold border rounded-lg" @click="router.push('/login')">
         Connexion
       </button>
       <button type="button" class="text-lg bg-blue-950 p-2 text-white font-semibold border border-white rounded-lg hover:text-green-600 hover:border-green-500">
@@ -316,6 +316,8 @@
 
 <script setup lang="ts">
 import {ref} from 'vue';
+import {useRouter} from "vue-router"
+const router = useRouter()
 import Logo from "@/assets/images/logo.png"
 // import Logo from "@/assets/images/svg/logo.svg"
 
