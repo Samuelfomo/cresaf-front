@@ -6,25 +6,30 @@
     <main class="flex-grow bg-blue-950 px-8 pt-32 pb-12">
      <div class="min-h-screen flex flex-wrap sm:flex-nowrap">
        <div v-for="(service, index) in services" :key="index" class="w-full flex flex-col lg:px-10 lg:text-start text-center justify-center lg:items-start items-center">
-         <h1 class="text-6xl font-bold text-white pb-6">
+         <h1 class="text-6xl font-accent text-white pb-6">
            Découvrez la nouvelle génération de
            <span class="text-green-600 font-bold">{{service.value}}</span>
          </h1>
-         <h5 class="text-white font-light text-2xl max-w-lg py-6">
+         <h5 class="text-white font-accent text-xl max-w-lg py-6">
            Favoriser le développement économique par l'épargne, l'octroi de crédits et la facilitation des services financiers
          </h5>
-
          <button type="button" @click="openWhatsApp" class="text-white text-xl font-semibold border border-white rounded-lg p-2
-         flex justify-between items-center max-w-[150px] capitalize hover:text-green-600 hover:border-green-600">
-           <img :src="whatsApp" alt="whatsApp Icon"> parlons-en
+         flex justify-between items-center w-full max-w-[150px] capitalize hover:text-green-600 hover:border-green-600 lg:m-0 mb-10">
+           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
+                 stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
+                 class="transition-colors duration-200">
+             <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+             <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+           </svg>
+           parlons-en
          </button>
        </div>
-       <div class="min-h-44 w-full p-6">
+       <div class="min-h-44 w-full px-6">
          <Header1 />
        </div>
      </div>
     </main>
-    <div class="bg-white px-8 flex flex-col min-h-screen py-20">
+    <div class="bg-white px-8 flex flex-col min-h-screen py-20 z-40">
       <h2 class="text-gray-400 font-light text-lg uppercase text-center pb-10">nos services de transfert d'argent</h2>
       <div class="relative w-full overflow-hidden">
         <div class="flex transition-transform duration-300 space-x-5 mb-20"
@@ -230,8 +235,6 @@ import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 import Header1 from "@public/components/image.vue";
 
-import WhatsApp from "@/assets/images/svg/whatsApp.svg"
-// import Video from "@/assets/video/video.mp4"
 import MoMo from "@/assets/images/momo.jpeg"
 import MoneyGram from "@/assets/images/MoneyGram.jpeg"
 import MoneyTrans from "@/assets/images/Moneytrans.jpeg"
@@ -243,8 +246,6 @@ import Worldremit from "@/assets/images/Worldremit.jpeg"
 import Icon from"@/assets/images/logo-cref.jpg"
 import Arrow from"@/assets/images/svg/arow.svg"
 
-const whatsApp = WhatsApp
-// const video = Video
 const momo = MoMo
 const moneygram = MoneyGram
 const moneytrans = MoneyTrans

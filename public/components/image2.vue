@@ -1,76 +1,151 @@
 <template>
-  <div class="w-full">
-    <!-- Navigation -->
-    <nav class="fixed w-full bg-blue-500 p-4 flex justify-around text-white">
-      <a href="#section1" class="hover:underline">Section 1</a>
-      <a href="#section2" class="hover:underline">Section 2</a>
-      <a href="#section3" class="hover:underline">Section 3</a>
-    </nav>
+  <div class="relative py-16 px-4">
+    <div class="text-center text-white mb-12">
+      <h2 class="text-2xl font-light tracking-wide uppercase">
+        nos services de transfert d'argent
+      </h2>
+    </div>
 
-    <!-- Sections avec animation -->
-    <div class="pt-20">
-      <section
-          id="section1"
-          ref="section1"
-          :class="{'opacity-100 translate-y-0': visible.section1, 'opacity-0 translate-y-10': !visible.section1}"
-          class="transition-all duration-700 ease-out h-screen bg-gray-200 flex items-center justify-center"
+    <div class="relative overflow-hidden">
+      <div
+          class="flex transition-transform duration-500 ease-in-out"
+          :style="`transform: translateX(-${currentIndex * 100}%)`"
       >
-        <h1 class="text-3xl">Section 1</h1>
-      </section>
+        <div class="flex-shrink-0 w-full flex justify-center space-x-8">
+          <div
+              v-for="image in images"
+              :key="image.name"
+              class="bg-blue-900 p-4 rounded-lg shadow-md flex items-center justify-center w-48 h-24 cursor-pointer hover:shadow-xl transition-all"
+          >
+            <img
+                :src="image.src"
+                :alt="image.name"
+                class="max-w-full max-h-full object-contain"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
 
-      <section
-          id="section2"
-          ref="section2"
-          :class="{'opacity-100 translate-y-0': visible.section2, 'opacity-0 translate-y-10': !visible.section2}"
-          class="transition-all duration-700 ease-out h-screen bg-gray-300 flex items-center justify-center"
+    <div class="absolute inset-y-0 left-0 flex items-center">
+      <button
+          @click="prevSlide"
+          class="bg-blue-950/20 text-white p-2 rounded-full"
       >
-        <h1 class="text-3xl">Section 2</h1>
-      </section>
-
-      <section
-          id="section3"
-          ref="section3"
-          :class="{'opacity-100 translate-y-0': visible.section3, 'opacity-0 translate-y-10': !visible.section3}"
-          class="transition-all duration-700 ease-out h-screen bg-gray-400 flex items-center justify-center"
+        ←
+      </button>
+    </div>
+    <div class="absolute /inset-y-0 right-0 flex items-center">
+      <button
+          @click="nextSlide"
+          class="bg-blue-950/20 text-white p-2 rounded-full"
       >
-        <h1 class="text-3xl">Section 3</h1>
-      </section>
+        →
+      </button>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      visible: {
-        section1: false,
-        section2: false,
-        section3: false,
-      }
-    };
-  },
-  mounted() {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          this.visible[entry.target.id] = true;
-        }
-      });
-    }, { threshold: 0.3 });
+<script setup>
+import { ref } from 'vue'
+import GLILogo from "@/assets/images/momo.jpeg"
+import VeoLogo from "@/assets/images/momo.jpeg"
+import CESALogo from "@/assets/images/momo.jpeg"
+import StarOilLogo from "@/assets/images/momo.jpeg"
+import BioMedicalLogo from "@/assets/images/momo.jpeg"
 
-    this.$refs.section1 && observer.observe(this.$refs.section1);
-    this.$refs.section2 && observer.observe(this.$refs.section2);
-    this.$refs.section3 && observer.observe(this.$refs.section3);
-  }
-};
+const images = ref([
+  { name: 'GLI', src: GLILogo },
+  { name: 'Veo Canal+', src: VeoLogo },
+  { name: 'CESA', src: CESALogo },
+  { name: 'Star Oil', src: StarOilLogo },
+  { name: 'Biomedical', src: BioMedicalLogo }
+])
+
+const currentIndex = ref(0)
+
+const nextSlide = () => {
+  currentIndex.value = (currentIndex.value + 1) % logos.value.length
+}
+
+const prevSlide = () => {
+  currentIndex.value = (currentIndex.value - 1 + logos.value.length) % logos.value.length
+}
 </script>
 
-<style scoped>
-.transition-all {
-  transition: all 0.7s ease-out;
-}
-</style>
+<!--<template>-->
+<!--  <div class="w-full">-->
+<!--    &lt;!&ndash; Navigation &ndash;&gt;-->
+<!--    <nav class="fixed w-full bg-blue-500 p-4 flex justify-around text-white">-->
+<!--      <a href="#section1" class="hover:underline">Section 1</a>-->
+<!--      <a href="#section2" class="hover:underline">Section 2</a>-->
+<!--      <a href="#section3" class="hover:underline">Section 3</a>-->
+<!--    </nav>-->
+
+<!--    &lt;!&ndash; Sections avec animation &ndash;&gt;-->
+<!--    <div class="pt-20">-->
+<!--      <section-->
+<!--          id="section1"-->
+<!--          ref="section1"-->
+<!--          :class="{'opacity-100 translate-y-0': visible.section1, 'opacity-0 translate-y-10': !visible.section1}"-->
+<!--          class="transition-all duration-700 ease-out h-screen bg-gray-200 flex items-center justify-center"-->
+<!--      >-->
+<!--        <h1 class="text-3xl">Section 1</h1>-->
+<!--      </section>-->
+
+<!--      <section-->
+<!--          id="section2"-->
+<!--          ref="section2"-->
+<!--          :class="{'opacity-100 translate-y-0': visible.section2, 'opacity-0 translate-y-10': !visible.section2}"-->
+<!--          class="transition-all duration-700 ease-out h-screen bg-gray-300 flex items-center justify-center"-->
+<!--      >-->
+<!--        <h1 class="text-3xl">Section 2</h1>-->
+<!--      </section>-->
+
+<!--      <section-->
+<!--          id="section3"-->
+<!--          ref="section3"-->
+<!--          :class="{'opacity-100 translate-y-0': visible.section3, 'opacity-0 translate-y-10': !visible.section3}"-->
+<!--          class="transition-all duration-700 ease-out h-screen bg-gray-400 flex items-center justify-center"-->
+<!--      >-->
+<!--        <h1 class="text-3xl">Section 3</h1>-->
+<!--      </section>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</template>-->
+
+<!--<script>-->
+<!--export default {-->
+<!--  data() {-->
+<!--    return {-->
+<!--      visible: {-->
+<!--        section1: false,-->
+<!--        section2: false,-->
+<!--        section3: false,-->
+<!--      }-->
+<!--    };-->
+<!--  },-->
+<!--  mounted() {-->
+<!--    const observer = new IntersectionObserver((entries) => {-->
+<!--      entries.forEach((entry) => {-->
+<!--        if (entry.isIntersecting) {-->
+<!--          this.visible[entry.target.id] = true;-->
+<!--        }-->
+<!--      });-->
+<!--    }, { threshold: 0.3 });-->
+
+<!--    this.$refs.section1 && observer.observe(this.$refs.section1);-->
+<!--    this.$refs.section2 && observer.observe(this.$refs.section2);-->
+<!--    this.$refs.section3 && observer.observe(this.$refs.section3);-->
+<!--  }-->
+<!--};-->
+<!--</script>-->
+
+<!--<style scoped>-->
+<!--.transition-all {-->
+<!--  transition: all 0.7s ease-out;-->
+<!--}-->
+<!--</style>-->
 
 
 
@@ -161,7 +236,7 @@ export default {
 <!--import { ref } from "vue";-->
 <!--import MoMo from "@/assets/images/momo.jpeg";-->
 <!--import MoneyGram from "@/assets/images/MoneyGram.jpeg";-->
-<!--import MoneyTrans from "@/assets/images/Moneytrans.jpeg";-->
+<!--import MoneyTrans from "@/assets/images/momo.jpeg";-->
 <!--import OM from "@/assets/images/om.jpeg";-->
 <!--import Ria from "@/assets/images/Ria.jpeg";-->
 <!--import Paytop from "@/assets/images/paytop.png";-->

@@ -9,7 +9,7 @@
       >
         <img
             :src="image"
-            class="w-full h-full"
+            class="rounded-xl lg:h-full"
             alt="Carousel Image"
         />
       </div>
@@ -52,10 +52,11 @@
 
 <script setup>
 import {ref, onMounted, onUnmounted} from "vue";
-import Image from "@/assets/images/woman.png";
-import Image1 from "@/assets/images/croco.png";
+import Image from "@/assets/images/woman.jpg";
+import Image1 from "@/assets/images/woman1.jpg";
+import Image2 from "@/assets/images/woman2.jpg";
 
-const images = ref([Image, Image1]);
+const images = ref([Image, Image1, Image2]);
 const currentIndex = ref(0);
 let interval = null;
 
