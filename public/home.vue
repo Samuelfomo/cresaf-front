@@ -160,7 +160,7 @@
           Designed to work better together erat velit eget hac nulla nullam et id praesent nisi ornare risus risus consequat nunc nisl pellentesque diam neque.
         </p>
 
-        <div class="flex items-center w-full flex-wrap my-5 justify-between">
+        <div class="flex items-center w-full flex-row my-5 justify-between">
           <div class="flex p-2 justify-between items-center w-full max-w-xs gap-2" v-for="(location5, index) in locations5" :key="index">
             <div class="rounded-full h-12 w-12 flex justify-center items-center bg-red-500 border-4 border-pink-300">
              <h1 class="text-white font-bold text-xl">
