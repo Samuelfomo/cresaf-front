@@ -13,7 +13,9 @@
         </p>
         <button type="button"
                 class="text-white border border-white rounded-lg px-6 py-3 font-semibold
-          transition-colors duration-300 hover:border-green-600 hover:text-green-600">
+          transition-colors duration-300 hover:border-green-600 hover:text-green-600"
+        @click="router.push('/login')"
+        >
           Open your account today
         </button>
       </div>
@@ -60,8 +62,11 @@
 </template>
 
 <script setup>
+import {useRouter} from "vue-router";
 import FaceBook from "@/assets/images/svg/facebook.svg"
 import Phone from "@/assets/images/svg/phone.svg"
+
+const router = useRouter()
 
 const facebookIcon = FaceBook
 const phone = Phone

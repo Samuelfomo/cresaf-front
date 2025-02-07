@@ -46,7 +46,7 @@
         </div>
         <footer class="flex justify-center items-center px-5 pb-5 gap-2">
           <span class="font-light">© 2020 – 2025</span>
-          <a href="https://imediatis.cm/" class="font-light text-purple-500 text-sm cursor-pointer">imediatis-team</a>
+          <a href="#" class="font-light text-purple-500 text-sm cursor-pointer" @click="openImediatis">imediatis-team</a>
         </footer>
       </div>
   </div>
@@ -90,7 +90,9 @@ const handleSubmit = () => {
     console.log('Form submitted',submit);
   }
 };
-
+const openImediatis = () => {
+  window.open("https://imediatis.cm/", "_blank");
+}
 
 
 </script>
