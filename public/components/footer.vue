@@ -3,7 +3,7 @@
   <footer class="bg-blue-950 pt-10 md:pt-20 flex">
     <div class="container mx-auto px-4 w-full">
       <!-- Call to Action Section -->
-      <div class="flex flex-col items-center text-center mb-40">
+      <div class="flex flex-col items-center text-center lg:mb-40 mb-10">
         <h2 class="text-white font-bold text-2xl md:text-3xl mb-4">
           Experience the next-gen banking
         </h2>

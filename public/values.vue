@@ -5,26 +5,26 @@
     <div class="flex-grow px-8 pt-32 pb-32 min-h-screen">
       <div class="min-h-screen flex flex-wrap sm:flex-nowrap">
         <div v-for="(service, index) in services" :key="index" class="w-full flex flex-col lg:px-10 lg:text-start text-start justify-center lg:items-start">
-          <h1 class="lg:text-5xl text-3xl font-bold text-white pb-3">
-            <span class="text-green-600 font-bold">{{service.value}}</span>
+          <h1 class="lg:text-5xl text-3xl font-primary text-white pb-3">
+            <span class="text-green-600">{{service.value}}</span>
           </h1>
-          <h5 class="text-gray-600 font-mono text-lg max-w-lg py-3">
+          <h5 class="text-gray-600 font-primary text-lg max-w-xl py-3">
             Notre objectif est de répondre aux besoins de tous ceux qui, dans le secteur informel ou non, ont besoin d'une assistance financière fiable, directe et personnalisée, en devenant le premier pourvoyeur de microcrédits.
           </h5>
-          <h5 class="text-gray-700 text-xl max-w-lg py-3 leading-8">
+          <h5 class="text-gray-700 font-primary text-xl max-w-xl py-3 leading-8">
             Le Crédit Solidaire d'Afrique (CRESAF) est une société anonyme créée par un groupe d'entrepreneurs locaux désireux de contribuer au progrès économique et social du Cameroun en proposant des solutions de financement adaptées aux besoins des micros, petites et moyennes entreprises.
           </h5>
-          <h5 class="text-gray-700 text-xl max-w-lg py-3 leading-8">
+          <h5 class="text-gray-700 font-primary text-xl max-w-xl py-3 leading-8">
             CRESAF s'appuie sur des valeurs de solidarité, de confiance, de transparence et de responsabilité pour renforcer l'inclusion financière, soutenir l'innovation et favoriser le développement durable dans le pays.
           </h5>
         </div>
-        <div class="min-h-44 w-full lg:py-0 py-8">
+        <div class="min-h-44 w-full lg:pt-0 pt-10">
           <Image1 />
         </div>
       </div>
     </div>
     <div id="section1" class="bg-blue-50 opacity-90 lg:px-8 flex flex-col py-12 lg:pb-0 justify-start min-h-screen">
-      <h1 class="text-green-600 lg:text-5xl text-3xl font-bold text-center">Nos valeurs fondamentales</h1>
+      <h1 class="text-green-600 lg:text-5xl text-3xl font-primary text-center">Nos valeurs fondamentales</h1>
       <p class="text-gray-600 text-xl py-10 w-full text-center lg:px-20 px-5">
         Nos employés partagent des valeurs fortes qui sous-tendent notre engagement et notre responsabilité de fournir à nos clients et partenaires une expérience enrichissante.
       </p>
@@ -47,7 +47,7 @@
      </div>
     </div>
     <div id="section2" class="lg:px-8 flex flex-col py-12 lg:pb-0 justify-start min-h-screen">
-      <h1 class="text-green-600 lg:text-4xl text-3xl font-bold text-center">Pourquoi nous faire confiance ?</h1>
+      <h1 class="text-green-600 lg:text-5xl text-3xl font-primary text-center">Pourquoi nous faire confiance ?</h1>
       <p class="text-gray-500 font-sans text-xl py-8 w-full text-center lg:px-20 px-6">
         Nous disposons d'actifs de qualité que nous employons au profit de nos clients
       </p>
@@ -68,7 +68,7 @@
     <div id="section3" class="min-h-full flex justify-between items-center w-full flex-wrap lg:px-8 px-1 bg-blue-950 pb-2">
       <div class="flex lg:flex-nowrap flex-wrap px-5 h-full justify-between items-center w-full gap-2">
         <div class="flex flex-col w-full h-full items-start justify-between py-5">
-          <h1 class="text-white lg:text-5xl text-3xl text-center font-bold">Nous misons sur l'avenir</h1>
+          <h1 class="text-white lg:text-5xl text-3xl text-center font-primary">Nous misons sur l'avenir</h1>
           <p class="text-gray-400 text-xl font-sans lg:py-5 pt-5 w-full text-left">
             Nous aspirons à être une force motrice du changement pour transformer et établir le standard du secteur de la microfinance au Cameroun.
           </p>
@@ -89,7 +89,7 @@
     </div>
 
     <div id="section4" class="lg:px-8 flex flex-col lg:py-0 py-12 lg:pb-0 justify-center items-center min-h-screen">
-      <h1 class="text-green-600 lg:text-4xl text-3xl font-bold text-center">Créons des opportunités pour tous !</h1>
+      <h1 class="text-green-600 lg:text-5xl text-3xl font-primary text-center">Créons des opportunités pour tous !</h1>
       <p class="text-gray-500 font-sans text-xl py-8 w-full text-center lg:px-20 px-6">
         Notre mission se traduit par la mise à disposition de services financiers adaptés aux personnes exclues du secteur bancaire.
       </p>

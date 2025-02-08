@@ -55,8 +55,13 @@ import {ref, onMounted, onUnmounted} from "vue";
 import Image from "@/assets/images/woman.jpg";
 import Image1 from "@/assets/images/woman1.jpg";
 import Image2 from "@/assets/images/woman2.jpg";
+const Image4 ='https://picsum.photos/id/1018/800/600'|| null;
+const Image5 ='https://picsum.photos/id/1015/800/600'
+const Image6 ='https://picsum.photos/id/1019/800/600'
+const Image7 ='https://picsum.photos/id/1016/800/600'
+const Image8 ='https://picsum.photos/id/1016/800/600'
 
-const images = ref([Image, Image1, Image2]);
+const images = ref([Image, Image1, Image2, Image4, Image5, Image6, Image7, Image8 ]);
 const currentIndex = ref(0);
 let interval = null;
 

@@ -115,8 +115,8 @@
               <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
               <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
             </svg>
-            <router-link to="#" class="flex flex-col font-semibold text-lg px-5 pb-2"
-                         :class="[$route.name === '#' ? activeClass : inactiveClass]"
+            <router-link to="products" class="flex flex-col font-semibold text-lg px-5 pb-2"
+                         :class="[$route.name === 'products' ? activeClass : inactiveClass]"
                          @click="closeDropdown2"
             >
               <h2>Compte chèque</h2>
@@ -242,8 +242,8 @@
               0.34187500000000004 -0.34187500000000004 0.3418125 0.1530625 0.3418125 0.34187500000000004 -0.1530625 0.3418125 -0.3418125 0.3418125Z"
                     fill="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
             </svg>
-            <router-link to="#" class="flex flex-col font-medium text-lg px-5 py-2"
-                         :class="[$route.name === '#' ? activeClass : inactiveClass]"
+            <router-link to="solutions" class="flex flex-col font-medium text-lg px-5 py-2"
+                         :class="[$route.name === 'solutions' ? activeClass : inactiveClass]"
                          @click="closeDropdown3"
             >
               <h1>Financement de projets</h1>
@@ -325,7 +325,7 @@
               <div class="w-full flex items-center">
               <h1 class="text-2xl">🤍</h1>
               <router-link to="/values" class="flex flex-col text-white font-semibold hover:text-green-500 text-base px-5 pb-2"
-                           @click="scrollTo({id : 'section1'})"
+                           @click="closeDrawerAndScroll1"
               >
                 <h1>Nos valeurs</h1>
                 <span class="text-xs text-gray-400">Confiance, Intégrité et solidarité </span>
@@ -341,7 +341,7 @@
                 <path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" />
               </svg>
               <router-link to="#" class="flex flex-col font-semibold hover:text-green-500 text-base text-white px-5 py-2"
-                           @click="scrollTo({id : 'section2'})"
+                           @click="closeDrawerAndScroll2"
               >
                 <h1>Nos atouts</h1>
                 <span class="text-xs text-gray-400">Culture de la performance </span>
@@ -355,7 +355,7 @@
                   <path d="M3 21l17 -17" /><path d="M3 3v18h18" />
                 </svg>
                 <router-link to="/values" class="flex flex-col text-white justify-start font-semibold hover:text-green-500 text-base px-5 py-2"
-                             @click="scrollTo({id : 'section3'})"
+                             @click="closeDrawerAndScroll3"
                 >
                   <h1>Notre vision</h1>
                   <span class="text-xs text-gray-400">Misé sur l'avenir </span>
@@ -372,7 +372,7 @@
              .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
                 </svg>
                 <router-link to="/values" class="flex flex-col text-white justify-start font-semibold hover:text-green-500 text-base px-5 py-2"
-                             @click="scrollTo({id : 'section4'})"
+                             @click="closeDrawerAndScroll4"
                 >
                   <h1>Notre mission</h1>
                   <span class="text-xs text-gray-400">Renforcer la solidarité</span>
@@ -592,6 +592,22 @@ const closeAndScroll1 = () =>{
   scrollTo({id : 'section1'})
   closeDropdown1()
 }
+const closeDrawerAndScroll1 = () =>{
+  scrollTo({id : 'section1'})
+  isDrawerOpen.value = false
+}
+const closeDrawerAndScroll2 = () =>{
+  scrollTo({id : 'section2'})
+  isDrawerOpen.value = false
+}
+const closeDrawerAndScroll3 = () =>{
+  scrollTo({id : 'section3'})
+  isDrawerOpen.value = false
+}
+const closeDrawerAndScroll4 = () =>{
+  scrollTo({id : 'section4'})
+  isDrawerOpen.value = false
+}
 const closeAndScroll2 = () =>{
   scrollTo({id : 'section2'})
   closeDropdown1()
@@ -629,6 +645,10 @@ const closeDropdown2 = () =>{
   }, 100);
 
 }
+// const closeDropdown2AndScroll1 = () =>{
+//   closeDropdown1()
+// }
+
 const closeDropdown3 = () =>{
   timeout = setTimeout(() => {
     isDropdownOpen3.value = false
