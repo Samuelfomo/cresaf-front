@@ -31,32 +31,34 @@
     </main>
     <div class="bg-white px-8 flex flex-col min-h-screen py-20 z-40">
       <h2 class="text-gray-400 font-light text-lg uppercase text-center pb-10">nos services de transfert d'argent</h2>
-      <div class="relative w-full overflow-hidden">
-        <div class="flex transition-transform duration-300 space-x-5 mb-20"
-             :style="`transform: translateX(-${currentIndex * 100}%)`">
-          <div
-              v-for="(image, index) in images"
-              :key="index"
-              class="flex-shrink-0 w-full max-w-xs max-h-20 flex justify-center items-center"
-          >
-            <img :src="image.name" alt="Service logo" class="max-w-full max-h-full rounded-lg border">
-          </div>
-        </div>
+<!--      <div class="relative w-full overflow-hidden hidden">-->
+<!--        <div class="flex transition-transform duration-300 space-x-5 mb-20"-->
+<!--             :style="`transform: translateX(-${currentIndex * 100}%)`">-->
+<!--          <div-->
+<!--              v-for="(image, index) in images"-->
+<!--              :key="index"-->
+<!--              class="flex-shrink-0 w-full max-w-xs max-h-20 flex justify-center items-center"-->
+<!--          >-->
+<!--            <img :src="image.name" alt="Service logo" class="max-w-full max-h-full rounded-lg border">-->
+<!--          </div>-->
+<!--        </div>-->
 
-        <!-- Slider indicators -->
-        <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-3">
-          <button
-              v-for="(image, index) in images"
-              :key="index"
-              class="w-3 h-3 rounded-full transition-colors duration-300"
-              :class="currentIndex === index ? 'bg-blue-500' : 'bg-gray-400'"
-              @click="goToSlide(index)"
-              :aria-label="`Aller à la diapositive ${index + 1}`"
-          ></button>
-        </div>
-      </div>
+<!--        &lt;!&ndash; Slider indicators &ndash;&gt;-->
+<!--        <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 flex space-x-3">-->
+<!--          <button-->
+<!--              v-for="(image, index) in images"-->
+<!--              :key="index"-->
+<!--              class="w-3 h-3 rounded-full transition-colors duration-300"-->
+<!--              :class="currentIndex === index ? 'bg-blue-500' : 'bg-gray-400'"-->
+<!--              @click="goToSlide(index)"-->
+<!--              :aria-label="`Aller à la diapositive ${index + 1}`"-->
+<!--          ></button>-->
+<!--        </div>-->
+<!--      </div>-->
 
-      <div class="w-full h-full flex flex-col justify-end items-center mt-auto lg:pt-52 pt-10 border-t lg:border-none">
+      <Image2 />
+
+      <div class="w-full h-full flex flex-col justify-end items-center mt-auto lg:pt-32 pt-10 border-t lg:border-none">
         <h1 class="text-3xl font-semibold text-center text-black">Un guichet unique pour
           <span class="text-green-600 font-semibold">vos finances </span>
         </h1>
@@ -235,38 +237,12 @@ import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 import Header1 from "@public/components/image.vue";
 
-import MoMo from "@/assets/images/momo.jpeg"
-import MoneyGram from "@/assets/images/MoneyGram.jpeg"
-import MoneyTrans from "@/assets/images/Moneytrans.jpeg"
-import OM from "@/assets/images/om.jpeg"
-import Ria from "@/assets/images/Ria.jpeg"
-import Paytop from "@/assets/images/paytop.png"
-import Western from "@/assets/images/Western Union.jpeg"
-import Worldremit from "@/assets/images/Worldremit.jpeg"
 import Icon from"@/assets/images/logo-cref.jpg"
 import Arrow from"@/assets/images/svg/arow.svg"
+import Image2 from "@public/components/image2.vue";
 
-const momo = MoMo
-const moneygram = MoneyGram
-const moneytrans = MoneyTrans
-const om = OM
-const ria = Ria
-const paytop = Paytop
-const western = Western
-const worldremit = Worldremit
 const icon =Icon
 const arrow = Arrow
-
-const images = ref([
-  { name: momo },
-  { name: moneygram },
-  { name: moneytrans },
-  { name: om },
-  { name: ria },
-  { name: paytop },
-  { name: western },
-  { name: worldremit },
-])
 
 const services =ref( [
   {
