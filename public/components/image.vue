@@ -9,7 +9,7 @@
       >
         <img
             :src="image"
-            class="rounded-xl lg:h-full"
+            class="rounded-xl"
             alt="Carousel Image"
         />
       </div>
