@@ -12,12 +12,12 @@
         <div
             v-for="(image, index) in images"
             :key="index"
-            class="shrink-0 snap-center border rounded-lg"
+            class="w-64 h-48 shrink-0 snap-center "
         >
           <img
               :src="image.url"
               :alt="image.alt"
-              class="w-64 h-48 object-cover shadow-lg hover:scale-105 transition-transform duration-300"
+              class="w-full h-full object-cover shadow-lg hover:scale-105 transition-transform duration-300 border rounded-lg"
               loading="lazy"
           />
         </div>
@@ -69,7 +69,7 @@ import MoneyTrans from "@/assets/images/Moneytrans.png"
 import OM from "@/assets/images/om.png"
 import Ria from "@/assets/images/Ria.png"
 import Paytop from "@/assets/images/paytop.png"
-import Western from "@/assets/images/Western.png"
+import Western from "@/assets/images/svg/Western_Union.svg"
 import Worldremit from "@/assets/images/Worldremit.png"
 
 const momo = MoMo
