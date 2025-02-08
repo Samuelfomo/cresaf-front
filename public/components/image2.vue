@@ -69,7 +69,7 @@ import MoneyTrans from "@/assets/images/Moneytrans.png"
 import OM from "@/assets/images/om.png"
 import Ria from "@/assets/images/Ria.png"
 import Paytop from "@/assets/images/paytop.png"
-import Western from "@/assets/images/svg/Western_Union.svg"
+import Western from "@/assets/images/Western.png"
 import Worldremit from "@/assets/images/Worldremit.png"
 
 const momo = MoMo
