@@ -149,7 +149,7 @@
           nunc nisl pellentesque diam neque.
         </p>
 
-        <div class="flex w-full h-full py-5 lg:justify-between justify-center flex-wrap px-5 lg:px-28 gap-2">
+        <div class="flex w-full h-full py-5 justify-center flex-wrap px-5 lg:px-20 gap-2">
           <div v-for="(location4, index) in locations4" :key="index" class="flex justify-between items-start h-full min-h-44 w-full max-w-lg border rounded-lg lg:p-8 p-5 bg-blue-50">
             <div class="border-white flex justify-center min-h-10 min-w-16 items-center">
               <img :src="location4.icon" alt="img" class="h-16 w-16 rounded-full">

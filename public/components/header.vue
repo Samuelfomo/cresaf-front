@@ -30,7 +30,7 @@
            @mouseleave="closeDropdown1"
       >
         <div class="py-1">
-          <div class="flex items-center hover:bg-green-100"  :class="[$route.name === 'values' ? activeClass : inactiveClass]">
+          <div class="flex items-center hover:text-green-600"  :class="[$route.name === 'values' ? activeClass : inactiveClass]">
             <h1 class="text-2xl">🤍</h1>
             <router-link to="/values" class="flex flex-col font-semibold text-lg px-5 pb-2"
                          @click="closeAndScroll1"
@@ -39,7 +39,7 @@
               <span class="text-xs text-gray-500">Confiance, Intégrité et solidarité </span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100"  :class="[$route.name === '#' ? activeClass : inactiveClass]">
+          <div class="flex items-center hover:text-green-600"  :class="[$route.name === '#' ? activeClass : inactiveClass]">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -55,7 +55,7 @@
               <span class="text-xs text-gray-500">Culture de la performance </span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100" :class="[$route.name === '#' ? activeClass : inactiveClass]">
+          <div class="flex items-center hover:text-green-600" :class="[$route.name === '#' ? activeClass : inactiveClass]">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -69,7 +69,7 @@
               <span class="text-xs text-gray-500">Misé sur l'avenir </span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100" :class="[$route.name === '#' ? activeClass : inactiveClass]">
+          <div class="flex items-center hover:text-green-600" :class="[$route.name === '#' ? activeClass : inactiveClass]">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -106,7 +106,7 @@
            @mouseleave="closeDropdown2"
       >
         <div class="py-1">
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:text-green-600">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -123,7 +123,7 @@
               <span class="text-xs text-gray-500">Particulier, entreprise & salaire</span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:text-green-600">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
                   stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -137,7 +137,7 @@
               <span class="text-xs text-gray-500">Bon plan pour votre épargne</span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:text-green-600">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -155,7 +155,7 @@
               <span class="text-xs text-gray-500">Fructifier votre argent</span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:text-green-600">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -173,7 +173,7 @@
               <span class="text-xs text-gray-500">Livret & Association</span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:text-green-600">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 11v.01" />
@@ -189,7 +189,7 @@
               <span class="text-xs text-gray-500">Vous suivre a quotidien</span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:text-green-600">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -227,7 +227,7 @@
            @mouseleave="closeDropdown3"
       >
         <div class="py-1">
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:text-green-600">
             <svg viewBox="-0.5 -0.5 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" id="Emoji--Streamline-Iconoir" height="24" width="24">
               <path d="M7.5 14.337187499999999C3.7239375000000003 14.337187499999999 0.6628125 11.276062499999998 0.6628125 7.5 0.6628125
               3.7239375000000003 3.7239375000000003 0.6628125 7.5 0.6628125c3.7760624999999997 0 6.837187500000001 3.061125 6.837187500000001
@@ -250,7 +250,7 @@
               <span class="text-xs text-gray-500">Sur mésure pour vos projets</span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:text-green-600">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -265,7 +265,7 @@
               <span class="text-xs text-gray-500">Financement des besoins de trésorerie ponctuels</span>
             </router-link>
           </div>
-          <div class="flex items-center hover:bg-green-100">
+          <div class="flex items-center hover:text-green-600">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                   class="text-gray-400">
@@ -624,14 +624,20 @@ const closeAndScroll4 = () =>{
 const toggleDropdownAboutUs = () => {
   clearTimeout(timeout);
   isDropdownOpen1.value = true
+  isDropdownOpen2.value = false
+  isDropdownOpen3.value = false
 }
 const toggleDropdownProducts = () => {
   clearTimeout(timeout);
   isDropdownOpen2.value = true
+  isDropdownOpen1.value = false
+  isDropdownOpen3.value = false
 }
 const toggleDropdownSolutions = () => {
   clearTimeout(timeout)
   isDropdownOpen3.value = true
+  isDropdownOpen1.value = false
+  isDropdownOpen2.value = false
 }
 
 const closeDropdown1 = () =>{
