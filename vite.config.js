@@ -15,7 +15,8 @@ export default defineConfig({
     fs: {
       allow: [
         resolve(__dirname, 'src'),
-        resolve(__dirname, 'public')
+        resolve(__dirname, 'public'),
+        resolve(__dirname, 'node_modules') // Ajout de cette lign
       ]
     },
     open: true,

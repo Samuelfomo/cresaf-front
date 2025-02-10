@@ -4,6 +4,7 @@ import Values from "@public/values.vue";
 import Products from "@public/products.vue";
 import Solutions from "@public/solutions.vue";
 import Image from "@public/components/image2.vue";
+import SCroll from "@public/components/scroll.vue";
 import Login from "@public/login.vue";
 const routes = [
 
@@ -36,6 +37,11 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login
+  },
+  {
+    path: '/scroll',
+    name: 'scroll',
+    component: SCroll
   },
 ];
 

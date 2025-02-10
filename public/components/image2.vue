@@ -1,7 +1,7 @@
 <template>
-  <div class="max-h-screen p-8">
+  <div class="max-h-screen flex lg:justify-center p-8">
     <!-- Carrousel d'images -->
-    <div class="relative w-full overflow-hidden">
+    <div class="relative w-full lg:max-w-5xl overflow-hidden">
       <div
           ref="scrollContainer"
           class="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth"
@@ -12,12 +12,13 @@
         <div
             v-for="(image, index) in images"
             :key="index"
-            class="w-64 h-48 shrink-0 snap-center "
+            class="w-40 h-40 shrink-0 snap-center cursor-pointer"
+            @click="openLink(image.url)"
         >
           <img
-              :src="image.url"
+              :src="image.image"
               :alt="image.alt"
-              class="w-full h-full object-cover shadow-lg hover:scale-105 transition-transform duration-300 border rounded-lg"
+              class="object-cover shadow-lg hover:scale-105 transition-transform duration-300 border rounded-lg"
               loading="lazy"
           />
         </div>
@@ -26,7 +27,7 @@
       <!-- Boutons de navigation -->
       <button
           @click="scroll('left')"
-          class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg disabled:opacity-50"
+          class="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg disabled:opacity-50"
           :disabled="isAtStart"
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -64,15 +65,17 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import MoMo from "@/assets/images/momo.png"
-import MoneyGram from "@/assets/images/MoneyGram.png"
-import MoneyTrans from "@/assets/images/Moneytrans.png"
-import OM from "@/assets/images/om.png"
-import Ria from "@/assets/images/Ria.png"
-import Paytop from "@/assets/images/paytop.png"
-import Western from "@/assets/images/svg/Western_Union.svg"
-import Worldremit from "@/assets/images/Worldremit.png"
+import Sigue from "@/assets/images/Sigue.png"
+import MoneyGram from "@/assets/images/MoneyGram2.png"
+import MoneyTrans from "@/assets/images/Moneytrans1.png"
+import OM from "@/assets/images/OM1.png"
+import Ria from "@/assets/images/Ria1.png"
+import Paytop from "@/assets/images/paytop1.png"
+import Western from "@/assets/images/Western1.png"
+import Worldremit from "@/assets/images/Worldremit3.png"
 
 const momo = MoMo
+const sigue = Sigue
 const moneygram = MoneyGram
 const moneytrans = MoneyTrans
 const om = OM
@@ -84,35 +87,48 @@ const worldremit = Worldremit
 // Données des images
 const images = ref([
   {
-    url: momo,
+    url: 'https://momo.mtn.com/home-page/',
+    image: momo,
     alt: 'logo MoMo'
   },
   {
-    url: moneygram,
+    url: 'https://sigue.com/',
+    image: sigue,
+    alt: 'logo Sigue'
+  },
+  {
+    url: 'https://moneygram.cm/',
+    image: moneygram,
     alt: 'logo moneygram'
   },
   {
-    url: moneytrans,
+    url: 'https://www.moneytrans.eu/belgium/',
+    image: moneytrans,
     alt: 'logo moneytrans'
   },
   {
-    url: om,
+    url: 'https://orangemoney.orange.cm/',
+    image: om,
     alt: 'logo Orange Money'
   },
   {
-    url: ria,
+    url: 'https://www.riamoneytransfer.com/en-us/',
+    image: ria,
     alt: 'Logo ria'
   },
   {
-    url: paytop,
+    url: 'https://www.paytop.com/',
+    image: paytop,
     alt: 'Logo paytop'
   },
   {
-    url: western,
+    url: 'https://www.westernunion.com/be/fr/home.html',
+    image: western,
     alt: 'Logo western'
   },
   {
-    url: worldremit,
+    url: 'https://www.worldremit.com/en',
+    image: worldremit,
     alt: 'Logo worldremit'
   },
   // {
@@ -220,6 +236,10 @@ const updateScrollButtons = () => {
   isAtEnd.value = container.scrollLeft + container.clientWidth >= container.scrollWidth
 }
 
+const openLink = (link)=>{
+  window.open(link, 'blank');
+}
+
 // Mise en place des observers
 onMounted(() => {
   if (!scrollContainer.value) return
@@ -246,79 +266,3 @@ onUnmounted(() => {
   display: none;
 }
 </style>
-
-
-<!--<template>-->
-<!--  <div class="relative py-16 px-4">-->
-<!--    <div class="text-center text-white mb-12">-->
-<!--      <h2 class="text-2xl font-light tracking-wide uppercase">-->
-<!--        nos services de transfert d'argent-->
-<!--      </h2>-->
-<!--    </div>-->
-
-<!--    <div class="relative overflow-hidden">-->
-<!--      <div-->
-<!--          class="flex transition-transform duration-500 ease-in-out"-->
-<!--          :style="`transform: translateX(-${currentIndex * 100}%)`"-->
-<!--      >-->
-<!--        <div class="flex-shrink-0 w-full flex justify-center space-x-8">-->
-<!--          <div-->
-<!--              v-for="image in images"-->
-<!--              :key="image.name"-->
-<!--              class="bg-blue-900 p-4 rounded-lg shadow-md flex items-center justify-center w-48 h-24 cursor-pointer hover:shadow-xl transition-all"-->
-<!--          >-->
-<!--            <img-->
-<!--                :src="image.src"-->
-<!--                :alt="image.name"-->
-<!--                class="max-w-full max-h-full object-contain"-->
-<!--            >-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-
-<!--    <div class="absolute inset-y-0 left-0 flex items-center">-->
-<!--      <button-->
-<!--          @click="prevSlide"-->
-<!--          class="bg-blue-950/20 text-white p-2 rounded-full"-->
-<!--      >-->
-<!--        ←-->
-<!--      </button>-->
-<!--    </div>-->
-<!--    <div class="absolute /inset-y-0 right-0 flex items-center">-->
-<!--      <button-->
-<!--          @click="nextSlide"-->
-<!--          class="bg-blue-950/20 text-white p-2 rounded-full"-->
-<!--      >-->
-<!--        →-->
-<!--      </button>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</template>-->
-
-<!--<script setup>-->
-<!--import { ref } from 'vue'-->
-<!--import GLILogo from "@/assets/images/momo.jpeg"-->
-<!--import VeoLogo from "@/assets/images/momo.jpeg"-->
-<!--import CESALogo from "@/assets/images/momo.jpeg"-->
-<!--import StarOilLogo from "@/assets/images/momo.jpeg"-->
-<!--import BioMedicalLogo from "@/assets/images/momo.jpeg"-->
-
-<!--const images = ref([-->
-<!--  { name: 'GLI', src: GLILogo },-->
-<!--  { name: 'Veo Canal+', src: VeoLogo },-->
-<!--  { name: 'CESA', src: CESALogo },-->
-<!--  { name: 'Star Oil', src: StarOilLogo },-->
-<!--  { name: 'Biomedical', src: BioMedicalLogo }-->
-<!--])-->
-
-<!--const currentIndex = ref(0)-->
-
-<!--const nextSlide = () => {-->
-<!--  currentIndex.value = (currentIndex.value + 1) % logos.value.length-->
-<!--}-->
-
-<!--const prevSlide = () => {-->
-<!--  currentIndex.value = (currentIndex.value - 1 + logos.value.length) % logos.value.length-->
-<!--}-->
-<!--</script>-->
