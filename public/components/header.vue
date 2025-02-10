@@ -291,7 +291,11 @@
       <button type="button" class="text-lg bg-gray-100 p-2 font-semibold border rounded-lg" @click="router.push('/login')">
         Connexion
       </button>
-      <button type="button" class="text-lg bg-blue-950 p-2 text-white font-semibold border border-white rounded-lg hover:text-green-600 hover:border-green-500">
+      <button type="button"
+              class="text-lg bg-blue-950 p-2 text-white font-semibold border border-white rounded-lg
+               hover:text-green-600 hover:border-green-500"
+              @click="router.push('/login')"
+      >
         Ouvrir un compte
       </button>
     </div>
