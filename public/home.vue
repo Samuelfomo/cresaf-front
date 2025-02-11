@@ -183,7 +183,7 @@
           Leur satisfaction et leur réussite sont notre plus grande fierté.
         </p>
 
-          <div class="flex w-full h-full py-5 justify-between flex-wrap gap-2">
+          <div class="flex w-full h-full py-5 justify-center flex-wrap gap-2">
             <div v-for="(location6, index) in locations6" :key="index" class="flex flex-col justify-between items-start h-full min-h-44 w-full
              max-w-2xl border rounded-lg lg:p-8 p-5 shadow space-y-10">
               <p class="lg:text-xl font-bold text-black">
