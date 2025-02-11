@@ -15,12 +15,13 @@
     <div class="hidden lg:flex justify-between w-full max-w-xl">
     <div class="text-sm text-gray-700 flex relative">
       <div class="flex items-center space-x-2 cursor-pointer" @mouseover="toggleDropdownAboutUs" @mouseleave="closeDropdown1">
-        <h2 class="hover:text-green-600 lg:text-lg text-xs flex"> Qui sommes-nous ?
+        <h2 class="relative hover:text-green-600 lg:text-lg text-xs flex group"> Qui sommes-nous ?
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
                 stroke-linejoin="round">
             <path d="M9 9l6 8l7 -8" />
           </svg>
+          <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-300 group-hover:w-full"></span>
         </h2>
       </div>
 
@@ -91,12 +92,13 @@
     </div>
     <div class="text-sm text-gray-700 flex relative">
       <div class="flex items-center space-x-2 cursor-pointer" @mouseover=toggleDropdownProducts @mouseleave="closeDropdown2">
-        <h2 class="hover:text-green-600 lg:text-lg text-xs flex"> Nos produits
+        <h2 class="relative hover:text-green-600 lg:text-lg text-xs flex group"> Nos produits
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
                 stroke-linejoin="round">
             <path d="M9 9l6 8l7 -8" />
           </svg>
+          <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-300 group-hover:w-full"></span>
         </h2>
       </div>
 
@@ -212,12 +214,13 @@
     </div>
     <div class="text-sm text-gray-700 flex relative">
       <div class="flex items-center space-x-2 cursor-pointer" @mouseover="toggleDropdownSolutions" @mouseleave="closeDropdown3">
-        <h2 class="hover:text-green-600 lg:text-lg text-xs flex"> Nos solutions
+        <h2 class="relative hover:text-green-600 lg:text-lg text-xs flex group"> Nos solutions
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
                 stroke-linejoin="round">
             <path d="M9 9l6 8l7 -8" />
           </svg>
+          <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-300 group-hover:w-full"></span>
         </h2>
       </div>
 

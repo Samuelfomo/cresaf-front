@@ -1,200 +1,369 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
 const solutions = ref([
   {
     id: 'presentation',
-    title: 'Nos Solutions Financières',
-    subtitle: 'Des solutions adaptées à vos besoins',
-    description: 'CRESAF vous accompagne dans tous vos projets avec des solutions de financement sur mesure.',
-    image: 'https://picsum.photos/id/1018/800/600',
+    title: "Solutions CRESAF",
+    subtitle: "Des solutions adaptées à vos besoins",
+    image: "https://picsum.photos/id/1018/800/600",
+    stats: [
+      { value: "5M+", label: "Clients satisfaits" },
+      { value: "15+", label: "Années d'expérience" },
+      { value: "98%", label: "Taux de satisfaction" }
+    ]
   },
   {
     id: 'projets',
-    title: 'Financement de Projets',
-    subtitle: 'Concrétisez vos ambitions',
-    description: 'Nous accompagnons le développement de vos projets avec des solutions de financement adaptées.',
+    title: "Financement de projets",
+    subtitle: "Concrétisez vos ambitions",
+    image: "https://picsum.photos/id/1020/800/600",
     features: [
-      'Financement d\'équipements',
-      'Financement immobilier',
-      'Crédit d\'investissement'
+      { title: "Analyse approfondie", description: "Étude détaillée de votre projet" },
+      { title: "Accompagnement", description: "Suivi personnalisé tout au long du financement" },
+      { title: "Flexibilité", description: "Solutions adaptées à votre secteur d'activité" }
     ],
-    image: 'https://picsum.photos/id/1015/800/600',
+    process: [
+      "Soumission du projet",
+      "Étude de faisabilité",
+      "Proposition de financement",
+      "Mise en place"
+    ]
   },
   {
     id: 'tresorerie',
-    title: 'Financement de la Trésorerie',
-    subtitle: 'Optimisez votre gestion financière',
-    description: 'Des solutions pour maintenir une trésorerie saine et faire face à vos besoins de fonctionnement.',
+    title: "Financement de la trésorerie",
+    subtitle: "Optimisez votre flux de trésorerie",
+    image: "https://picsum.photos/id/1015/800/600",
     features: [
-      'Facilité de caisse',
-      'Découvert autorisé',
-      'Escompte commercial'
+      { title: "Réactivité", description: "Réponse rapide à vos besoins" },
+      { title: "Solutions sur mesure", description: "Adaptées à votre cycle d'exploitation" },
+      { title: "Gestion optimisée", description: "Outils de suivi performants" }
     ],
-    image: 'https://picsum.photos/id/1016/800/600',
+    tools: [
+      "Découvert autorisé",
+      "Ligne de crédit",
+      "Escompte commercial",
+      "Affacturage"
+    ]
   },
   {
-    id: 'import-export',
-    title: 'Financement Import/Export',
-    subtitle: 'Développez votre activité internationale',
-    description: 'Accompagnement dans vos opérations de commerce international avec des solutions spécialisées.',
+    id: 'importexport',
+    title: "Financement Import/Export",
+    subtitle: "Développez votre activité internationale",
+    image: "https://picsum.photos/id/1015/800/600",
     features: [
-      'Crédit documentaire',
-      'Remise documentaire',
-      'Garantie internationale'
+      { title: "Expertise internationale", description: "Maîtrise des opérations transfrontalières" },
+      { title: "Sécurisation", description: "Garantie des transactions internationales" },
+      { title: "Réseau global", description: "Partenaires dans le monde entier" }
     ],
-    image: 'https://picsum.photos/id/1020/800/600',
+    services: [
+      "Crédit documentaire",
+      "Garantie internationale",
+      "Préfinancement export",
+      "Remise documentaire"
+    ]
   }
 ]);
 
-const activeSection = ref(0);
+const isIntersecting = ref({});
+const activeSection = ref('presentation');
 
-const handleScroll = () => {
-  const sections = document.querySelectorAll('.section');
-  sections.forEach((section, index) => {
-    const rect = section.getBoundingClientRect();
-    if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {
-      activeSection.value = index;
+const observerCallback = (entries) => {
+  entries.forEach(entry => {
+    isIntersecting.value[entry.target.id] = entry.isIntersecting;
+    if (entry.isIntersecting) {
+      activeSection.value = entry.target.id;
     }
   });
 };
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-});
+  const observer = new IntersectionObserver(observerCallback, {
+    threshold: 0.5
+  });
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
+  document.querySelectorAll('section[id]').forEach(section => {
+    observer.observe(section);
+  });
 });
-
-const scrollToSection = (index) => {
-  const sections = document.querySelectorAll('.section');
-  sections[index].scrollIntoView({ behavior: 'smooth' });
-};
 </script>
 
 <template>
-  <div class="relative">
+  <div class="flex flex-col min-h-screen">
     <Header />
 
-    <!-- Navigation latérale -->
-    <nav class="fixed right-8 top-1/2 transform -translate-y-1/2 z-50">
-      <ul class="space-y-4">
-        <li v-for="(solution, index) in solutions" :key="index">
-          <button
-              @click="scrollToSection(index)"
-              :class="[
-              'w-3 h-3 rounded-full transition-all duration-300',
-              activeSection === index ? 'bg-white scale-150' : 'bg-gray-400 hover:bg-white'
-            ]"
-              :aria-label="`Section ${solution.title}`"
-          ></button>
-        </li>
-      </ul>
-    </nav>
-
-    <main class="relative">
-      <!-- Sections -->
-      <section
-          v-for="(solution, index) in solutions"
-          :key="index"
-          :id="solution.id"
-          class="section relative min-h-screen flex items-center transition-all duration-700"
-          :class="{ 'opacity-100': activeSection === index, 'opacity-90': activeSection !== index }"
-      >
-        <!-- Arrière-plan avec effet parallaxe -->
-        <div class="absolute inset-0 overflow-hidden">
-          <img
-              :src="solution.image"
-              :alt="solution.title"
-              class="w-full h-full object-cover transform scale-110"
-              :style="`transform: translateY(${activeSection === index ? '-5%' : '0'})`"
-          >
+    <main class="flex flex-col min-h-screen">
+      <!-- Section Présentation -->
+      <section id="presentation" class="relative min-h-screen flex items-center">
+        <div class="absolute inset-0">
+          <img :src="solutions[0].image" alt="Background" class="w-full h-full object-cover">
           <div class="absolute inset-0 bg-blue-950 bg-opacity-75"></div>
         </div>
 
-        <!-- Contenu de la section -->
-        <div class="container mx-auto px-8 relative z-10">
+        <div class="relative container mx-auto px-8 py-32">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="text-white space-y-6"
-                 :class="{ 'translate-x-0 opacity-100': activeSection === index, '-translate-x-full opacity-0': activeSection !== index }"
-            >
-              <h2 class="text-5xl font-bold mb-4">{{ solution.title }}</h2>
-              <p class="text-2xl text-gray-300 mb-6">{{ solution.subtitle }}</p>
-              <p class="text-lg text-gray-200">{{ solution.description }}</p>
+            <div class="text-white">
+              <h1 class="text-5xl font-bold mb-6">{{ solutions[0].title }}</h1>
+              <p class="text-xl mb-12">{{ solutions[0].subtitle }}</p>
+              <div class="grid grid-cols-3 gap-8">
+                <div v-for="stat in solutions[0].stats" :key="stat.label"
+                     class="text-center p-6 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                  <div class="text-3xl font-bold mb-2">{{ stat.value }}</div>
+                  <div class="text-sm">{{ stat.label }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <ul v-if="solution.features" class="space-y-4 mt-8">
-                <li v-for="feature in solution.features"
-                    :key="feature"
-                    class="flex items-center text-lg">
-                  <span class="mr-3 text-2xl">•</span>
-                  {{ feature }}
-                </li>
-              </ul>
+      <!-- Sections Solutions -->
+      <section v-for="(solution, index) in solutions.slice(1)" :key="solution.id"
+               :id="solution.id"
+               class="relative min-h-screen flex items-center bg-blue-950">
+        <div class="container mx-auto px-8 py-32">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Contenu -->
+            <div :class="{ 'order-2': index % 2 === 0 }" class="text-white">
+              <h2 class="text-4xl font-bold mb-6">{{ solution.title }}</h2>
+              <p class="text-xl mb-12">{{ solution.subtitle }}</p>
+
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <div v-for="feature in solution.features" :key="feature.title"
+                     class="p-6 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                  <h3 class="text-lg font-semibold mb-2">{{ feature.title }}</h3>
+                  <p>{{ feature.description }}</p>
+                </div>
+              </div>
+
+              <!-- Process/Tools/Services -->
+              <div class="bg-white bg-opacity-10 rounded-lg backdrop-blur-sm p-8">
+                <h3 class="text-xl font-semibold mb-6">
+                  {{ solution.process ? 'Processus' :
+                    solution.tools ? 'Outils disponibles' :
+                        'Services proposés' }}
+                </h3>
+                <ul class="space-y-4">
+                  <li v-for="item in (solution.process || solution.tools || solution.services)"
+                      :key="item"
+                      class="flex items-center">
+                    <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                    {{ item }}
+                  </li>
+                </ul>
+              </div>
             </div>
 
-            <!-- Zone interactive ou illustration -->
-            <div class="hidden lg:block"
-                 :class="{ 'translate-x-0 opacity-100': activeSection === index, 'translate-x-full opacity-0': activeSection !== index }"
-            >
-              <!-- Ici vous pouvez ajouter des éléments interactifs spécifiques à chaque solution -->
+            <!-- Image -->
+            <div :class="{ 'order-1': index % 2 === 0 }"
+                 class="relative h-96 lg:h-[600px] overflow-hidden rounded-lg">
+              <img :src="solution.image" :alt="solution.title"
+                   class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
             </div>
           </div>
         </div>
       </section>
     </main>
 
+    <!-- Navigation latérale -->
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 space-y-4 z-50">
+      <a v-for="solution in solutions" :key="solution.id"
+         :href="`#${solution.id}`"
+         :class="[
+           'block w-3 h-3 rounded-full transition-all duration-300',
+           activeSection === solution.id ? 'bg-white scale-125' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+         ]"
+         @click.prevent="document.getElementById(solution.id).scrollIntoView({ behavior: 'smooth' })">
+        <span class="sr-only">{{ solution.title }}</span>
+      </a>
+    </div>
+
     <Footer />
   </div>
 </template>
 
 <style scoped>
-.section {
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+.backdrop-blur-sm {
+  backdrop-filter: blur(8px);
 }
 
-/* Transitions pour les éléments de contenu */
-.translate-x-0 {
-  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
-.section img {
-  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+main {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 </style>
 
 <!--<script setup>-->
-
+<!--import { ref, onMounted, onUnmounted } from 'vue';-->
 <!--import Header from "@public/components/header.vue";-->
 <!--import Footer from "@public/components/footer.vue";-->
+
+<!--const solutions = ref([-->
+<!--  {-->
+<!--    id: 'presentation',-->
+<!--    title: 'Nos Solutions Financières',-->
+<!--    subtitle: 'Des solutions adaptées à vos besoins',-->
+<!--    description: 'CRESAF vous accompagne dans tous vos projets avec des solutions de financement sur mesure.',-->
+<!--    image: 'https://picsum.photos/id/1018/800/600',-->
+<!--  },-->
+<!--  {-->
+<!--    id: 'projets',-->
+<!--    title: 'Financement de Projets',-->
+<!--    subtitle: 'Concrétisez vos ambitions',-->
+<!--    description: 'Nous accompagnons le développement de vos projets avec des solutions de financement adaptées.',-->
+<!--    features: [-->
+<!--      'Financement d\'équipements',-->
+<!--      'Financement immobilier',-->
+<!--      'Crédit d\'investissement'-->
+<!--    ],-->
+<!--    image: 'https://picsum.photos/id/1015/800/600',-->
+<!--  },-->
+<!--  {-->
+<!--    id: 'tresorerie',-->
+<!--    title: 'Financement de la Trésorerie',-->
+<!--    subtitle: 'Optimisez votre gestion financière',-->
+<!--    description: 'Des solutions pour maintenir une trésorerie saine et faire face à vos besoins de fonctionnement.',-->
+<!--    features: [-->
+<!--      'Facilité de caisse',-->
+<!--      'Découvert autorisé',-->
+<!--      'Escompte commercial'-->
+<!--    ],-->
+<!--    image: 'https://picsum.photos/id/1016/800/600',-->
+<!--  },-->
+<!--  {-->
+<!--    id: 'import-export',-->
+<!--    title: 'Financement Import/Export',-->
+<!--    subtitle: 'Développez votre activité internationale',-->
+<!--    description: 'Accompagnement dans vos opérations de commerce international avec des solutions spécialisées.',-->
+<!--    features: [-->
+<!--      'Crédit documentaire',-->
+<!--      'Remise documentaire',-->
+<!--      'Garantie internationale'-->
+<!--    ],-->
+<!--    image: 'https://picsum.photos/id/1020/800/600',-->
+<!--  }-->
+<!--]);-->
+
+<!--const activeSection = ref(0);-->
+
+<!--const handleScroll = () => {-->
+<!--  const sections = document.querySelectorAll('.section');-->
+<!--  sections.forEach((section, index) => {-->
+<!--    const rect = section.getBoundingClientRect();-->
+<!--    if (rect.top >= 0 && rect.top <= window.innerHeight / 2) {-->
+<!--      activeSection.value = index;-->
+<!--    }-->
+<!--  });-->
+<!--};-->
+
+<!--onMounted(() => {-->
+<!--  window.addEventListener('scroll', handleScroll);-->
+<!--});-->
+
+<!--onUnmounted(() => {-->
+<!--  window.removeEventListener('scroll', handleScroll);-->
+<!--});-->
+
+<!--const scrollToSection = (index) => {-->
+<!--  const sections = document.querySelectorAll('.section');-->
+<!--  sections[index].scrollIntoView({ behavior: 'smooth' });-->
+<!--};-->
 <!--</script>-->
 
 <!--<template>-->
-<!--  <div class="flex flex-col min-h-screen">-->
+<!--  <div class="relative">-->
 <!--    <Header />-->
-<!--    <main class="flex flex-col min-h-screen">-->
-<!--      <div id="section0" class="flex min-h-screen flex-col bg-blue-950 px-8 pt-32 pb-12 mb-5">-->
-<!--        presentation-->
-<!--      </div>-->
-<!--      <div id="section1" class="flex min-h-screen flex-col bg-blue-950 px-8 pt-32 pb-12 mb-5">-->
-<!--        Financement de projets-->
-<!--      </div>-->
-<!--      <div id="section2" class="flex min-h-screen flex-col bg-blue-950 px-8 pt-32 pb-12 mb-5">-->
-<!--        Financement de la trésorerie-->
-<!--      </div>-->
-<!--      <div id="section2" class="flex min-h-screen flex-col bg-blue-950 px-8 pt-32 pb-12 mb-5">-->
-<!--        Financement Import/Export-->
-<!--      </div>-->
 
+<!--    &lt;!&ndash; Navigation latérale &ndash;&gt;-->
+<!--    <nav class="fixed right-8 top-1/2 transform -translate-y-1/2 z-50">-->
+<!--      <ul class="space-y-4">-->
+<!--        <li v-for="(solution, index) in solutions" :key="index">-->
+<!--          <button-->
+<!--              @click="scrollToSection(index)"-->
+<!--              :class="[-->
+<!--              'w-3 h-3 rounded-full transition-all duration-300',-->
+<!--              activeSection === index ? 'bg-white scale-150' : 'bg-gray-400 hover:bg-white'-->
+<!--            ]"-->
+<!--              :aria-label="`Section ${solution.title}`"-->
+<!--          ></button>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--    </nav>-->
+
+<!--    <main class="relative">-->
+<!--      &lt;!&ndash; Sections &ndash;&gt;-->
+<!--      <section-->
+<!--          v-for="(solution, index) in solutions"-->
+<!--          :key="index"-->
+<!--          :id="solution.id"-->
+<!--          class="section relative min-h-screen flex items-center transition-all duration-700"-->
+<!--          :class="{ 'opacity-100': activeSection === index, 'opacity-90': activeSection !== index }"-->
+<!--      >-->
+<!--        &lt;!&ndash; Arrière-plan avec effet parallaxe &ndash;&gt;-->
+<!--        <div class="absolute inset-0 overflow-hidden">-->
+<!--          <img-->
+<!--              :src="solution.image"-->
+<!--              :alt="solution.title"-->
+<!--              class="w-full h-full object-cover transform scale-110"-->
+<!--              :style="`transform: translateY(${activeSection === index ? '-5%' : '0'})`"-->
+<!--          >-->
+<!--          <div class="absolute inset-0 bg-blue-950 bg-opacity-75"></div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Contenu de la section &ndash;&gt;-->
+<!--        <div class="container mx-auto px-8 relative z-10">-->
+<!--          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">-->
+<!--            <div class="text-white space-y-6"-->
+<!--                 :class="{ 'translate-x-0 opacity-100': activeSection === index, '-translate-x-full opacity-0': activeSection !== index }"-->
+<!--            >-->
+<!--              <h2 class="text-5xl font-bold mb-4">{{ solution.title }}</h2>-->
+<!--              <p class="text-2xl text-gray-300 mb-6">{{ solution.subtitle }}</p>-->
+<!--              <p class="text-lg text-gray-200">{{ solution.description }}</p>-->
+
+<!--              <ul v-if="solution.features" class="space-y-4 mt-8">-->
+<!--                <li v-for="feature in solution.features"-->
+<!--                    :key="feature"-->
+<!--                    class="flex items-center text-lg">-->
+<!--                  <span class="mr-3 text-2xl">•</span>-->
+<!--                  {{ feature }}-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Zone interactive ou illustration &ndash;&gt;-->
+<!--            <div class="hidden lg:block"-->
+<!--                 :class="{ 'translate-x-0 opacity-100': activeSection === index, 'translate-x-full opacity-0': activeSection !== index }"-->
+<!--            >-->
+<!--              &lt;!&ndash; Ici vous pouvez ajouter des éléments interactifs spécifiques à chaque solution &ndash;&gt;-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </section>-->
 <!--    </main>-->
 
 <!--    <Footer />-->
 <!--  </div>-->
-
 <!--</template>-->
 
 <!--<style scoped>-->
+<!--.section {-->
+<!--  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);-->
+<!--}-->
 
+<!--/* Transitions pour les éléments de contenu */-->
+<!--.translate-x-0 {-->
+<!--  transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;-->
+<!--}-->
+
+<!--.section img {-->
+<!--  transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);-->
+<!--}-->
 <!--</style>-->
