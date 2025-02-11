@@ -100,13 +100,13 @@ onMounted(() => {
       <section id="presentation" class="relative min-h-screen flex items-center">
         <div class="absolute inset-0">
           <img :src="solutions[0].image" alt="Background" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-blue-950 bg-opacity-75"></div>
+          <div class="absolute inset-0 bg-blue-700 bg-opacity-20"></div>
         </div>
 
         <div class="relative container mx-auto px-8 py-32">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="text-white">
-              <h1 class="text-5xl font-bold mb-6">{{ solutions[0].title }}</h1>
+              <h1 class="text-5xl font-accent mb-6">{{ solutions[0].title }}</h1>
               <p class="text-xl mb-12">{{ solutions[0].subtitle }}</p>
               <div class="grid grid-cols-3 gap-8">
                 <div v-for="stat in solutions[0].stats" :key="stat.label"
@@ -135,7 +135,7 @@ onMounted(() => {
                 <div v-for="feature in solution.features" :key="feature.title"
                      class="p-6 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
                   <h3 class="text-lg font-semibold mb-2">{{ feature.title }}</h3>
-                  <p>{{ feature.description }}</p>
+                  <p>{{ feature.description }} </p>
                 </div>
               </div>
 

@@ -41,14 +41,8 @@
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600"  :class="[$route.name === '#' ? activeClass : inactiveClass]">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="text-gray-400">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" />
-              <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
-              <path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" />
-            </svg>
+            <img :src="briefcase" alt="briefcase" class="h-5 w-5">
+
             <router-link to="#" class="flex flex-col font-semibold text-lg px-5 py-2"
                          @click="closeAndScroll2"
             >
@@ -57,12 +51,7 @@
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600" :class="[$route.name === '#' ? activeClass : inactiveClass]">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="text-gray-400">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M3 21l17 -17" /><path d="M3 3v18h18" />
-            </svg>
+            <img :src="graphUp" alt="graphUp" class="h-5 w-5">
             <router-link to="/values" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          @click="closeAndScroll3"
             >
@@ -109,14 +98,7 @@
       >
         <div class="py-1">
           <div class="flex items-center hover:text-green-600">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="text-gray-400">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-              <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-              <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
-            </svg>
+            <img :src="personCircle" alt="personCircle" class="h-5 w-5">
             <router-link to="products" class="flex flex-col font-semibold text-lg px-5 pb-2"
                          :class="[$route.name === 'products' ? activeClass : inactiveClass]"
                          @click="closeDropdown2"
@@ -126,11 +108,7 @@
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
-                  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="text-gray-400"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12z" /><path d="M19 16h-12a2 2 0 0 0 -2 2" /><path d="M9 8h6" />
-            </svg>
+            <img :src="wallet2" alt="wallet2" class="h-5 w-5">
             <router-link to="#" class="flex flex-col font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
                          @click="closeDropdown2"
@@ -140,15 +118,7 @@
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="text-gray-400">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" />
-              <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-              <path d="M11.8 16.817l-2.172 1.138a.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a.389 .389 0 0 1
-               .217 -.665l2.428 -.352l1.086 -2.193a.392 .392 0 0 1 .702 0l1.086 2.193l2.428
-             .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
-            </svg>
+            <img :src="database" alt="database-up" class="h-5 w-5">
             <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
                          @click="closeDropdown2"
@@ -158,15 +128,7 @@
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="text-gray-400">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" />
-              <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-              <path d="M11.8 16.817l-2.172 1.138a.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a.389 .389 0 0 1
-               .217 -.665l2.428 -.352l1.086 -2.193a.392 .392 0 0 1 .702 0l1.086 2.193l2.428
-             .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
-            </svg>
+            <img :src="collection" alt="collection" class="h-5 w-5">
             <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
                          @click="closeDropdown2"
@@ -176,13 +138,7 @@
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 11v.01" />
-              <path d="M16 3l0 3.803a6.019 6.019 0 0 1 2.658 3.197h1.341a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-1.342a6.008
-              6.008 0 0 1 -1.658 2.473v2.027a1.5 1.5 0 0 1 -3 0v-.583a6.04 6.04 0 0 1 -1 .083h-4a6.04 6.04 0 0 1 -1
-             -.083v.583a1.5 1.5 0 0 1 -3 0v-2l0 -.027a6 6 0 0 1 4 -10.473h2.5l4.5 -3z" />
-            </svg>
+            <img :src="piggy" alt="piggy" class="h-5 w-5">
             <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
                          @click="closeDropdown2"
@@ -192,15 +148,7 @@
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="text-gray-400">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" />
-              <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-              <path d="M11.8 16.817l-2.172 1.138a.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a.389 .389 0 0 1
-               .217 -.665l2.428 -.352l1.086 -2.193a.392 .392 0 0 1 .702 0l1.086 2.193l2.428
-             .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
-            </svg>
+            <img :src="personCard" alt="personCard" class="h-5 w-5">
             <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
                          @click="closeDropdown2"
@@ -231,20 +179,7 @@
       >
         <div class="py-1">
           <div class="flex items-center hover:text-green-600">
-            <svg viewBox="-0.5 -0.5 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" id="Emoji--Streamline-Iconoir" height="24" width="24">
-              <path d="M7.5 14.337187499999999C3.7239375000000003 14.337187499999999 0.6628125 11.276062499999998 0.6628125 7.5 0.6628125
-              3.7239375000000003 3.7239375000000003 0.6628125 7.5 0.6628125c3.7760624999999997 0 6.837187500000001 3.061125 6.837187500000001
-              6.837187500000001 0 3.7760624999999997 -3.061125 6.837187500000001 -6.837187500000001 6.837187500000001Z" stroke="#000000"
-                    stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path><path d="M10.576749999999999 9.2093125S9.551187500000001
-                    10.576749999999999 7.5 10.576749999999999s-3.0767499999999997 -1.3674374999999999 -3.0767499999999997
-                     -1.3674374999999999" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
-              <path d="M9.892999999999999 5.4488125c-0.18875 0 -0.3418125 -0.1530625 -0.3418125 -0.3418125s0.1530625 -0.34187500000000004
-              0.3418125 -0.34187500000000004 0.34187500000000004 0.1530625 0.34187500000000004 0.34187500000000004 -0.1530625 0.3418125
-              -0.34187500000000004 0.3418125Z" fill="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
-              <path d="M5.107 5.4488125c-0.1888125 0 -0.34187500000000004 -0.1530625 -0.34187500000000004 -0.3418125s0.1530625 -0.34187500000000004
-              0.34187500000000004 -0.34187500000000004 0.3418125 0.1530625 0.3418125 0.34187500000000004 -0.1530625 0.3418125 -0.3418125 0.3418125Z"
-                    fill="#000000" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
-            </svg>
+            <img :src="smile" alt="smile emoji" class="h-5 w-5">
             <router-link to="solutions" class="flex flex-col font-medium text-lg px-5 py-2"
                          :class="[$route.name === 'solutions' ? activeClass : inactiveClass]"
                          @click="closeDropdown3"
@@ -254,12 +189,7 @@
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="text-gray-400">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <path d="M3 21l17 -17" /><path d="M3 3v18h18" />
-            </svg>
+            <img :src="heart" alt="heart emoji" class="h-5 w-5">
             <router-link to="#" class="flex flex-col justify-start font-medium text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
                          @click="closeDropdown3"
@@ -269,15 +199,7 @@
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
-            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
-                  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
-                  class="text-gray-400">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 3v4a1 1 0 0 0 1 1h4" />
-              <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
-              <path d="M11.8 16.817l-2.172 1.138a.392 .392 0 0 1 -.568 -.41l.415 -2.411l-1.757 -1.707a.389 .389 0 0 1
-               .217 -.665l2.428 -.352l1.086 -2.193a.392 .392 0 0 1 .702 0l1.086 2.193l2.428
-             .352a.39 .39 0 0 1 .217 .665l-1.757 1.707l.414 2.41a.39 .39 0 0 1 -.567 .411l-2.172 -1.138z" />
-            </svg>
+            <img :src="sunglasses" alt="sunglasses emoji" class="h-5 w-5">
             <router-link to="#" class="flex flex-col justify-start font-medium text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
                          @click="closeDropdown3"
@@ -576,6 +498,18 @@ import {useRouter} from "vue-router"
 const router = useRouter()
 import Logo from "@/assets/images/logo.png"
 import LogoDrewa from "@/assets/images/logo-cresaf.png"
+
+import database from "@/assets/images/svg/database-up.svg"
+import briefcase from "@/assets/images/svg/briefcase.svg"
+import graphUp from "@/assets/images/svg/graph-up-arrow.svg"
+import personCircle from "@/assets/images/svg/person-circle.svg"
+import wallet2 from "@/assets/images/svg/wallet2.svg"
+import collection from "@/assets/images/svg/collection.svg"
+import piggy from "@/assets/images/svg/piggy-bank.svg"
+import personCard from "@/assets/images/svg/person-vcard.svg"
+import smile from "@/assets/images/svg/emoji-smile.svg"
+import heart from "@/assets/images/svg/emoji-heart-eyes.svg"
+import sunglasses from "@/assets/images/svg/emoji-sunglasses.svg"
 // import Logo from "@/assets/images/svg/logo.svg"
 
 const isDropdownOpen1 = ref(false)

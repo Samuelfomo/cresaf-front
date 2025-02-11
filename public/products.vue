@@ -3,20 +3,40 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
+import Compte from "@/assets/images/account/compte1.jpg"
+import cash from "@/assets/images/account/cash-receipt.jpg"
+import Cheque from "@/assets/images/account/cheque.jpg"
+import Epargne from "@/assets/images/account/epargne2.jpg"
+import Depot from "@/assets/images/account/depot.jpg"
+import Money from "@/assets/images/account/money.jpg"
+import Argent from "@/assets/images/account/argent.png"
+import Interred from "@/assets/images/account/interrest.jpg"
+import Guichet from "@/assets/images/account/guichet.jpg"
+import Electronic from "@/assets/images/account/img.png"
+import Order from "@/assets/images/account/autre.png"
+import Refund from "@/assets/images/account/refund.png"
+import Micro from "@/assets/images/account/micro.png"
+import Image from "@/assets/images/account/image.jpg"
+import Image1 from "@/assets/images/account/img_1.png"
+import Image2 from "@/assets/images/account/img_2.png"
+import Image3 from "@/assets/images/account/img_3.png"
+import Image4 from "@/assets/images/account/img_4.png"
+
 const products = ref([
   {
     id: 1,
-    title: "🏦 Compte chèque",
+    title: "Compte chèque",
+    // title: "🏦 Compte chèque",
     subtitle: "Particulier, entreprise & salaire",
     subtitle2: "✅ Gérez vos finances au quotidien avec facilité et rapidité ",
     description: "Description du compte chèque...",
-    image: "https://picsum.photos/id/1018/800/600"
+    image: Image4
   },
   {
     id: 2,
-    title: "🏦 Bon de caisse",
+    title: "Bon de caisse",
     subtitle: "Bon plan pour votre épargne",
-    subtitle2: "💰 Investissez en toute sécurité avec un rendement garanti chez CRESAF !e",
+    subtitle2: "💰 Investissez en toute sécurité avec un rendement garanti chez CRESAF !",
     description: "Description du Bon de caisse...",
     // description: `Notre service en bon de caisse permet aux entreprises et aux investisseurs d'effectuer des placements de fonds en toute sécurité sur une période minimale d'un an. Le placement a pour vocation à terme de générer d'importants bénéfices grâce à des taux d'intérêts allant jusqu'à 5%. Le bon de caisse à échéance n'étant soumis à aucune obligation de reconduction.`,
     // features: [
@@ -24,39 +44,39 @@ const products = ref([
     //   "Taux de rémunération négociable",
     //   "Intérêt précompte ou post compte à la demande du client"
     // ],
-    image: "https://picsum.photos/id/1015/800/600"
+    image: Image
   },
   {
     id: 3,
-    title: "📈 Dépôt à terme",
+    title: "Dépôt à terme",
     description: "Description du dépôt à terme...",
     subtitle: "Fructifier votre argent",
     subtitle2: "💵 Faites fructifier votre argent avec des taux avantageux et sans risque !",
-    image: "https://picsum.photos/id/1019/800/600"
+    image: Image1
   },
   {
     id: 4,
-    title: "🐖 Compte d'épargne",
+    title: "Compte d'épargne",
     subtitle: "Livret & Association",
     subtitle2: "💳 Épargnez sereinement et faites grandir vos projets avec CRESAF !",
     description: "Description du compte d'épargne...",
-    image: "https://picsum.photos/id/1016/800/600"
+    image: Image2
   },
   {
     id: 5,
-    title: "🚀 Collecte journalière",
+    title: "Collecte journalière",
     subtitle: "Vous suivre au quotidien",
     subtitle2: "📥 Sécurisez vos revenus quotidiens sans vous déplacer",
     description: "Description de la collecte journalière...",
-    image: "https://picsum.photos/id/1020/800/600"
+    image: Image3
   },
   {
     id: 6,
-    title: "💳 Carte VISA",
+    title: "Carte VISA",
     subtitle: "Vous ouvrir au monde",
     subtitle2: "🌍 Payez et retirez de l’argent partout, en toute simplicité !",
     description: "Description de la carte VISA...",
-    image: "https://picsum.photos/id/1015/800/600"
+    image: Compte
   }
 ]);
 
@@ -104,7 +124,7 @@ onUnmounted(() => {
           <div v-for="(product, index) in products"
                :key="product.id"
                v-show="currentSlide === index"
-               class="absolute inset-0">
+               class="absolute inset-0 cursor-pointer">
             <img :src="product.image"
                  :alt="product.title"
                  class="w-full h-full object-cover">
@@ -112,7 +132,7 @@ onUnmounted(() => {
               <div class="container mx-auto px-6 h-full flex items-center">
                 <div class="text-white max-w-lg">
                   <h1 class="text-5xl font-accent mb-4">{{ product.title }}</h1>
-                  <p class="text-xl">{{ product.subtitle2 }}</p>
+                  <p class="text-xl font-accent">{{ product.subtitle2 }}</p>
                 </div>
               </div>
             </div>
@@ -120,14 +140,15 @@ onUnmounted(() => {
         </transition-group>
 
         <!-- Contrôles du slider -->
-        <div class="absolute inset-y-0 left-0 flex items-center">
+        <div class="absolute inset-y-0 left-0 flex items-center lg:hidden">
           <button @click="prevSlide"
                   class="bg-white bg-opacity-30 hover:bg-opacity-50 rounded-r p-2">
             <span class="sr-only">Précédent</span>
             <!-- Icône précédent -->
           </button>
         </div>
-        <div class="absolute inset-y-0 right-0 flex items-center">
+
+        <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
           <button @click="nextSlide"
                   class="bg-white bg-opacity-30 hover:bg-opacity-50 rounded-l p-2">
             <span class="sr-only">Suivant</span>
@@ -139,6 +160,234 @@ onUnmounted(() => {
 
     <!-- Sections des produits -->
     <main class="bg-blue-950 px-8 py-12">
+      <h2 class="text-white font-accent text-4xl w-full justify-center text-center pb-5">
+        Compte chèque
+      </h2>
+      <p class="text-gray-300 font-primary text-lg w-full justify-start pb-10">
+        Notre service de compte chèque à destination des auto-entrepreneurs quel que soit le secteur d’activité,
+        permettra d’effectuer les transactions bancaires courantes lies a leurs activités.
+      </p>
+      <div class="lg:flex w-full min-h-screen gap-2 justify-center lg:px-10">
+        <div class="flex w-full max-w-xl h-full lg:min-h-[38rem] ">
+          <img :src="Cheque" alt="image" class="object-cover rounded-lg">
+        </div>
+        <div class="w-full max-w-xl flex flex-col">
+          <h2 class="text-xl w-full lg:text-center font-semibold text-gray-300 lg:p-0 pt-5">
+            Ce compte offre plusieurs avantages pour faciliter la gestion financière des auto-entrepreneurs
+          </h2>
+          <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-white">Crédit après 03 mois de fonctionnement</h2>
+              <span class="text-lg font-bold text-white"> à la demande du client </span>
+            </div>
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-white">Mise en place d’un découvert</h2>
+              <span class="text-lg font-bold text-white"> a la demande du client</span>
+            </div>
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-white">Déposit minimum </h2>
+              <span class="text-lg font-bold text-white"> 30.000 XCFA</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <main class="bg-blue-50 px-8 py-12">
+      <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+        Bon de caisse
+      </h2>
+      <p class="text-gray-800 font-primary text-lg w-full justify-center lg:text-center pb-10">
+        Notre service en bon de caisse permet  aux entreprises et aux investisseurs d’effectuer des placements de fonds en toute sécurité
+        sur une période minimale d’un an. Le placement a pour vocation  à terme de générer d’importants bénéfices grâce à des taux
+        d’intérêts allant jusqu’à 5%.
+      </p>
+      <div class="lg:flex w-full min-h-screen gap-2 justify-center lg:px-10">
+        <div class="w-full lg:max-w-xl flex flex-col lg:py-16">
+          <h2 class="text-xl w-full lg:text-center font-semibold text-gray-600">Les placements en bon de caisse offrent les conditions suivantes</h2>
+          <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-black border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-white ">dépôt minimum a l’ouverture</h2>
+              <span class="text-lg font-bold text-white"> 5000000FCFA</span>
+            </div>
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-black border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-white">taux de rémunération</h2>
+              <span class="text-lg font-bold text-white"> négociable</span>
+            </div>
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-black border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-white">Intérêt  précompte ou post compte</h2>
+              <span class="text-lg font-bold text-white"> à la demande du client</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex w-full max-w-xl h-full lg:min-h-[38rem]">
+          <img :src="cash" alt="image" class="object-cover rounded-lg">
+        </div>
+      </div>
+
+    </main>
+    <main class="bg-blue-950 px-8 py-12">
+      <div class="container mx-auto">
+        <h1 class="text-white w-full text-center font-accent text-4xl pb-6">Dépôt à terme </h1>
+        <p class="w-full py-6 text-lg text-gray-300">
+          Notre service de dépôt à terme permet au souscripteur de déposer des fonds sur un compte bloqué afin de
+          bénéficier d’intérêts supérieurs au taux applicable sur un compte d’épargne classique. Le souscripteur
+          pouvant à tout moment disposer des intérêts générés par le compte.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img :src="Money"
+                 alt="Money"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Minimum de dépôt</h3>
+              <p class="text-gray-600 mb-4">5.000.000 XCFA</p>
+            </div>
+          </div>
+          <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img :src="Depot"
+                 alt="Depot a terme"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Taux de rémunération </h3>
+              <p class="text-gray-600 mb-4">négociable</p>
+            </div>
+          </div>
+          <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img :src="Interred"
+                 alt="Interred a terme"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Taux d’intérêts</h3>
+              <p class="text-gray-600 mb-4">Allant jusqu’à 6%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <main class="lg:px-8 px-5 py-12">
+      <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+        Compte d’épargne
+      </h2>
+      <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
+        Notre service compte d’épargne association a été mis sur pied afin de permettre aux associations
+        de protéger leurs finances grâce à des comptes d’épargnes fiables et sécurisés.
+      </p>
+      <div class="lg:flex w-full lg:min-h-screen gap-2 justify-center lg:px-10 px-4">
+        <div class="flex w-full lg:max-w-xl h-full lg:min-h-[38rem]">
+          <img :src="Epargne" alt="image" class="object-cover rounded-lg">
+        </div>
+        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5">
+          <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
+            Les associations bénéficient des conditions suivantes pour leur compte d’épargne
+          </h2>
+          <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white shadow border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-lg">Dépôt minimum à l’ouverture</h2>
+              <span class="text-lg font-bold"> 50000fcfa </span>
+            </div>
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white shadow border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-lg">Taux d’intérêt</h2>
+              <span class="text-lg font-bold">6% sur l’année</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <main class="bg-blue-950 px-8 py-12">
+      <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl pb-4">Collecte journalière </h1>
+      <div class="container mx-auto">
+        <p class="w-full py-6 text-lg text-gray-300">
+          Collecte journalière/ Collecte journalière bloquée
+          Notre service de collecte journalière destiné principalement aux travailleurs indépendants
+          ( commerçants ou autre)  permet de sécuriser l’argent sans avoir à se déplacer.\
+          Nos agents déployés sur le terrain collectent les fonds contre reçu et les déposent
+          directement sur les  comptes de chaque souscripteur.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img :src="Argent"
+                 alt="Argent"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Minimum d’épargne</h3>
+              <p class="text-gray-600 mb-4">200-500fcfa/jour</p>
+            </div>
+          </div>
+          <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img :src="Refund"
+                 alt="Refund"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Décaissable</h3>
+              <p class="text-gray-600 mb-4">fin du mois/ fin d’année</p>
+            </div>
+          </div>
+          <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img :src="Micro"
+                 alt="Micro"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Possibilité de micro-crédit </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <main class="bg-blue-50 px-8 py-12">
+      <div class="container mx-auto">
+        <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+          Carte visa
+        </h2>
+        <p class="text-gray-800 font-primary text-lg w-full justify-center lg:text-center pb-10">
+          Les cartes VISA du CRESAF offrent une solution sécurisée pour effectuer des retraits aux guichets automatiques
+          et régler des achats de biens ou services, que ce soit via des terminaux de paiement électronique (TPE) ou en ligne.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white opacity-90 hover:opacity-100 rounded-lg shadow-lg
+          overflow-hidden transition-transform duration-300 hover:scale-105 p-2">
+            <img :src="Guichet"
+                 alt="Guichet"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Guichet automatique de banque</h3>
+            </div>
+          </div>
+          <div
+               class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img :src="Electronic"
+                 alt="Electronic"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Terminaux de paiement électronique </h3>
+            </div>
+
+          </div>
+          <div
+               class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+
+            <img :src="Order"
+                 alt="Order"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Autres moyens de payement en ligne</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <main class="bg-blue-950 px-8 py-12 hidden">
       <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div v-for="product in products"
@@ -164,6 +413,7 @@ onUnmounted(() => {
         </div>
       </div>
     </main>
+
 
     <Footer />
   </div>
