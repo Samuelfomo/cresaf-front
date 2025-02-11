@@ -72,7 +72,7 @@ import OM from "@/assets/images/OM1.png"
 import Ria from "@/assets/images/Ria1.png"
 import Paytop from "@/assets/images/paytop1.png"
 import Western from "@/assets/images/Western1.png"
-import Worldremit from "@/assets/images/Worldremit3.png"
+import Worldremit from "@/assets/images/WorldRemit3.png"
 
 const momo = MoMo
 const sigue = Sigue
