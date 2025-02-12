@@ -102,15 +102,35 @@ const stopAutoPlay = () => {
   }
 };
 
+const isIntersecting = ref({});
+const activeSection = ref(0)
+const observerCallback = (entries) => {
+  entries.forEach(entry => {
+    isIntersecting.value[entry.target.id] = entry.isIntersecting;
+    if (entry.isIntersecting) {
+      activeSection.value = entry.target.id;
+    }
+  });
+};
+
+
 // Démarrer l'auto-play au montage du composant
 onMounted(() => {
   startAutoPlay();
+  const observer = new IntersectionObserver(observerCallback, {
+    threshold: 0.5
+  });
+
+  document.querySelectorAll('section[id]').forEach(section => {
+    observer.observe(section);
+  });
 });
 
 // Nettoyer l'intervalle lors du démontage
 onUnmounted(() => {
   stopAutoPlay();
 });
+
 </script>
 
 <template>
@@ -140,7 +160,7 @@ onUnmounted(() => {
         </transition-group>
 
         <!-- Contrôles du slider -->
-        <div class="absolute inset-y-0 left-0 flex items-center lg:hidden">
+        <div class="absolute inset-y-0 left-0 flex items-center">
           <button @click="prevSlide"
                   class="bg-white bg-opacity-30 hover:bg-opacity-50 rounded-r p-2">
             <span class="sr-only">Précédent</span>
@@ -148,7 +168,7 @@ onUnmounted(() => {
           </button>
         </div>
 
-        <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
+        <div class="absolute inset-y-0 right-0 flex items-center">
           <button @click="nextSlide"
                   class="bg-white bg-opacity-30 hover:bg-opacity-50 rounded-l p-2">
             <span class="sr-only">Suivant</span>
@@ -159,7 +179,7 @@ onUnmounted(() => {
     </section>
 
     <!-- Sections des produits -->
-    <main class="bg-blue-950 px-8 py-12">
+    <main id="section1" class="bg-blue-950 px-8 py-12">
       <h2 class="text-white font-accent text-4xl w-full justify-center text-center pb-5">
         Compte chèque
       </h2>
@@ -194,7 +214,7 @@ onUnmounted(() => {
       </div>
 
     </main>
-    <main class="bg-blue-50 px-8 py-12">
+    <main id="section2" class="bg-blue-50 px-8 py-12">
       <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
         Bon de caisse
       </h2>
@@ -207,15 +227,15 @@ onUnmounted(() => {
         <div class="w-full lg:max-w-xl flex flex-col lg:py-16">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-600">Les placements en bon de caisse offrent les conditions suivantes</h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
-            <div class="flex w-full lg:max-w-[12rem] flex-col bg-black border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-white ">dépôt minimum a l’ouverture</h2>
-              <span class="text-lg font-bold text-white"> 5000000FCFA</span>
+              <span class="text-lg font-bold text-white">5.000.000 CFA</span>
             </div>
-            <div class="flex w-full lg:max-w-[12rem] flex-col bg-black border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-white">taux de rémunération</h2>
               <span class="text-lg font-bold text-white"> négociable</span>
             </div>
-            <div class="flex w-full lg:max-w-[12rem] flex-col bg-black border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-white">Intérêt  précompte ou post compte</h2>
               <span class="text-lg font-bold text-white"> à la demande du client</span>
             </div>
@@ -227,7 +247,7 @@ onUnmounted(() => {
       </div>
 
     </main>
-    <main class="bg-blue-950 px-8 py-12">
+    <main id="section3" class="bg-blue-950 px-8 py-12">
       <div class="container mx-auto">
         <h1 class="text-white w-full text-center font-accent text-4xl pb-6">Dépôt à terme </h1>
         <p class="w-full py-6 text-lg text-gray-300">
@@ -270,7 +290,7 @@ onUnmounted(() => {
         </div>
       </div>
     </main>
-    <main class="lg:px-8 px-5 py-12">
+    <main id="section4" class="lg:px-8 px-5 py-12">
       <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
         Compte d’épargne
       </h2>
@@ -287,19 +307,19 @@ onUnmounted(() => {
             Les associations bénéficient des conditions suivantes pour leur compte d’épargne
           </h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
-            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white shadow border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
-              <h2 class="font-light text-lg">Dépôt minimum à l’ouverture</h2>
-              <span class="text-lg font-bold"> 50000fcfa </span>
+            <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
+              <span class="text-lg font-bold text-white"> 50.000 XCFA </span>
             </div>
-            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white shadow border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
-              <h2 class="font-light text-lg">Taux d’intérêt</h2>
-              <span class="text-lg font-bold">6% sur l’année</span>
+            <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-lg text-white">Taux d’intérêt</h2>
+              <span class="text-lg font-bold text-white">6% sur l’année</span>
             </div>
           </div>
         </div>
       </div>
     </main>
-    <main class="bg-blue-950 px-8 py-12">
+    <main id="section5" class="bg-blue-950 px-8 py-12">
       <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl pb-4">Collecte journalière </h1>
       <div class="container mx-auto">
         <p class="w-full py-6 text-lg text-gray-300">
@@ -343,7 +363,7 @@ onUnmounted(() => {
         </div>
       </div>
     </main>
-    <main class="bg-blue-50 px-8 py-12">
+    <main id="section6" class="bg-blue-50 px-8 py-12">
       <div class="container mx-auto">
         <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
           Carte visa
@@ -413,7 +433,18 @@ onUnmounted(() => {
         </div>
       </div>
     </main>
-
+    <!-- Navigation latérale -->
+    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 space-y-4 z-50">
+      <a v-for="product in products" :key="product.id"
+         :href="`#${product.id}`"
+         :class="[
+           'block w-3 h-3 rounded-full transition-all duration-300',
+           activeSection === product.id ? 'bg-white scale-125' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+         ]"
+         @click.prevent="document.getElementById(product.id).scrollIntoView({ behavior: 'smooth' })">
+        <span class="sr-only">{{ product.title }}</span>
+      </a>
+    </div>
 
     <Footer />
   </div>
@@ -431,22 +462,3 @@ onUnmounted(() => {
 }
 </style>
 
-<!--<script setup>-->
-
-<!--import Header from "@public/components/header.vue";-->
-<!--import Footer from "@public/components/footer.vue";-->
-<!--</script>-->
-
-<!--<template>-->
-<!--  <div class="flex flex-col min-h-screen">-->
-<!--    <Header />-->
-<!--    <main class="min-h-screen  flex flex-col bg-blue-950 px-8 pt-32 pb-12 mb-2">-->
-<!--    </main>-->
-<!--    <Footer />-->
-<!--  </div>-->
-
-<!--</template>-->
-
-<!--<style scoped>-->
-
-<!--</style>-->

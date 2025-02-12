@@ -15,7 +15,10 @@
     <div class="hidden lg:flex justify-between w-full max-w-xl">
     <div class="text-sm text-gray-700 flex relative">
       <div class="flex items-center space-x-2 cursor-pointer" @mouseover="toggleDropdownAboutUs" @mouseleave="closeDropdown1">
-        <h2 class="relative hover:text-green-600 lg:text-lg text-xs flex group"> Qui sommes-nous ?
+        <h2 class="relative hover:text-green-600 lg:text-lg text-xs flex group"
+            :class="[$route.name === 'values' ? activeClass : inactiveClass]"
+        >
+          Qui sommes-nous ?
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
                 stroke-linejoin="round">
@@ -31,22 +34,26 @@
            @mouseleave="closeDropdown1"
       >
         <div class="py-1">
-          <div class="flex items-center hover:text-green-600"  :class="[$route.name === 'values' ? activeClass : inactiveClass]">
+          <div class="flex items-center hover:text-green-600"   :class="[$route.name === '#' ? activeClass : inactiveClass]">
             <h1 class="text-2xl">🤍</h1>
             <router-link to="/values" class="flex flex-col font-semibold text-lg px-5 pb-2"
                          @click="closeAndScroll1"
             >
-              <h1>Nos valeurs</h1>
+              <h2 class="group relative">Nos valeurs
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Confiance, Intégrité et solidarité </span>
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600"  :class="[$route.name === '#' ? activeClass : inactiveClass]">
             <img :src="briefcase" alt="briefcase" class="h-5 w-5">
 
-            <router-link to="#" class="flex flex-col font-semibold text-lg px-5 py-2"
+            <router-link to="values" class="flex flex-col font-semibold text-lg px-5 py-2"
                          @click="closeAndScroll2"
             >
-              <h1>Nos atouts</h1>
+              <h2 class="relative group">Nos atouts
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Culture de la performance </span>
             </router-link>
           </div>
@@ -55,7 +62,9 @@
             <router-link to="/values" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          @click="closeAndScroll3"
             >
-              <h1>Notre vision</h1>
+              <h2 class="group relative">Notre vision
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Misé sur l'avenir </span>
             </router-link>
           </div>
@@ -72,7 +81,9 @@
             <router-link to="/values" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          @click="closeAndScroll4"
             >
-             <h1>Notre mission</h1>
+             <h2 class="relative group">Notre mission
+               <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+             </h2>
               <span class="text-xs text-gray-500">Renforcer la solidarité</span>
             </router-link>
           </div>
@@ -81,13 +92,16 @@
     </div>
     <div class="text-sm text-gray-700 flex relative">
       <div class="flex items-center space-x-2 cursor-pointer" @mouseover=toggleDropdownProducts @mouseleave="closeDropdown2">
-        <h2 class="relative hover:text-green-600 lg:text-lg text-xs flex group"> Nos produits
+        <h2 class="relative hover:text-green-600 lg:text-lg text-xs flex group"
+            :class="[$route.name === 'products' ? activeClass : inactiveClass]"
+        >
+          Nos produits
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
                 stroke-linejoin="round">
             <path d="M9 9l6 8l7 -8" />
           </svg>
-          <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
         </h2>
       </div>
 
@@ -100,60 +114,72 @@
           <div class="flex items-center hover:text-green-600">
             <img :src="personCircle" alt="personCircle" class="h-5 w-5">
             <router-link to="products" class="flex flex-col font-semibold text-lg px-5 pb-2"
-                         :class="[$route.name === 'products' ? activeClass : inactiveClass]"
-                         @click="closeDropdown2"
+                         :class="[$route.name === '#' ? activeClass : inactiveClass]"
+                         @click="closeAndScrollProducts1"
             >
-              <h2>Compte chèque</h2>
+              <h2 class="group relative">Compte chèque
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Particulier, entreprise & salaire</span>
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
             <img :src="wallet2" alt="wallet2" class="h-5 w-5">
-            <router-link to="#" class="flex flex-col font-semibold text-lg px-5 py-2"
+            <router-link to="products" class="flex flex-col font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
-                         @click="closeDropdown2"
+                         @click="closeAndScrollProducts2"
             >
-              <h2>Bon de caisse</h2>
+              <h2 class="relative group">Bon de caisse
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Bon plan pour votre épargne</span>
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
             <img :src="database" alt="database-up" class="h-5 w-5">
-            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
+            <router-link to="products" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
-                         @click="closeDropdown2"
+                         @click="closeAndScrollProducts3"
             >
-              <h2>Dépôt à terme</h2>
+              <h2 class="group relative">Dépôt à terme
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Fructifier votre argent</span>
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
             <img :src="collection" alt="collection" class="h-5 w-5">
-            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
+            <router-link to="products" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
-                         @click="closeDropdown2"
+                         @click="closeAndScrollProducts4"
             >
-              <h2>Compte d'épargne</h2>
+              <h2 class="relative group">Compte d'épargne
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Livret & Association</span>
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
             <img :src="piggy" alt="piggy" class="h-5 w-5">
-            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
+            <router-link to="products" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
-                         @click="closeDropdown2"
+                         @click="closeAndScrollProducts5"
             >
-              <h2>Collecte journalière</h2>
+              <h2 class="group relative">Collecte journalière
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Vous suivre a quotidien</span>
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
             <img :src="personCard" alt="personCard" class="h-5 w-5">
-            <router-link to="#" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
+            <router-link to="products" class="flex flex-col justify-start font-semibold text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
-                         @click="closeDropdown2"
+                         @click="closeAndScrollProducts6"
             >
-              <h2>Carte VISA</h2>
+              <h2 class="relative group">Carte VISA
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Vous ouvrir au monde</span>
             </router-link>
           </div>
@@ -162,13 +188,16 @@
     </div>
     <div class="text-sm text-gray-700 flex relative">
       <div class="flex items-center space-x-2 cursor-pointer" @mouseover="toggleDropdownSolutions" @mouseleave="closeDropdown3">
-        <h2 class="relative hover:text-green-600 lg:text-lg text-xs flex group"> Nos solutions
+        <h2 class="relative hover:text-green-600 lg:text-lg text-xs flex group"
+            :class="[$route.name === 'solutions' ? activeClass : inactiveClass]"
+        >
+          Nos solutions
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
                 stroke-linejoin="round">
             <path d="M9 9l6 8l7 -8" />
           </svg>
-          <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-300 group-hover:w-full"></span>
+          <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
         </h2>
       </div>
 
@@ -181,30 +210,36 @@
           <div class="flex items-center hover:text-green-600">
             <img :src="smile" alt="smile emoji" class="h-5 w-5">
             <router-link to="solutions" class="flex flex-col font-medium text-lg px-5 py-2"
-                         :class="[$route.name === 'solutions' ? activeClass : inactiveClass]"
-                         @click="closeDropdown3"
+                         :class="[$route.name === '#' ? activeClass : inactiveClass]"
+                         @click="closeAndScrollSolutions1"
             >
-              <h1>Financement de projets</h1>
+              <h1 class="relative group">Financement de projets
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h1>
               <span class="text-xs text-gray-500">Sur mésure pour vos projets</span>
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
             <img :src="heart" alt="heart emoji" class="h-5 w-5">
-            <router-link to="#" class="flex flex-col justify-start font-medium text-lg px-5 py-2"
+            <router-link to="solutions" class="flex flex-col justify-start font-medium text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
-                         @click="closeDropdown3"
+                         @click="closeAndScrollSolutions2"
             >
-              <h1>Financement de la trésorerie</h1>
+              <h2 class="group relative">Financement de la trésorerie
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Financement des besoins de trésorerie ponctuels</span>
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
             <img :src="sunglasses" alt="sunglasses emoji" class="h-5 w-5">
-            <router-link to="#" class="flex flex-col justify-start font-medium text-lg px-5 py-2"
+            <router-link to="solutions" class="flex flex-col justify-start font-medium text-lg px-5 py-2"
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
-                         @click="closeDropdown3"
+                         @click="closeAndScrollSolutions3"
             >
-              <h1>Financement Import/Export</h1>
+              <h2 class="relative group">Financement Import/Export
+                <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
+              </h2>
               <span class="text-xs text-gray-500">Financer votre développement international</span>
             </router-link>
           </div>
@@ -240,8 +275,11 @@
             </svg>
           </button>
           <nav class="flex flex-col space-y-4 py-5">
-            <router-link to="#" class="w-full h-full text-white text-lg font-bold hover:text-green-600 flex justify-between py-3
-            border-b items-center" @click="OpenAboutUs">
+            <router-link to="#" class="w-full h-full text-lg font-bold hover:text-green-600 flex justify-between py-3
+            border-b items-center"
+                         :class="[$route.name === 'values' ? activeDrawerClass : 'text-white']"
+                         @click="OpenAboutUs"
+            >
              <span>Qui sommes-nous ?</span>
               <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -269,7 +307,7 @@
                 <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" />
                 <path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" />
               </svg>
-              <router-link to="#" class="flex flex-col font-semibold hover:text-green-500 text-base text-white px-5 py-2"
+              <router-link to="values" class="flex flex-col font-semibold hover:text-green-500 text-base text-white px-5 py-2"
                            @click="closeDrawerAndScroll2"
               >
                 <h1>Nos atouts</h1>
@@ -308,8 +346,11 @@
                 </router-link>
               </div>
             </div>
-            <router-link to="#" class="w-full h-full text-white text-lg font-bold hover:text-green-600 flex justify-between py-3 border-b
-            items-center" @click="OpenProducts">
+            <router-link to="#" class="w-full h-full text-lg font-bold hover:text-green-600 flex justify-between py-3 border-b
+            items-center"
+                         :class="[$route.name === 'products' ? activeDrawerClass : 'text-white']"
+                         @click="OpenProducts"
+            >
              <span>Nos produits</span>
               <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -319,7 +360,9 @@
               </svg>
             </router-link>
             <div v-if="products" class="w-full flex flex-col">
-              <div class="w-full flex items-center">
+              <div class="w-full flex items-center"
+                   @click="closeDrawerAndScrollProducts1"
+              >
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                       stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                       class="text-gray-400">
@@ -335,7 +378,9 @@
                   <span class="text-xs text-gray-400">Particulier, entreprise & salaire</span>
                 </router-link>
               </div>
-              <div class="w-full flex items-center">
+              <div class="w-full flex items-center"
+              @click="closeDrawerAndScrollProducts2"
+              >
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
                       stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                       class="text-gray-400"><path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -348,7 +393,9 @@
                   <span class="text-xs text-gray-400">Bon plan pour votre épargne</span>
                 </router-link>
               </div>
-              <div class="w-full flex items-center">
+              <div class="w-full flex items-center"
+              @click="closeDrawerAndScrollProducts3"
+              >
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                       stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                       class="text-gray-400">
@@ -365,7 +412,9 @@
                   <span class="text-xs text-gray-400">Fructifier votre argent</span>
                 </router-link>
               </div>
-              <div class="w-full flex items-center">
+              <div class="w-full flex items-center"
+              @click="closeDrawerAndScrollProducts4"
+              >
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                       stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                       class="text-gray-400">
@@ -382,7 +431,9 @@
                   <span class="text-xs text-gray-400">Livret & Association</span>
                 </router-link>
               </div>
-              <div class="w-full flex items-center">
+              <div class="w-full flex items-center"
+              @click="closeDrawerAndScrollProducts5"
+              >
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                       stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" class="text-white opacity-60">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 11v.01" />
@@ -397,7 +448,9 @@
                   <span class="text-xs text-gray-400">Vous suivre a quotidien</span>
                 </router-link>
               </div>
-              <div class="w-full flex items-center">
+              <div class="w-full flex items-center"
+              @click="closeDrawerAndScrollProducts6"
+              >
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                       stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                       class="text-gray-400">
@@ -415,8 +468,11 @@
                 </router-link>
               </div>
             </div>
-            <router-link to="#" class="w-full h-full text-white text-lg font-bold hover:text-green-600 flex justify-between py-3 border-b
-            items-center" @click="OpenSolutions"  >
+            <router-link to="#" class="w-full h-full text-lg font-bold hover:text-green-600 flex justify-between py-3 border-b
+            items-center"
+                         :class="[$route.name === 'solutions' ? activeDrawerClass : 'text-white']"
+                         @click="OpenSolutions"
+            >
              <span>Nos solutions</span>
               <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
@@ -426,7 +482,9 @@
               </svg>
             </router-link>
             <div v-if="solutions" class="w-full flex flex-col">
-              <div class="w-full flex items-center">
+              <div class="w-full flex items-center"
+              @click="closeDrawerAndScrollSolutions1"
+              >
                 <svg viewBox="-0.5 -0.5 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" id="Emoji--Streamline-Iconoir" height="24" width="24">
                   <path d="M7.5 14.337187499999999C3.7239375000000003 14.337187499999999 0.6628125 11.276062499999998 0.6628125 7.5 0.6628125
               3.7239375000000003 3.7239375000000003 0.6628125 7.5 0.6628125c3.7760624999999997 0 6.837187500000001 3.061125 6.837187500000001
@@ -448,7 +506,9 @@
                   <span class="text-xs text-gray-400">Sur mésure pour vos projets</span>
                 </router-link>
               </div>
-              <div class="w-full flex items-center">
+              <div class="w-full flex items-center"
+                   @click="closeDrawerAndScrollSolutions2"
+              >
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                       stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                       class="text-gray-400">
@@ -462,7 +522,9 @@
                   <span class="text-xs text-gray-400">Financement des besoins de trésorerie ponctuels</span>
                 </router-link>
               </div>
-              <div class="w-full flex items-center">
+              <div class="w-full flex items-center"
+                   @click="closeDrawerAndScrollSolutions3"
+              >
                 <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                       stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                       class="text-gray-400">
@@ -481,7 +543,10 @@
               </div>
             </div>
           </nav>
-            <button type="button" class="text-lg bg-blue-950 p-2 mt-2 text-white font-semibold border border-white rounded-lg hover:text-green-600 hover:border-green-500">
+            <button type="button"
+                    class="text-lg bg-blue-950 p-2 mt-2 text-white font-semibold border border-white rounded-lg hover:text-green-600 hover:border-green-500"
+                    @click="router.push('/login')"
+            >
               Ouvrir un compte
             </button>
         </div>
@@ -493,7 +558,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue';
+import {ref, nextTick} from 'vue';
 import {useRouter} from "vue-router"
 const router = useRouter()
 import Logo from "@/assets/images/logo.png"
@@ -529,37 +594,230 @@ let timeout = null;
 const logo = Logo;
 const logoDrewa = LogoDrewa;
 
-const closeAndScroll1 = () =>{
-  scrollTo({id : 'section1'})
-  closeDropdown1()
-}
 const closeDrawerAndScroll1 = () =>{
-  scrollTo({id : 'section1'})
   isDrawerOpen.value = false
+  nextTick(() => {
+    setTimeout(() => {
+      scrollTo({id : 'section1'})
+    }, 100)
+  })
 }
 const closeDrawerAndScroll2 = () =>{
-  scrollTo({id : 'section2'})
   isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section2'})
+    }, 100)
+  })
 }
 const closeDrawerAndScroll3 = () =>{
-  scrollTo({id : 'section3'})
   isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section3'})
+    }, 100)
+  })
 }
 const closeDrawerAndScroll4 = () =>{
-  scrollTo({id : 'section4'})
   isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section4'})
+    }, 100)
+  })
+}
+
+const closeDrawerAndScrollProducts1 = () => {
+  router.push('products')
+  isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section1'})
+    }, 100)
+  })
+}
+const closeDrawerAndScrollProducts2 = () => {
+  router.push('/products')
+  isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section2'})
+    }, 100)
+  })
+}
+const closeDrawerAndScrollProducts3 = () => {
+  router.push('/products')
+  isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section3'})
+    }, 100)
+  })
+}
+const closeDrawerAndScrollProducts4 = () => {
+  router.push('/products')
+  isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section4'})
+    }, 100)
+  })
+}
+const closeDrawerAndScrollProducts5 = () => {
+  router.push('/products')
+  isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section5'})
+    }, 100)
+  })
+}
+const closeDrawerAndScrollProducts6 = () => {
+  router.push('/products')
+  isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section6'})
+    }, 100)
+  })
+}
+
+const closeDrawerAndScrollSolutions1 = () => {
+  router.push('/solutions')
+  isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section1'})
+    }, 100)
+  })
+}
+const closeDrawerAndScrollSolutions2 = () => {
+  router.push('/solutions')
+  isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section2'})
+    }, 100)
+  })
+}
+const closeDrawerAndScrollSolutions3 = () => {
+  router.push('/solutions')
+  isDrawerOpen.value = false
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id : 'section3'})
+    }, 100)
+  })
+}
+
+
+
+
+const closeAndScroll1 = () =>{
+  closeDropdown1()
+  nextTick(() =>{
+    setTimeout(() => {
+      scrollTo({id: 'section1'})
+    },100)
+  })
 }
 const closeAndScroll2 = () =>{
-  scrollTo({id : 'section2'})
   closeDropdown1()
+  nextTick(() => {
+    setTimeout(() =>{
+      scrollTo({id : 'section2'})
+    }, 100)
+  })
 }
 const closeAndScroll3 = () =>{
-  scrollTo({id : 'section3'})
   closeDropdown1()
+  nextTick(() =>{
+    setTimeout(() =>{
+      scrollTo({id : 'section3'})
+    }, 100)
+  })
 }
 const closeAndScroll4 = () =>{
-  scrollTo({id : 'section4'})
   closeDropdown1()
+  nextTick(() =>{
+    setTimeout(() =>{
+      scrollTo({id : 'section4'})
+    }, 100)
+  })
+}
+
+const closeAndScrollProducts1 = () =>{
+  closeDropdown2()
+  nextTick(() =>{
+    setTimeout(() =>{
+      scrollTo({id: 'section1'})
+    }, 100)
+  })
+}
+const closeAndScrollProducts2 = () =>{
+  closeDropdown2()
+  nextTick(() =>{
+    setTimeout(() =>{
+      scrollTo({id: 'section2'})
+    }, 100)
+  })
+}
+const closeAndScrollProducts3 = () =>{
+  closeDropdown2()
+  nextTick(() =>{
+    setTimeout(() =>{
+      scrollTo({id: 'section3'})
+    }, 100)
+  })
+}
+const closeAndScrollProducts4 = () =>{
+  closeDropdown2()
+  nextTick(() =>{
+    setTimeout(() =>{
+      scrollTo({id: 'section4'})
+    }, 100)
+  })
+}
+const closeAndScrollProducts5 = () =>{
+  closeDropdown2()
+  nextTick(() =>{
+    setTimeout(() =>{
+      scrollTo({id: 'section5'})
+    }, 100)
+  })
+}
+const closeAndScrollProducts6 = () =>{
+  closeDropdown2()
+  nextTick(() =>{
+    setTimeout(() =>{
+      scrollTo({id: 'section6'})
+    }, 100)
+  })
+}
+
+const closeAndScrollSolutions1 = () => {
+  closeDropdown3()
+  nextTick(() => {
+    setTimeout(() => {
+      scrollTo({id : 'section1'})
+    }, 100)
+  })
+}
+const closeAndScrollSolutions2 = () => {
+  closeDropdown3()
+  nextTick(() => {
+    setTimeout(() => {
+      scrollTo({id : 'section2'})
+    }, 100)
+  })
+}
+const closeAndScrollSolutions3 = () => {
+  closeDropdown3()
+  nextTick(() => {
+    setTimeout(() => {
+      scrollTo({id : 'section3'})
+    }, 100)
+  })
 }
 
 const toggleDropdownAboutUs = () => {
@@ -592,10 +850,6 @@ const closeDropdown2 = () =>{
   }, 100);
 
 }
-// const closeDropdown2AndScroll1 = () =>{
-//   closeDropdown1()
-// }
-
 const closeDropdown3 = () =>{
   timeout = setTimeout(() => {
     isDropdownOpen3.value = false
@@ -605,7 +859,8 @@ const closeDropdown3 = () =>{
 
 const isDrawerOpen = ref(false);
 
-const activeClass = ref('bg-green-100',)
+const activeClass = ref(' border-b border-blue-950',)
+const activeDrawerClass = ref('text-green-600')
 const inactiveClass = ref('',)
 
 const OpenAboutUs = () => {

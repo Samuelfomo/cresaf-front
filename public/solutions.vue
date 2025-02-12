@@ -2,24 +2,33 @@
 import { ref, onMounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
+import CresafSolution from "@/assets/images/solution/cresafSolution.jpg"
+import Finance from "@/assets/images/solution/finance.jpg"
+import Tresorerie from "@/assets/images/solution/tresorerie.jpg"
+import Exp_Imp from "@/assets/images/solution/Exp-Imp.jpg"
 
 const solutions = ref([
   {
     id: 'presentation',
     title: "Solutions CRESAF",
     subtitle: "Des solutions adaptées à vos besoins",
-    image: "https://picsum.photos/id/1018/800/600",
+    // image: "https://picsum.photos/id/1018/800/600",
+    image:CresafSolution,
     stats: [
       { value: "5M+", label: "Clients satisfaits" },
       { value: "15+", label: "Années d'expérience" },
       { value: "98%", label: "Taux de satisfaction" }
-    ]
+    ],
   },
+
   {
     id: 'projets',
     title: "Financement de projets",
+    description:'Nous accompagnons les entrepreneurs en général dans le financement de leurs projets à travers' +
+        ' la mise a disposition de fonds de roulement et le suivi de leurs activités.',
     subtitle: "Concrétisez vos ambitions",
-    image: "https://picsum.photos/id/1020/800/600",
+    image: Finance,
+    // image: "https://picsum.photos/id/1020/800/600",
     features: [
       { title: "Analyse approfondie", description: "Étude détaillée de votre projet" },
       { title: "Accompagnement", description: "Suivi personnalisé tout au long du financement" },
@@ -30,13 +39,19 @@ const solutions = ref([
       "Étude de faisabilité",
       "Proposition de financement",
       "Mise en place"
-    ]
+    ],
+    class:'bg-blue-950',
+    font:'text-white',
+    section : 'section1'
   },
   {
     id: 'tresorerie',
     title: "Financement de la trésorerie",
+    description: 'Nous aidons nos entreprises partenaires a faire face aux différentes crises liées aux tensions' +
+        ' de trésorerie (règlement des fournisseurs, paiement des salaires…)',
     subtitle: "Optimisez votre flux de trésorerie",
-    image: "https://picsum.photos/id/1015/800/600",
+    image: Tresorerie,
+    // image: "https://picsum.photos/id/1015/800/600",
     features: [
       { title: "Réactivité", description: "Réponse rapide à vos besoins" },
       { title: "Solutions sur mesure", description: "Adaptées à votre cycle d'exploitation" },
@@ -47,13 +62,18 @@ const solutions = ref([
       "Ligne de crédit",
       "Escompte commercial",
       "Affacturage"
-    ]
+    ],
+    class:'bg-blue-50',
+    section : 'section2'
   },
   {
     id: 'importexport',
     title: "Financement Import/Export",
+    description: 'Nous accompagnons les entrepreneurs dans leurs différentes opérations de vente ou d’achat' +
+        ' a l’international (fournisseurs, frais de douane…)',
     subtitle: "Développez votre activité internationale",
-    image: "https://picsum.photos/id/1015/800/600",
+    image: Exp_Imp,
+    // image: "https://picsum.photos/id/1015/800/600",
     features: [
       { title: "Expertise internationale", description: "Maîtrise des opérations transfrontalières" },
       { title: "Sécurisation", description: "Garantie des transactions internationales" },
@@ -64,7 +84,10 @@ const solutions = ref([
       "Garantie internationale",
       "Préfinancement export",
       "Remise documentaire"
-    ]
+    ],
+    class: "bg-blue-950",
+    font:'text-white',
+    section : 'section3'
   }
 ]);
 
@@ -95,7 +118,7 @@ onMounted(() => {
   <div class="flex flex-col min-h-screen">
     <Header />
 
-    <main class="flex flex-col min-h-screen">
+    <main class="flex flex-col min-h-screen pt-[4rem]">
       <!-- Section Présentation -->
       <section id="presentation" class="relative min-h-screen flex items-center">
         <div class="absolute inset-0">
@@ -123,24 +146,30 @@ onMounted(() => {
       <!-- Sections Solutions -->
       <section v-for="(solution, index) in solutions.slice(1)" :key="solution.id"
                :id="solution.id"
-               class="relative min-h-screen flex items-center bg-blue-950">
-        <div class="container mx-auto px-8 py-32">
+               class="relative min-h-screen flex items-center" :class="solution.class">
+        <div :id="solution.section" class="container mx-auto px-8 pb-32 ">
+          <h2 class="text-4xl font-accent text-center pt-14 pb-5" :class="{ [solution.font]: solution.font, 'text-green-600': !solution.font }">{{ solution.title }}</h2>
+          <p class="lg:pb-14 pb-5 lg:text-xl text-lg lg:text-center font-sans" :class="{ 'text-white text-opacity-70': solution.font, 'text-gray-700': !solution.font }">{{solution.description}}</p>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <!-- Contenu -->
-            <div :class="{ 'order-2': index % 2 === 0 }" class="text-white">
-              <h2 class="text-4xl font-bold mb-6">{{ solution.title }}</h2>
-              <p class="text-xl mb-12">{{ solution.subtitle }}</p>
+            <div :class="{ 'order-2': index % 2 === 0, [solution.font]:true }">
+<!--              <h2 class="text-4xl font-bold mb-6" :class="{ [solution.font]: solution.font, 'text-green-600': !solution.font }">{{ solution.title }}</h2>-->
+              <p class="lg:text-2xl text-xl font-sans lg:mb-12 mb-3" >{{ solution.subtitle }}</p>
 
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-12">
                 <div v-for="feature in solution.features" :key="feature.title"
-                     class="p-6 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
+                     class="p-6 rounded-lg backdrop-blur-sm flex flex-col justify-between"
+                     :class="{ 'bg-white bg-opacity-10': solution.font, 'bg-blue-950 bg-opacity-90 text-white': !solution.font }"
+                >
                   <h3 class="text-lg font-semibold mb-2">{{ feature.title }}</h3>
                   <p>{{ feature.description }} </p>
                 </div>
               </div>
 
               <!-- Process/Tools/Services -->
-              <div class="bg-white bg-opacity-10 rounded-lg backdrop-blur-sm p-8">
+              <div class="rounded-lg backdrop-blur-sm p-8"
+                   :class="{ 'bg-white bg-opacity-10': solution.font, 'bg-blue-950 bg-opacity-90 text-white': !solution.font }"
+              >
                 <h3 class="text-xl font-semibold mb-6">
                   {{ solution.process ? 'Processus' :
                     solution.tools ? 'Outils disponibles' :
