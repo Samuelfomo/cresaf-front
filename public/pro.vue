@@ -82,6 +82,7 @@ const products = ref([
 
 const currentSlide = ref(0);
 const autoPlayInterval = ref(null);
+const currentSection = ref(1);
 
 const nextSlide = () => {
   currentSlide.value = (currentSlide.value + 1) % products.value.length;
@@ -102,16 +103,69 @@ const stopAutoPlay = () => {
   }
 };
 
-const isIntersecting = ref({});
-const activeSection = ref(0)
-const observerCallback = (entries) => {
-  entries.forEach(entry => {
-    isIntersecting.value[entry.target.id] = entry.isIntersecting;
-    if (entry.isIntersecting) {
-      activeSection.value = entry.target.id;
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(`section${sectionId}`);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+    currentSection.value = sectionId;
+  }
+};
+
+const handleScroll = () => {
+  const sections = document.querySelectorAll('main[id^="section"]');
+  const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    const sectionBottom = sectionTop + section.offsetHeight;
+
+    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+      currentSection.value = parseInt(section.id.replace('section', ''));
     }
   });
 };
+// const scrollToSection = (sectionId) => {
+//   currentSection.value = sectionId;
+//   const section = document.getElementById(`section${sectionId}`);
+//   if (section) {
+//     section.scrollIntoView({ behavior: 'smooth' });
+//   }
+// };
+//
+// const handleScroll = () => {
+//   const sections = Array.from(document.querySelectorAll('main[id^="section"]'));
+//   const windowHeight = window.innerHeight;
+//   const scrollPosition = window.scrollY + (windowHeight / 2);
+//
+//   for (const section of sections) {
+//     const sectionId = parseInt(section.id.replace('section', ''));
+//     const sectionTop = section.offsetTop;
+//     const sectionHeight = section.offsetHeight;
+//
+//     // Vérifie si la section est dans la vue
+//     if (scrollPosition >= sectionTop && scrollPosition < (sectionTop + sectionHeight)) {
+//       currentSection.value = sectionId;
+//       break;
+//     }
+//   }
+// };
+
+// onMounted(() => {
+//   startAutoPlay();
+//   window.addEventListener('scroll', handleScroll);
+//   handleScroll(); // Initial check
+// });
+
+// const isIntersecting = ref({});
+// const activeSection = ref(0)
+// const observerCallback = (entries) => {
+//   entries.forEach(entry => {
+//     isIntersecting.value[entry.target.id] = entry.isIntersecting;
+//     if (entry.isIntersecting) {
+//       activeSection.value = entry.target.id;
+//     }
+//   });
+// };
 
 
 // Démarrer l'auto-play au montage du composant
@@ -124,11 +178,15 @@ onMounted(() => {
   document.querySelectorAll('section[id]').forEach(section => {
     observer.observe(section);
   });
+
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
 });
 
 // Nettoyer l'intervalle lors du démontage
 onUnmounted(() => {
   stopAutoPlay();
+  window.removeEventListener('scroll', handleScroll);
 });
 
 </script>
@@ -384,7 +442,7 @@ onUnmounted(() => {
             </div>
           </div>
           <div
-               class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
             <img :src="Electronic"
                  alt="Electronic"
                  class="w-full object-cover">
@@ -394,7 +452,7 @@ onUnmounted(() => {
 
           </div>
           <div
-               class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
 
             <img :src="Order"
                  alt="Order"
@@ -434,16 +492,31 @@ onUnmounted(() => {
       </div>
     </main>
     <!-- Navigation latérale -->
+    <!--    <div class="fixed right-8 top-1/2 transform -translate-y-1/2 space-y-4 z-50">-->
+    <!--      <a v-for="product in products" :key="product.id"-->
+    <!--         :href="`#section${product.id}`"-->
+    <!--         :class="[-->
+    <!--           'block w-3 h-3 rounded-full transition-all duration-300',-->
+    <!--           activeSection === product.id ? 'bg-white scale-125' : 'bg-white bg-opacity-50 hover:bg-opacity-75'-->
+    <!--         ]"-->
+    <!--         @click.prevent="document.getElementById(product.id).scrollIntoView({ behavior: 'smooth' })">-->
+    <!--        <span class="sr-only">{{ product.title }}</span>-->
+    <!--      </a>-->
+    <!--    </div>-->
+
+    <!-- Navigation points -->
     <div class="fixed right-8 top-1/2 transform -translate-y-1/2 space-y-4 z-50">
-      <a v-for="product in products" :key="product.id"
-         :href="`#section${product.id}`"
-         :class="[
-           'block w-3 h-3 rounded-full transition-all duration-300',
-           activeSection === product.id ? 'bg-white scale-125' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
-         ]"
-         @click.prevent="document.getElementById(product.id).scrollIntoView({ behavior: 'smooth' })">
+      <button v-for="product in products"
+              :key="product.id"
+              @click="scrollToSection(product.id)"
+              class="block w-3 h-3 rounded-full transition-all duration-300"
+              :class="[
+                currentSection === product.id
+                  ? 'bg-white scale-125'
+                  : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+              ]">
         <span class="sr-only">{{ product.title }}</span>
-      </a>
+      </button>
     </div>
 
     <Footer />
