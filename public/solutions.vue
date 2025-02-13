@@ -112,6 +112,14 @@ onMounted(() => {
     observer.observe(section);
   });
 });
+
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(`${sectionId}`);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+    activeSection.value = sectionId;
+  }
+};
 </script>
 
 <template>
@@ -205,7 +213,7 @@ onMounted(() => {
            'block w-3 h-3 rounded-full transition-all duration-300',
            activeSection === solution.id ? 'bg-white scale-125' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
          ]"
-         @click.prevent="document.getElementById(solution.id).scrollIntoView({ behavior: 'smooth' })">
+         @click.prevent="scrollToSection(solution.id)">
         <span class="sr-only">{{ solution.title }}</span>
       </a>
     </div>

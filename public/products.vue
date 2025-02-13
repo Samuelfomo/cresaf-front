@@ -103,12 +103,14 @@ const stopAutoPlay = () => {
 };
 
 const isIntersecting = ref({});
-const activeSection = ref(0)
+
 const observerCallback = (entries) => {
   entries.forEach(entry => {
     isIntersecting.value[entry.target.id] = entry.isIntersecting;
     if (entry.isIntersecting) {
-      activeSection.value = entry.target.id;
+      const idNumerique = Number(entry.target.id.replace(/\D/g, ''));
+      console.log(idNumerique);
+      currentSection.value = idNumerique;
     }
   });
 };
@@ -116,6 +118,7 @@ const observerCallback = (entries) => {
 
 // Démarrer l'auto-play au montage du composant
 onMounted(() => {
+
   startAutoPlay();
   const observer = new IntersectionObserver(observerCallback, {
     threshold: 0.5
@@ -130,6 +133,16 @@ onMounted(() => {
 onUnmounted(() => {
   stopAutoPlay();
 });
+
+const currentSection = ref(1);
+
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(`section${sectionId}`);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+    currentSection.value = sectionId;
+  }
+};
 
 </script>
 
@@ -407,41 +420,15 @@ onUnmounted(() => {
       </div>
     </main>
 
-    <main class="bg-blue-950 px-8 py-12 hidden">
-      <div class="container mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div v-for="product in products"
-               :key="product.id"
-               class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-            <img :src="product.image"
-                 :alt="product.title"
-                 class="w-full h-48 object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">{{ product.title }}</h3>
-              <p class="text-gray-600 mb-4">{{ product.subtitle }}</p>
-              <p class="text-gray-700">{{ product.description }}</p>
-              <ul v-if="product.features" class="mt-4 space-y-2">
-                <li v-for="feature in product.features"
-                    :key="feature"
-                    class="flex items-center text-gray-700">
-                  <span class="mr-2">•</span>
-                  {{ feature }}
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
     <!-- Navigation latérale -->
     <div class="fixed right-8 top-1/2 transform -translate-y-1/2 space-y-4 z-50">
       <a v-for="product in products" :key="product.id"
          :href="`#section${product.id}`"
          :class="[
            'block w-3 h-3 rounded-full transition-all duration-300',
-           activeSection === product.id ? 'bg-white scale-125' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+           currentSection === product.id ? 'bg-white scale-125' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
          ]"
-         @click.prevent="document.getElementById(product.id).scrollIntoView({ behavior: 'smooth' })">
+         @click.prevent="scrollToSection(product.id)">
         <span class="sr-only">{{ product.title }}</span>
       </a>
     </div>
