@@ -184,21 +184,42 @@ onUnmounted(() => {
         </transition-group>
 
         <!-- Contrôles du slider -->
-        <div class="absolute inset-y-0 left-0 flex items-center">
-          <button @click="prevSlide"
-                  class="bg-white bg-opacity-30 hover:bg-opacity-50 rounded-r p-2">
-            <span class="sr-only">Précédent</span>
-            <!-- Icône précédent -->
-          </button>
-        </div>
+<!--        <div class="absolute inset-y-0 left-0 flex items-center">-->
+<!--          <button @click="prevSlide"-->
+<!--                  class="bg-white bg-opacity-30 hover:bg-opacity-50 rounded-r p-2">-->
+<!--            <span class="sr-only">Précédent</span>-->
+<!--            &lt;!&ndash; Icône précédent &ndash;&gt;-->
+<!--          </button>-->
+<!--        </div>-->
 
-        <div class="absolute inset-y-0 right-0 flex items-center">
-          <button @click="nextSlide"
-                  class="bg-white bg-opacity-30 hover:bg-opacity-50 rounded-l p-2">
-            <span class="sr-only">Suivant</span>
-            <!-- Icône suivant -->
-          </button>
-        </div>
+<!--        <div class="absolute inset-y-0 right-0 flex items-center">-->
+<!--          <button @click="nextSlide"-->
+<!--                  class="bg-white bg-opacity-30 hover:bg-opacity-50 rounded-l p-2">-->
+<!--            <span class="sr-only">Suivant</span>-->
+<!--            &lt;!&ndash; Icône suivant &ndash;&gt;-->
+<!--          </button>-->
+<!--        </div>-->
+
+        <button
+            @click="prevSlide"
+            class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-white/50 p-2 rounded-full hover:bg-white/75 transition-colors"
+            aria-label="Previous slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor">
+            <path stroke-Linecap="round" stroke-linejoin="round" stroke-width="{2}" d="M15 19l-8-8 8-8"/>
+          </svg>
+        </button>
+        <button
+            @click="nextSlide"
+            class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-white/50 p-2 rounded-full hover:bg-white/75 transition-colors"
+            aria-label="Next slide"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor">
+            <path stroke-Linecap="round" stroke-Linejoin="round" stroke-Width={2} d="M9 5l8 8-8 8"/>
+          </svg>
+        </button>
       </div>
     </section>
 
