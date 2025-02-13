@@ -211,9 +211,10 @@ const scrollToSection = (sectionId) => {
          :href="`#${solution.id}`"
          :class="[
            'block w-3 h-3 rounded-full transition-all duration-300',
-           activeSection === solution.id ? 'bg-white scale-125' : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+           activeSection === solution.id ? 'bg-green-600 scale-125' : 'bg-gray-400 hover:bg-white'
          ]"
          @click.prevent="scrollToSection(solution.id)">
+<!--        activeSection === solution.id ? 'bg-white scale-125' : 'bg-white bg-opacity-50 hover:bg-opacity-75'-->
         <span class="sr-only">{{ solution.title }}</span>
       </a>
     </div>
