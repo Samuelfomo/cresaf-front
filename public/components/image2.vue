@@ -64,15 +64,15 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
-import MoMo from "@/assets/images/momo.png"
-import Sigue from "@/assets/images/logo/sigue1.png"
-import MoneyGram from "@/assets/images/logo/Money1.png"
-import MoneyTrans from "@/assets/images/Moneytrans1.png"
-import OM from "@/assets/images/OM1.png"
-import Ria from "@/assets/images/logo/Ria.png"
-import Paytop from "@/assets/images/logo/Paytop1.png"
-import Western from "@/assets/images/logo/western1.png"
-import Worldremit from "@/assets/images/logo/WorldRemit.png"
+import MoMo from "@/assets/images/logo/mtn.png"
+import Sigue from "@/assets/images/logo/sigue.png"
+import MoneyGram from "@/assets/images/logo/moneygram.png"
+import MoneyTrans from "@/assets/images/logo/moneytrans.png"
+import OM from "@/assets/images/logo/orange.png"
+import Ria from "@/assets/images/logo/ria.png"
+import Paytop from "@/assets/images/logo/paytop.png"
+import Western from "@/assets/images/logo/western.png"
+import Worldremit from "@/assets/images/logo/worldremit.png"
 
 const momo = MoMo
 const sigue = Sigue

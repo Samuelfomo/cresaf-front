@@ -1,15 +1,16 @@
 <!-- Footer.vue -->
 <template>
-  <footer class="bg-blue-950 pt-10 md:pt-20 flex">
+  <footer class="bg-blue-950 pt-10 lg:pt-20">
     <div class="container mx-auto px-4 w-full">
       <!-- Call to Action Section -->
-      <div class="flex flex-col items-center text-center lg:mb-40 mb-10">
-        <h2 class="text-white font-bold text-2xl md:text-3xl mb-4">
-          Experience the next-gen banking
+      <div class="flex flex-col items-center text-center lg:mb-36 mb-10">
+        <h2 class="text-white font-bold text-2xl lg::text-3xl mb-4">
+          Construisons ensemble votre avenir financier
         </h2>
-        <p class="text-gray-400 font-roboto text-base md:text-lg max-w-4xl mb-6">
-          Enim sed parturient sem enim nunc sit erat velit eget hac nulla nullam et id praesent nisi ornare
-          risus risus consequat nunc nisl pellentesque diam neque.
+        <p class="text-gray-400 font-roboto text-base lg:text-lg mb-6">
+          CRESAF s'engage à vos côtés pour concrétiser vos projets grâce à des solutions de financement adaptées
+          et un accompagnement personnalisé. Que vous soyez commerçant, entrepreneur ou agriculteur, nous sommes
+          là pour soutenir votre réussite.
         </p>
         <button type="button"
                 class="text-white border border-white rounded-lg px-6 py-3 font-semibold
@@ -35,7 +36,7 @@
       </div>
 
       <!-- Footer Bottom -->
-      <div class="border-t border-white pt-6">
+      <div class="border-t border-white pt-6 pb-2">
         <div class="lg:flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div class="w-full lg:flex flex-wrap lg:justify-center justify-start gap-x-4 text-sm text-gray-400 lg:space-x-0 space-x-4 lg:leading-none leading-7">
             <span>Copyright © 2023 - 2025</span>
@@ -60,18 +61,21 @@
         </div>
       </div>
     </div>
-    <div class="top-full right-0 mt-auto h-full flex justify-center md:justify-end z-50 pointer-events-none lg:pb-5 lg:pr-0 pr-2">
-      <a href="#" class="rounded-xl h-12 w-12 flex items-center justify-center border-2 border-purple-600 bg-white
+
+    <div class="fixed right-2 top-[95%] transform -translate-y-1/2 space-y-4 z-50">
+      <div class="top-full right-0 mt-auto h-full flex justify-center md:justify-end z-50 pointer-events-none lg:pb-5 lg:pr-0 pr-2">
+        <a href="#" class="rounded-xl h-12 w-12 flex items-center justify-center border-2 border-purple-600 bg-white
               transition-transform hover:scale-110 pointer-events-auto"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14f05d"
-             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-          <path d="M12 3l0 16" />
-          <path d="M16 7l-4 -4" />
-          <path d="M8 7l4 -4" />
-        </svg>
-      </a>
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#14f05d"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 3l0 16" />
+            <path d="M16 7l-4 -4" />
+            <path d="M8 7l4 -4" />
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 </template>

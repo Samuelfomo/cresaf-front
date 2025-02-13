@@ -38,7 +38,7 @@
         <h1 class="text-3xl font-semibold text-center text-black">Un guichet unique pour
           <span class="text-green-600 font-semibold">vos finances </span>
         </h1>
-        <p class="w-full lg:px-20 text-center max-w-6xl text-lg py-10">
+        <p class="w-full lg:px-10 text-lg py-10">
           Avec le CRESAF, vous bénéficiez d'un compte courant gratuit, d'une carte bancaire personnalisable,
           d'un livret d'épargne rémunéré, d'un crédit à la consommation et bien plus encore !
         </p>
@@ -76,7 +76,7 @@
     </div>
     <div class="bg-blue-950  lg:px-8 flex flex-col h-full py-12 items-center">
       <h1 class="text-white lg:text-4xl text-3xl font-bold text-center">Pourquoi plus de 5 millions de membres aiment-ils ?</h1>
-        <p class="text-gray-300 text-lg p-5 w-full text-center max-w-4xl">
+        <p class="text-gray-300 text-lg p-5 w-full lg:text-start text-center lg:px-10">
           Chez CRESAF, plus de 5 millions de membres nous font confiance grâce à nos solutions financières adaptées,
           notre accès facilité au crédit avec des conditions souples, des taux compétitifs et un accompagnement personnalisé.
         </p>
@@ -121,11 +121,11 @@
 
       <div class="lg:px-8 flex flex-col h-full py-12 items-center w-full">
         <h1 class="text-white lg:text-4xl text-3xl text-center font-bold">Produits conçus pour les entreprises de toutes tailles.</h1>
-        <p class="text-gray-400 text-lg p-5 w-full text-center max-w-4xl">
+        <p class="text-gray-400 text-lg py-5 w-full text-start">
           Que vous soyez une petite startup, une PME ou une grande entreprise, nous offrons des solutions financières adaptées à vos besoins :
         </p>
 
-        <div class="flex w-full h-full py-5 justify-center flex-wrap px-5 lg:px-20 gap-2">
+        <div class="flex w-full h-full py-5 flex-wrap px-5 lg:px-0 gap-2">
           <div v-for="(location4, index) in locations4" :key="index" class="flex justify-between items-start h-full min-h-44 w-full max-w-lg border rounded-lg lg:p-8 p-5 bg-blue-50">
             <div class="border-white flex justify-center min-h-10 min-w-16 items-center">
               <img :src="location4.icon" alt="img" class="h-16 w-16 rounded-full">
@@ -139,36 +139,37 @@
 
       <div class="lg:px-8 flex flex-col h-full py-12 items-center">
         <h1 class="text-white lg:text-4xl text-3xl font-bold text-center">Comment obtenir une carte de bloc en 3 étapes simples</h1>
-        <p class="text-gray-300 text-lg p-5 w-full text-center max-w-4xl">
-          Designed to work better together erat velit eget hac nulla nullam et id praesent nisi ornare risus risus consequat nunc nisl pellentesque diam neque.
+        <p class="text-gray-300 text-lg p-5 w-full text-start">
+          La carte Bloc permet de suivre, de sécuriser et de gérer les comptes de nos clients,
+          de faciliter les opérations financières et de garantir la traçabilité des transactions.
         </p>
 
-        <div class="flex items-center w-full flex-row my-5 justify-between">
+        <div class="flex items-center w-full flex-row py-5 px-1 justify-between">
           <div class="flex p-2 justify-between items-center w-full max-w-xs gap-2" v-for="(location6, index) in locations5" :key="index">
-            <div class="rounded-full h-12 w-12 flex justify-center items-center bg-red-500 border-4 border-pink-300">
+            <div class="rounded-full h-12 w-12 flex justify-center items-center bg-green-600 border-4 border-white border-opacity-80 hover:border-white">
              <h1 class="text-white font-bold text-xl">
                {{index+1}}
              </h1>
             </div>
             <img :src="location6.icon" class="flex-" alt="any">
           </div>
-          <div class="rounded-full h-8 w-8 flex justify-center items-center bg-green-500">
+          <div class="rounded-full h-8 w-8 flex justify-center items-center bg-green-500 hover:animate-bounce">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"
                   stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round" class="text-white">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" />
             </svg>
           </div>
         </div>
-        <div class="flex w-full justify-between flex-wrap lg:mt-5 lg:px-8">
+        <div class="flex w-full justify-between flex-wrap lg:mt-5">
           <div class="flex flex-col p-2 max-w-sm"  v-for="(location6, index) in locations5" :key="index">
             <h3 class="text-2xl font-bold text-white text-center lg:text-start">{{ location6.titre }}</h3>
-            <p class="text-gray-500 text-lg text-center lg:text-start">{{location6.description}}</p>
+            <p class="text-gray-400 text-lg text-center lg:text-start">{{location6.description}}</p>
           </div>
         </div>
       </div>
       <div class="w-full flex justify-center items-center p-2 mb-20">
-        <button type="button" @click="openWhatsApp" class="text-purple-600 text-lg font-semibold border border-purple-600 rounded-lg p-2
-         flex justify-center items-center capitalize hover:text-white hover:border-none hover:bg-purple-600">
+        <button type="button" @click="openWhatsApp" class="text-white text-lg font-semibold border border-white rounded-lg p-2
+         flex justify-center items-center capitalize hover:text-green-600 hover:border-green-500">
           Ouvrir un compte
         </button>
       </div>
