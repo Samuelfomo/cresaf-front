@@ -52,7 +52,7 @@
 
 <script setup>
 import {ref, onMounted, onUnmounted} from "vue";
-import Image from "@/assets/images/w2.png";
+import Image from "@/assets/images/woman.png";
 import Image1 from "@/assets/images/w3.png";
 import Image2 from "@/assets/images/w.png";
 // const Image4 ='https://picsum.photos/id/1018/800/600'|| null;

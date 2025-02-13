@@ -3,7 +3,6 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
-import Compte from "@/assets/images/account/compte1.jpg"
 import cash from "@/assets/images/account/cash-receipt.jpg"
 import Cheque from "@/assets/images/account/cheque.jpg"
 import Epargne from "@/assets/images/account/epargne2.jpg"
@@ -16,11 +15,13 @@ import Electronic from "@/assets/images/account/img.png"
 import Order from "@/assets/images/account/autre.png"
 import Refund from "@/assets/images/account/refund.png"
 import Micro from "@/assets/images/account/micro.png"
-import Image from "@/assets/images/account/image.jpg"
-import Image1 from "@/assets/images/account/img_1.png"
-import Image2 from "@/assets/images/account/img_2.png"
-import Image3 from "@/assets/images/account/img_3.png"
-import Image4 from "@/assets/images/account/img_4.png"
+// import Compte from "@/assets/images/account/compte1.jpg"
+// import Image from "@/assets/images/account/image.jpg"
+// import Image1 from "@/assets/images/account/img_1.png"
+// import Image2 from "@/assets/images/account/img_2.png"
+// import Image3 from "@/assets/images/account/img_3.png"
+// import Image4 from "@/assets/images/account/img_4.png"
+import Images from "@/assets/images/solution/cresafSolution.jpg"
 
 const products = ref([
   {
@@ -30,7 +31,8 @@ const products = ref([
     subtitle: "Particulier, entreprise & salaire",
     subtitle2: "✅ Gérez vos finances au quotidien avec facilité et rapidité ",
     description: "Description du compte chèque...",
-    image: Image4
+    image: Images
+    // image: Image4
   },
   {
     id: 2,
@@ -38,15 +40,18 @@ const products = ref([
     subtitle: "Bon plan pour votre épargne",
     subtitle2: "💰 Investissez en toute sécurité avec un rendement garanti chez CRESAF !",
     description: "Description du Bon de caisse...",
-    image: Image
+    image: Images
+    // image: Image
   },
   {
     id: 3,
     title: "Dépôt à terme",
     description: "Description du dépôt à terme...",
     subtitle: "Fructifier votre argent",
-    subtitle2: "💵 Faites fructifier votre argent avec des taux avantageux et sans risque !",
-    image: Image1
+    subtitle2: "🤑 Faites fructifier votre argent avec des taux avantageux et sans risque !",
+    // subtitle2: "💵 💸🤑 Faites fructifier votre argent avec des taux avantageux et sans risque !",
+    image: Images
+    // image: Image1
   },
   {
     id: 4,
@@ -54,7 +59,8 @@ const products = ref([
     subtitle: "Livret & Association",
     subtitle2: "💳 Épargnez sereinement et faites grandir vos projets avec CRESAF !",
     description: "Description du compte d'épargne...",
-    image: Image2
+    image: Images
+    // image: Image2
   },
   {
     id: 5,
@@ -62,7 +68,8 @@ const products = ref([
     subtitle: "Vous suivre au quotidien",
     subtitle2: "📥 Sécurisez vos revenus quotidiens sans vous déplacer",
     description: "Description de la collecte journalière...",
-    image: Image3
+    image: Images
+    // image: Image3
   },
   {
     id: 6,
@@ -70,7 +77,8 @@ const products = ref([
     subtitle: "Vous ouvrir au monde",
     subtitle2: "🌍 Payez et retirez de l’argent partout, en toute simplicité !",
     description: "Description de la carte VISA...",
-    image: Compte
+    image: Images
+    // image: Compte
   }
 ]);
 
@@ -164,7 +172,7 @@ onUnmounted(() => {
             <img :src="product.image"
                  :alt="product.title"
                  class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-blue-700 bg-opacity-50">
+            <div class="absolute inset-0 bg-blue-700 bg-opacity-30">
               <div class="container mx-auto px-6 h-full flex items-center">
                 <div class="text-white max-w-lg">
                   <h1 class="text-5xl font-accent mb-4">{{ product.title }}</h1>

@@ -65,14 +65,14 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import MoMo from "@/assets/images/momo.png"
-import Sigue from "@/assets/images/Sigue.png"
-import MoneyGram from "@/assets/images/MoneyGram2.png"
+import Sigue from "@/assets/images/logo/sigue1.png"
+import MoneyGram from "@/assets/images/logo/Money1.png"
 import MoneyTrans from "@/assets/images/Moneytrans1.png"
 import OM from "@/assets/images/OM1.png"
-import Ria from "@/assets/images/Ria1.png"
-import Paytop from "@/assets/images/paytop1.png"
-import Western from "@/assets/images/Western1.png"
-import Worldremit from "@/assets/images/WorldRemit3.png"
+import Ria from "@/assets/images/logo/Ria.png"
+import Paytop from "@/assets/images/logo/Paytop1.png"
+import Western from "@/assets/images/logo/western1.png"
+import Worldremit from "@/assets/images/logo/WorldRemit.png"
 
 const momo = MoMo
 const sigue = Sigue

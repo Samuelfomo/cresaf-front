@@ -14,14 +14,14 @@
            Favoriser le développement économique par l'épargne, l'octroi de crédits et la facilitation des services financiers
          </h5>
          <button type="button" @click="openWhatsApp" class="text-white text-xl font-semibold border border-white rounded-lg p-2
-         flex justify-between items-center w-full max-w-[150px] capitalize hover:text-green-600 hover:border-green-600 lg:m-0 mb-10">
+         flex justify-between items-center w-full max-w-[150px] hover:text-green-600 hover:border-green-600 lg:m-0 mb-10">
            <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
                  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"
                  class="transition-colors duration-200">
              <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
              <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
            </svg>
-           parlons-en
+           Parlons-en
          </button>
        </div>
        <div class="min-h-44 w-full lg:px-6">
@@ -45,7 +45,7 @@
       </div>
 
       <div class="flex w-full h-full py-5 justify-center flex-wrap gap-5">
-        <div v-for="(location, index) in locations" :key="index" class="group h-full w-full min-h-80 max-w-sm border rounded-lg p-8 bg-blue-50  hover:bg-purple-600 group-hover:text-white hover:text-white">
+        <div v-for="(location, index) in locations" :key="index" class="group h-full w-full min-h-80 max-w-sm border rounded-lg p-8 bg-blue-50  hover:bg-blue-950 hover:bg-opacity-90 group-hover:text-white hover:text-white">
           <div class="flex justify-start items-center mb-7">
             <img :src="location.icon" alt="img" class="h-20 w-20 rounded-full border-2 border-white">
           </div>
@@ -53,7 +53,7 @@
              {{location.titre}}
             </p>
             <h3 class="font-sans py-2">{{location.description}}</h3>
-          <div class="flex text-lg font-mono justify-start items-center pt-5 text-purple-600 group-hover:text-white">
+          <div class="flex text-lg font-mono justify-start items-center pt-5 text-green-600 group-hover:text-white">
             {{location.suite}}
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
                   stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
@@ -88,28 +88,28 @@
       </div>
     </div>
     <div class="min-h-full flex justify-between items-center w-full flex-wrap lg:px-8 px-1 bg-blue-950 pb-2">
-      <table class="w-full border-t border-red-500">
+      <table class="w-full border-t border-green-600">
         <thead>
         <tr class="flex w-full flex-wrap justify-between lg:flex-nowrap lg:gap-0 gap-8 lg:pt-0 py-10">
-          <th class="lg:border-r justify-start flex lg:w-full w-36 lg:p-8 border-red-500">
+          <th class="lg:border-r justify-start flex lg:w-full w-36 lg:p-8 border-green-600">
             <div class="flex flex-col lg:items-start items-center gap-1 w-full">
               <h1 class="text-4xl font-bold text-white">5M+</h1>
               <p class="text-lg text-gray-400 font-roboto">Membres</p>
             </div>
           </th>
-          <th class="lg:border-r justify-start flex lg:w-full w-44 lg:p-8 border-red-500">
+          <th class="lg:border-r justify-start flex lg:w-full w-44 lg:p-8 border-green-600">
             <div class="flex flex-col lg:items-start items-center gap-1">
               <h1 class="text-4xl font-bold text-white">95%</h1>
               <p class="text-lg text-gray-400 font-roboto">Satisfaction des clients</p>
             </div>
           </th>
-          <th class="lg:border-r justify-start flex lg:w-full w-40 lg:p-8 border-red-500">
+          <th class="lg:border-r justify-start flex lg:w-full w-40 lg:p-8 border-green-600">
             <div class="flex flex-col lg:items-start items-center gap-1">
               <h1 class="text-4xl font-bold text-white">73%</h1>
               <p class="text-lg text-gray-400 font-roboto">Croissance annuelle</p>
             </div>
           </th>
-          <th class="justify-start flex lg:w-full w-40 lg:p-8 border-red-500">
+          <th class="justify-start flex lg:w-full w-40 lg:p-8 border-green-600">
             <div class="flex flex-col lg:items-start items-center gap-1">
               <h1 class="text-4xl font-bold text-white">250B</h1>
               <p class="text-lg text-gray-400 font-roboto">Gestion des fonds</p>
@@ -175,41 +175,7 @@
 
     </div>
 
-    <div class="bg-white px-4 flex flex-col h-full">
-      <div class="flex flex-col h-full py-12 items-center">
-        <h1 class="text-gray-900 lg:text-4xl text-3xl font-bold text-center">Témoignages de clients</h1>
-        <p class="text-lg p-5 text-gray-500 w-full text-center max-w-4xl">
-          Découvrez comment nos services ont transformé le quotidien de nos clients.
-          Leur satisfaction et leur réussite sont notre plus grande fierté.
-        </p>
-
-          <div class="flex w-full h-full py-5 justify-center flex-wrap gap-2">
-            <div v-for="(location6, index) in locations6" :key="index" class="flex flex-col justify-between items-start h-full min-h-44 w-full
-             max-w-2xl border rounded-lg lg:p-8 p-5 shadow space-y-10">
-              <p class="lg:text-xl font-bold text-black">
-                {{location6.titre}}
-              </p>
-              <div class="flex w-full justify-between">
-                <div class="flex items-center justify-between text-sm font-semibold gap-2">
-                <div class="flex justify-center items-center">
-                  <img :src="location6.icon" alt="img" class="h-16 w-16 rounded-full border">
-                </div>
-                  <div class="flex flex-col">
-                    <p class="text-xl font-semibold">{{location6.name}}</p>
-                    <p class="pl-5 text-gray-500">{{location6.profession}}</p>
-                  </div>
-                </div>
-
-                <div class="flex justify-center items-center">
-                  <img :src="location6.logo" alt="img" class="h-16 w-16">
-                </div>
-              </div>
-            </div>
-            </div>
-          </div>
-
-    </div>
-
+    <Scroll />
 
     <Footer />
   </div>
@@ -222,14 +188,12 @@ import Footer from "@public/components/footer.vue";
 import Image from "@public/components/image.vue";
 
 import Icon from"@/assets/images/logo-cref.jpg"
-import Woman from"@/assets/images/w3.png"
-import Logo from"@/assets/images/Entp.png"
 import Arrow from"@/assets/images/svg/arow.svg"
 import Image2 from "@public/components/image2.vue";
+import Scroll from "@public/components/scroll.vue";
 
 
 const icon =Icon
-const woman =Woman
 const arrow = Arrow
 
 const services =ref( [
@@ -288,16 +252,19 @@ const locations3 = ref([
 const locations4 = ref([
   {
     icon:icon,
-    description:'Simplifiez-vous la vie avec nos services personnalisés et notre soutien pour tous vos projets',
+    description:'Accédez à nos solutions financières adaptées aux besoins de votre entreprise.' +
+        ' Nos produits sont conçus pour soutenir chaque étape de votre développement.',
 
   },
   {
     icon:icon,
-    description:'Choisissez une carte bancaire qui vous offre plus de liberté, de sécurité et de fonctionnalités',
+    description:'Notre équipe vous offre des conseils personnalisés pour optimiser votre gestion financière et' +
+        ' vous aider à réaliser vos projets. Chaque solution est conçue pour répondre à vos besoins spécifiques.',
   },
   {
     icon:icon,
-    description:'Profiter d\'un suivi et d\'un accompagnement de qualité, de la définition de votre stratégie à sa mise en œuvre',
+    description:'Que vous ayez besoin de financer un projet, de gérer votre trésorerie ou d\'investir' +
+        ' dans de nouveaux équipements, CRESAF est à vos côtés avec des offres flexibles et abordables.',
   },
 ])
 const locations5 = ref([
@@ -316,44 +283,6 @@ const locations5 = ref([
     titre: 'Démarrer la conversion!',
     description:'Mettez en place un dépôt direct ou connectez votre compte bancaire actuel pour transférer de l\'argent sur votre carte de débit.'
   },
-])
-const locations6 = ref([
-  {
-    titre:'“Grâce aux solutions de financement de CRESAF, j’ai pu agrandir mon commerce sans stress. Le processus de prêt était simple et rapide, et aujourd’hui, mon activité se développe mieux que jamais !"',
-    icon:woman,
-    name:'⭐Marie T.',
-    profession:"Commerçante",
-    logo:Logo
-
-  },
-  {
-    titre:'"CRESAF m’a accompagné dans le lancement de mon entreprise avec un financement adapté et des conseils personnalisés. Leur flexibilité et leur soutien ont été essentiels à ma réussite."',
-    icon:woman,
-    name:'⭐Alain D.',
-    profession:"Entrepreneur",
-    logo:Logo
-  },
-  // {
-  //   titre:'"Avec CRESAF, j’ai pu obtenir un prêt sans complications pour moderniser mon restaurant. Leurs paiements flexibles m’ont permis de gérer mon remboursement sans pression."',
-  //   icon:woman,
-  //   name:'⭐Fatima K.',
-  //   profession:"Restauratrice",
-  //   logo:Logo
-  // },
-  // {
-  //   titre:'"Les services de microfinance de CRESAF m’ont aidé à acheter du matériel agricole essentiel. Aujourd’hui, ma production a doublé, et mes revenus sont plus stables."',
-  //   icon:woman,
-  //   name:'⭐Jean-Marc B.',
-  //   profession:"Agriculteur",
-  //   logo:Logo
-  // },
-  // {
-  //   titre:'"J’ai enfin trouvé une institution qui comprend les besoins des petites entreprises. CRESAF m’a soutenue dès le début avec des conseils et un financement adapté à mon projet."',
-  //   icon:woman,
-  //   name:'⭐Sandra M.',
-  //   profession:"Jeune entrepreneure",
-  //   logo:Logo
-  // },
 ])
 
 const openWhatsApp = () =>{

@@ -2,7 +2,7 @@
 import { ref, onMounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
-import CresafSolution from "@/assets/images/solution/cresafSolution.jpg"
+import CresafSolution from "@/assets/images/solution/solution.jpg"
 import Finance from "@/assets/images/solution/finance.jpg"
 import Tresorerie from "@/assets/images/solution/tresorerie.jpg"
 import Exp_Imp from "@/assets/images/solution/Exp-Imp.jpg"
@@ -131,15 +131,15 @@ const scrollToSection = (sectionId) => {
       <section id="presentation" class="relative min-h-screen flex items-center">
         <div class="absolute inset-0">
           <img :src="solutions[0].image" alt="Background" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-blue-700 bg-opacity-20"></div>
+          <div class="absolute inset-0 bg-blue-950 bg-opacity-40"></div>
         </div>
 
-        <div class="relative container mx-auto px-8 py-32">
+        <div class="relative container mx-auto lg:px-8 py-32">
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div class="text-white">
-              <h1 class="text-5xl font-accent mb-6">{{ solutions[0].title }}</h1>
-              <p class="text-xl mb-12">{{ solutions[0].subtitle }}</p>
-              <div class="grid grid-cols-3 gap-8">
+              <h1 class="text-5xl lg:px-0 px-8 font-accent mb-6">{{ solutions[0].title }}</h1>
+              <p class="text-xl lg:px-0 px-8 mb-12">{{ solutions[0].subtitle }}</p>
+              <div class="grid grid-cols-3 lg:gap-8 gap-2 lg:px-0 px-2 ">
                 <div v-for="stat in solutions[0].stats" :key="stat.label"
                      class="text-center p-6 bg-white bg-opacity-10 rounded-lg backdrop-blur-sm">
                   <div class="text-3xl font-bold mb-2">{{ stat.value }}</div>
