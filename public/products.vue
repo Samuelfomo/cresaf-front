@@ -38,12 +38,6 @@ const products = ref([
     subtitle: "Bon plan pour votre épargne",
     subtitle2: "💰 Investissez en toute sécurité avec un rendement garanti chez CRESAF !",
     description: "Description du Bon de caisse...",
-    // description: `Notre service en bon de caisse permet aux entreprises et aux investisseurs d'effectuer des placements de fonds en toute sécurité sur une période minimale d'un an. Le placement a pour vocation à terme de générer d'importants bénéfices grâce à des taux d'intérêts allant jusqu'à 5%. Le bon de caisse à échéance n'étant soumis à aucune obligation de reconduction.`,
-    // features: [
-    //   "Dépôt minimum à l'ouverture : 5,000,000 FCFA",
-    //   "Taux de rémunération négociable",
-    //   "Intérêt précompte ou post compte à la demande du client"
-    // ],
     image: Image
   },
   {
@@ -102,37 +96,6 @@ const stopAutoPlay = () => {
   }
 };
 
-const isIntersecting = ref({});
-
-const observerCallback = (entries) => {
-  entries.forEach(entry => {
-    isIntersecting.value[entry.target.id] = entry.isIntersecting;
-    if (entry.isIntersecting) {
-      const idNumerique = Number(entry.target.id.replace(/\D/g, ''));
-      console.log(idNumerique);
-      currentSection.value = idNumerique;
-    }
-  });
-};
-
-
-// Démarrer l'auto-play au montage du composant
-onMounted(() => {
-
-  startAutoPlay();
-  const observer = new IntersectionObserver(observerCallback, {
-    threshold: 0.5
-  });
-
-  document.querySelectorAll('section[id]').forEach(section => {
-    observer.observe(section);
-  });
-});
-
-// Nettoyer l'intervalle lors du démontage
-onUnmounted(() => {
-  stopAutoPlay();
-});
 
 const currentSection = ref(1);
 
@@ -143,6 +106,46 @@ const scrollToSection = (sectionId) => {
     currentSection.value = sectionId;
   }
 };
+
+// Démarrer l'auto-play au montage du composant
+onMounted(() => {
+
+  startAutoPlay();
+  const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const sectionId = parseInt(entry.target.id.replace('section', ''));
+            if (!isNaN(sectionId)) {
+              currentSection.value = sectionId;
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+        root: null,
+        rootMargin: '0px'
+      }
+  );
+
+  // Observer toutes les sections
+  document.querySelectorAll('main[id^="section"]').forEach(section => {
+    observer.observe(section);
+  });
+  // const observer = new IntersectionObserver(observerCallback, {
+  //   threshold: 0.5
+  // });
+  //
+  // document.querySelectorAll('section[id]').forEach(section => {
+  //   observer.observe(section);
+  // });
+});
+
+// Nettoyer l'intervalle lors du démontage
+onUnmounted(() => {
+  stopAutoPlay();
+});
 
 </script>
 
