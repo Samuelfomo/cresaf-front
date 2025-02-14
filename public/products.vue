@@ -16,6 +16,7 @@ import Order from "@/assets/images/account/autre.png"
 import Refund from "@/assets/images/account/refund.png"
 import Micro from "@/assets/images/account/micro.png"
 import Livret from "@/assets/images/account/epargne.jpg"
+import Courant from "@/assets/images/account/courant.jpg"
 // import Compte from "@/assets/images/account/compte1.jpg"
 // import Image from "@/assets/images/account/image.jpg"
 // import Image1 from "@/assets/images/account/img_1.png"
@@ -417,7 +418,7 @@ onUnmounted(() => {
         </p>
         <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
           <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
-            <img :src="Epargne" alt="image" class="object-cover rounded-lg">
+            <img :src="Courant" alt="image" class="object-cover rounded-lg">
           </div>
           <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5">
             <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
