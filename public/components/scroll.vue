@@ -63,7 +63,7 @@ import { Pagination, Navigation, Autoplay } from 'swiper/modules'; // Ajout de A
 import 'swiper/css/bundle';
 
 import Woman from"@/assets/images/w3.png"
-import Logo from"@/assets/images/Entp.png"
+import Logo from"@/assets/images/enterprise.png"
 
 // Ajout de Autoplay dans les modules
 const modules = [Pagination, Navigation, Autoplay];
