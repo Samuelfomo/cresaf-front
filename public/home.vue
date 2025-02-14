@@ -24,7 +24,7 @@
            Parlons-en
          </button>
        </div>
-       <div class="min-h-44 w-full lg:px-6">
+       <div class="min-h-44 w-full">
          <Image />
        </div>
      </div>
@@ -80,8 +80,8 @@
           Chez CRESAF, plus de 5 millions de membres nous font confiance grâce à nos solutions financières adaptées,
           notre accès facilité au crédit avec des conditions souples, des taux compétitifs et un accompagnement personnalisé.
         </p>
-      <div class="flex w-full justify-between flex-wrap lg:mt-5 lg:px-8">
-        <div class="flex flex-col p-2 max-w-[420px]"  v-for="(location3, index) in locations3" :key="index">
+      <div class="flex w-full justify-start flex-wrap lg:mt-5 lg:px-8">
+        <div class="flex flex-col p-2 max-w-[25rem]"  v-for="(location3, index) in locations3" :key="index">
           <h3 class="text-2xl font-bold text-white text-center lg:text-start">{{ location3.titre }}</h3>
           <p class="text-gray-300 text-lg text-center lg:text-start">{{location3.description}}</p>
         </div>

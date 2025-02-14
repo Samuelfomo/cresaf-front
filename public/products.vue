@@ -15,6 +15,7 @@ import Electronic from "@/assets/images/account/img.png"
 import Order from "@/assets/images/account/autre.png"
 import Refund from "@/assets/images/account/refund.png"
 import Micro from "@/assets/images/account/micro.png"
+import Livret from "@/assets/images/account/epargne.jpg"
 // import Compte from "@/assets/images/account/compte1.jpg"
 // import Image from "@/assets/images/account/image.jpg"
 // import Image1 from "@/assets/images/account/img_1.png"
@@ -79,7 +80,16 @@ const products = ref([
     description: "Description de la carte VISA...",
     image: Images
     // image: Compte
-  }
+  },
+  // {
+  //   id: 7,
+  //   // title: "Carte VISA",
+  //   // subtitle: "Vous ouvrir au monde",
+  //   // subtitle2: "🌍 Payez et retirez de l’argent partout, en toute simplicité !",
+  //   // description: "Description de la carte VISA...",
+  //   // image: Images
+  //   // image: Compte
+  // }
 ]);
 
 const currentSlide = ref(0);
@@ -335,16 +345,17 @@ onUnmounted(() => {
         </div>
       </div>
     </main>
-    <main id="section4" class="lg:px-8 px-5 py-12">
+    <main id="section4" class="pb-6">
+      <div class="py-6 bg-blue-50 lg:px-8 px-5">
       <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
-        Compte d’épargne
+        Compte d’épargne association
       </h2>
       <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
         Notre service compte d’épargne association a été mis sur pied afin de permettre aux associations
         de protéger leurs finances grâce à des comptes d’épargnes fiables et sécurisés.
       </p>
-      <div class="lg:flex w-full lg:min-h-screen gap-2 justify-center lg:px-10 px-4">
-        <div class="flex w-full lg:max-w-xl h-full lg:min-h-[38rem]">
+      <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
+        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
           <img :src="Epargne" alt="image" class="object-cover rounded-lg">
         </div>
         <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5">
@@ -362,6 +373,88 @@ onUnmounted(() => {
             </div>
           </div>
         </div>
+      </div>
+      </div>
+<!--    </main>-->
+<!--    <main id="section4" class="lg:px-8 px-5 py-12 bg-blue-50">-->
+      <div class="py-6 lg:px-8 px-5">
+      <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+        Compte d’épargne sur livret
+      </h2>
+      <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
+        Le compte d’épargne sur livret  est notre service destiné sécuriser les économies de nos clients.
+        Le client pourra ainsi faire fructifier l’argent déposé grâce à des taux d’intérêts les plus intéressants du marché.
+      </p>
+      <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
+        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5">
+          <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
+            Les règles applicable a l'ouverture d'un compte d'épargne sur livret sont les suivantes :
+          </h2>
+          <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
+            <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
+              <span class="text-lg font-bold text-white"> 15.000 XCFA </span>
+            </div>
+            <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-lg text-white">Solde minimum permanent en compte</h2>
+              <span class="text-lg font-bold text-white">15.000 XCFA</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
+          <img :src="Livret" alt="image" class="object-cover rounded-lg">
+        </div>
+      </div>
+      </div>
+      <div class="py-6 bg-blue-50 lg:px-8 px-5">
+        <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+          Compte courant entreprise
+        </h2>
+        <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
+          Nos comptes courants entreprise permettent aux entrepreneurs ou entreprises clients d’avoir leurs fonds à disposition
+          et de bénéficier à tout moment de nos services bancaires de base. Les entreprises clients  pourrons  effectuer toutes
+          les transactions financières  courantes liés à leurs fonctionnement  grâce à un service simplifié sur le compte courant.
+        </p>
+        <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
+          <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
+            <img :src="Epargne" alt="image" class="object-cover rounded-lg">
+          </div>
+          <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5">
+            <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
+              Les entreprises bénéficient des conditions suivantes pour leur compte d’épargne
+            </h2>
+            <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
+              <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
+                <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
+                <span class="text-lg font-bold text-white"> 30.000 XCFA </span>
+              </div>
+              <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
+                <h2 class="font-light text-lg text-white">Facilité de compensation chèque</h2>
+              </div>
+              <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
+                <h2 class="font-light text-lg text-white">Possibilité de préfinancer les salaires</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-6 lg:px-8 px-5">
+        <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+          Epargne islamique
+        </h2>
+        <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
+          Notre service d’épargne islamique qui ne produit pas d’intérêts, s’adresse à nos clients
+          qui souhaitent constituer une épargne tout en respectant les préceptes de la religion islamique.
+        </p>
+      </div>
+      <div class="py-6 bg-blue-50 lg:px-8 px-5">
+        <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+          Compte virement salaire
+        </h2>
+        <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
+          Le compte virement salaire permet de recevoir son salaire mensuel mais aussi d’effectuer ses transactions
+          banquières courantes. Il donne droit à un découvert permanent, ainsi qu’à des crédits de plusieurs sortes.
+        </p>
       </div>
     </main>
     <main id="section5" class="bg-blue-950 px-8 py-12">
