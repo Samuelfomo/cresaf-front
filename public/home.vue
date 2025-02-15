@@ -45,7 +45,7 @@
       </div>
 
       <div class="flex w-full h-full py-5 justify-center flex-wrap gap-5">
-        <div v-for="(location, index) in locations" :key="index" class="group h-full w-full min-h-80 max-w-sm border rounded-lg p-8 bg-blue-50  hover:bg-blue-950 hover:bg-opacity-90 group-hover:text-white hover:text-white">
+        <div v-for="(location, index) in locations" :key="index" :id="location.pdfContent" class="group h-full w-full min-h-80 max-w-sm border rounded-lg p-8 bg-blue-50  hover:bg-blue-950 hover:bg-opacity-90 group-hover:text-white hover:text-white">
           <div class="flex justify-start items-center mb-7">
             <img :src="location.icon" alt="img" class="h-20 w-20 rounded-full border-2 border-white">
           </div>
@@ -53,7 +53,7 @@
              {{location.titre}}
             </p>
             <h3 class="font-sans py-2">{{location.description}}</h3>
-          <div class="flex text-lg font-primary justify-start items-center pt-5 text-green-600 group-hover:text-white">
+          <div class="flex text-lg font-primary justify-start items-center pt-5 text-green-600 group-hover:text-white" @click="openPdf">
             {{location.suite}}
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
                   stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
@@ -193,6 +193,29 @@ import Arrow from"@/assets/images/svg/arow.svg"
 import Image2 from "@public/components/image2.vue";
 import Scroll from "@public/components/scroll.vue";
 
+import pdfGenerator from '@/pdf/Pdf'
+
+const openPdf = async () => {
+  try {
+    const element = document.getElementById('pdfContent')
+    // Attendre que les images soient chargées
+    // await this.$nextTick()
+    await pdfGenerator.generatePdf(element, 'rapport.pdf', true)
+  } catch (error) {
+    console.error('Erreur lors de l\'ouverture du PDF:', error)
+  }
+}
+
+const downloadPdf = async () => {
+  try {
+    const element = document.getElementById('pdfContent')
+    // Attendre que les images soient chargées
+    await this.$nextTick()
+    await pdfGenerator.generatePdf(element, 'rapport.pdf', false)
+  } catch (error) {
+    console.error('Erreur lors du téléchargement du PDF:', error)
+  }
+}
 
 const icon =Icon
 const arrow = Arrow
@@ -207,13 +230,15 @@ const locations = ref([
     icon:icon,
     titre:'Ouverture d\'un compte',
     description:'Simplifiez-vous la vie avec nos services personnalisés et notre soutien pour tous vos projets',
-    suite:'Voir conditions'
+    suite:'Voir conditions',
+    pdfContent: 'pdfContent1',
   },
   {
     icon:icon,
     titre:'Cartes Bancaire',
     description:'Choisissez une carte bancaire qui vous offre plus de liberté, de sécurité et de fonctionnalités',
-    suite:'Demander une carte'
+    suite:'Demander une carte',
+    pdfContent: 'pdfContent2',
   },
   {
     icon:icon,
@@ -222,6 +247,9 @@ const locations = ref([
     suite:'Démarrer un investissement'
   },
 ])
+
+
+
 const locations2 = ref([
   {
     titre:'24/7 account monitoring'
