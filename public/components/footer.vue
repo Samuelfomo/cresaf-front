@@ -23,14 +23,14 @@
 
       <!-- Locations Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-5">
-        <div v-for="(location, index) in locations" :key="index" class="text-white">
-          <h3 class="font-bold text-lg mb-2">{{ location.title }}</h3>
-          <p class="text-gray-300 italic font-semibold text-sm mb-2">
+        <div v-for="(location, index) in locations" :key="index" class="text-white md:text-start text-center">
+          <h3 class="font-bold text-sm py-1">{{ location.title }}</h3>
+          <p class="text-gray-300 italic font-semibold text-xs">
             {{ location.address }}
           </p>
-          <div class="flex items-center space-x-2 italic font-bold">
+          <div class="flex md:justify-normal justify-center items-center space-x-2 italic font-bold">
             <img :src="phone" alt="phone icon" class="w-4 h-4" />
-            <span>{{ location.phone }}</span>
+            <span class="cursor-pointer text-sm font-bold text-white" @click="openWhatsApp(location.phone) ">{{ location.phone }}</span>
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@
             </span>
           </div>
 
-          <div class="flex w-full lg:justify-center justify-start">
+          <div class="flex w-full lg:justify-center justify-around">
             <a href="#" class="rounded-full h-10 w-10 flex items-center justify-center
               border border-white bg-yellow-500"
                @click="openCresafFaceBook"
@@ -62,7 +62,7 @@
       </div>
     </div>
 
-    <div class="fixed right-2 top-[95%] transform -translate-y-1/2 space-y-4 z-50">
+    <div class="fixed right-2 top-[95%]  transform -translate-y-1/2 space-y-4 z-50">
       <div class="top-full right-0 mt-auto h-full flex justify-center md:justify-end z-50 pointer-events-none lg:pb-5 lg:pr-0 pr-2">
         <a href="#" class="rounded-xl h-12 w-12 flex items-center justify-center border-2 border-purple-600 bg-white
               transition-transform hover:scale-110 pointer-events-auto"
@@ -119,6 +119,17 @@ const openImediatis = () => {
 
 const openCresafFaceBook = () =>{
   window.open("https://www.facebook.com/cresaf.sa", "blank");
+}
+
+const openWhatsApp = (phone) =>{
+  // window.open(`https://api.whatsapp.com/send/?phone=${phone}&text&type=phone_number&app_absent=0`, "_blank");
+  if (phone) {
+    const phoneExemple = String(phone).replace(/\s+/g, '').replace('+', '')
+    const url = `https://api.whatsapp.com/send/?phone=${phoneExemple}&image&type=phone_number&app_absent=0`;
+    window.open(url, "_blank");
+  } else {
+    alert("Numéro de téléphone non disponible !");
+  }
 }
 
 </script>

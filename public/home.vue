@@ -53,7 +53,7 @@
              {{location.titre}}
             </p>
             <h3 class="font-sans py-2">{{location.description}}</h3>
-          <div class="flex text-lg font-mono justify-start items-center pt-5 text-green-600 group-hover:text-white">
+          <div class="flex text-lg font-primary justify-start items-center pt-5 text-green-600 group-hover:text-white">
             {{location.suite}}
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
                   stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
@@ -211,7 +211,7 @@ const locations = ref([
   },
   {
     icon:icon,
-    titre:'Cartes VISA',
+    titre:'Cartes Bancaire',
     description:'Choisissez une carte bancaire qui vous offre plus de liberté, de sécurité et de fonctionnalités',
     suite:'Demander une carte'
   },
@@ -219,7 +219,7 @@ const locations = ref([
     icon:icon,
     titre:'Investissement',
     description:'Profiter d\'un suivi et d\'un accompagnement de qualité, de la définition de votre stratégie à sa mise en œuvre',
-    suite:'Start Investments'
+    suite:'Démarrer un investissement'
   },
 ])
 const locations2 = ref([
