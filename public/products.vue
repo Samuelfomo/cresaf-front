@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
-import cash from "@/assets/images/account/cash-receipt.jpg"
+import cash from "@/assets/images/account/caissier.jpg"
 import Cheque from "@/assets/images/account/cheque.jpg"
 import Epargne from "@/assets/images/account/epargne2.jpg"
 import Depot from "@/assets/images/account/depot.jpg"
@@ -348,9 +348,9 @@ onUnmounted(() => {
         </div>
       </div>
     </main>
-    <main id="section4" class="pb-6 bg-blue-50">
-      <div class="py-6 bg-blue-50 lg:px-8 px-5">
-      <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+    <main id="section4" class="pb-6 bg-blue-50 py-12">
+      <div class="bg-blue-50 lg:px-8 px-5">
+      <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-8">
         Compte d’épargne association
       </h2>
       <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
@@ -380,8 +380,8 @@ onUnmounted(() => {
       </div>
 <!--    </main>-->
 <!--    <main id="section4" class="lg:px-8 px-5 py-12 bg-blue-50">-->
-      <div class="py-6 lg:px-8 px-5">
-      <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+      <div class="py-12 lg:px-8 px-5 bg-white">
+      <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-8">
         Compte d’épargne sur livret
       </h2>
       <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
@@ -409,7 +409,7 @@ onUnmounted(() => {
         </div>
       </div>
       </div>
-      <div class="py-6 bg-blue-50 lg:px-8 px-5">
+      <div class="py-12 bg-blue-50 lg:px-8 px-5">
         <h2 class="text-green-600 font-accent text-3xl md:text-4xl text-center mb-10">
           Compte courant entreprise
         </h2>
@@ -444,7 +444,7 @@ onUnmounted(() => {
 
       <div class="container mx-auto py-12 px-4 md:px-0 lg:px-0">
         <div class="min-w-6xl mx-auto bg-white bg-opacity-70 rounded-xl shadow-sm overflow-hidden">
-          <div class="p-6 md:p-10">
+          <div class="p-6 md:py-12 md:px-10">
             <!-- Titre -->
             <h2 class="text-green-600 font-accent text-3xl md:text-4xl text-center mb-10">
               Epargne islamique
@@ -476,7 +476,7 @@ onUnmounted(() => {
         </div>
       </div>
 
-      <div class="py-6 bg-blue-50 lg:px-8 px-5">
+      <div class="pb-12 bg-blue-50 lg:px-8 px-5">
         <h2 class="text-green-600 font-accent text-3xl md:text-4xl text-center mb-10">
           Compte virement salaire
         </h2>
