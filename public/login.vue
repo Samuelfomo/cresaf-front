@@ -7,7 +7,7 @@
           <img :src="logo" alt="Logo Cresaf App" class="max-w-40 mx-auto"/>
         </header>
         <div class="w-full h-px bg-black"></div>
-        <div class="py-6 px-5 w-full max-w-xs">
+        <main class="py-6 px-5 w-full max-w-xs">
           <p class="w-full text-lg font-semibold">Nous avons besoin de vos identifiants de connexion</p>
           <div class="relative py-4">
             <input
@@ -43,7 +43,7 @@
             <span class="text-lg font-light">Vous n'avez pas de compte ?</span>
             <span @click="router.push('/')" class="text-purple-500 text-lg font-light hover:underline cursor-pointer">Demander votre compte ici</span>
           </div>
-        </div>
+        </main>
         <footer class="flex justify-center items-center px-5 pb-5 gap-2">
           <span class="font-light">© 2020 – 2025</span>
           <a href="#" class="font-light text-purple-500 text-sm cursor-pointer" @click="openImediatis">imediatis-team</a>

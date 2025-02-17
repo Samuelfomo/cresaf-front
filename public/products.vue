@@ -1,4 +1,4 @@
-<script setup>
+<script setup xmlns="http://www.w3.org/1999/html">
 import { ref, onMounted, onUnmounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
@@ -17,6 +17,8 @@ import Refund from "@/assets/images/account/refund.png"
 import Micro from "@/assets/images/account/micro.png"
 import Livret from "@/assets/images/account/epargne.jpg"
 import Courant from "@/assets/images/account/courant.jpg"
+import Islamique from "@/assets/images/account/account-islamique.png"
+import Virement from "@/assets/images/account/account-transfer.png"
 // import Compte from "@/assets/images/account/compte1.jpg"
 // import Image from "@/assets/images/account/image.jpg"
 // import Image1 from "@/assets/images/account/img_1.png"
@@ -245,7 +247,7 @@ onUnmounted(() => {
       </p>
       <div class="lg:flex w-full min-h-screen gap-2 justify-center lg:px-10">
         <div class="flex w-full max-w-xl h-full lg:min-h-[38rem] ">
-          <img :src="Cheque" alt="image" class="object-cover rounded-lg">
+          <img :src="Cheque" alt="image" class="object-cover rounded-lg transition-transform duration-500 hover:scale-105">
         </div>
         <div class="w-full max-w-xl flex flex-col">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-300 lg:p-0 pt-5">
@@ -298,7 +300,7 @@ onUnmounted(() => {
           </div>
         </div>
         <div class="flex w-full max-w-xl h-full lg:min-h-[38rem]">
-          <img :src="cash" alt="image" class="object-cover rounded-lg">
+          <img :src="cash" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
         </div>
       </div>
 
@@ -346,7 +348,7 @@ onUnmounted(() => {
         </div>
       </div>
     </main>
-    <main id="section4" class="pb-6">
+    <main id="section4" class="pb-6 bg-blue-50">
       <div class="py-6 bg-blue-50 lg:px-8 px-5">
       <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
         Compte d’épargne association
@@ -357,7 +359,7 @@ onUnmounted(() => {
       </p>
       <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
         <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
-          <img :src="Epargne" alt="image" class="object-cover rounded-lg">
+          <img :src="Epargne" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
         </div>
         <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
@@ -403,12 +405,12 @@ onUnmounted(() => {
           </div>
         </div>
         <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
-          <img :src="Livret" alt="image" class="object-cover rounded-lg">
+          <img :src="Livret" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
         </div>
       </div>
       </div>
       <div class="py-6 bg-blue-50 lg:px-8 px-5">
-        <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+        <h2 class="text-green-600 font-accent text-3xl md:text-4xl text-center mb-10">
           Compte courant entreprise
         </h2>
         <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
@@ -418,7 +420,7 @@ onUnmounted(() => {
         </p>
         <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
           <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
-            <img :src="Courant" alt="image" class="object-cover rounded-lg">
+            <img :src="Courant" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
           </div>
           <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5">
             <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
@@ -439,23 +441,61 @@ onUnmounted(() => {
           </div>
         </div>
       </div>
-      <div class="py-6 lg:px-8 px-5">
-        <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
-          Epargne islamique
-        </h2>
-        <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
-          Notre service d’épargne islamique qui ne produit pas d’intérêts, s’adresse à nos clients
-          qui souhaitent constituer une épargne tout en respectant les préceptes de la religion islamique.
-        </p>
+
+      <div class="container mx-auto py-12 px-4 md:px-0 lg:px-0">
+        <div class="min-w-6xl mx-auto bg-white bg-opacity-70 rounded-xl shadow-sm overflow-hidden">
+          <div class="p-6 md:p-10">
+            <!-- Titre -->
+            <h2 class="text-green-600 font-accent text-3xl md:text-4xl text-center mb-10">
+              Epargne islamique
+            </h2>
+
+            <!-- Contenu principal -->
+            <div class="flex flex-col lg:flex-row items-start gap-8 lg:gap-5">
+              <!-- Texte descriptif -->
+              <div class="w-full lg:w-3/5 order-2 lg:order-1 my-auto">
+                <p class="text-gray-500 lg:text-xl lg:font-accent text-lg leading-relaxed lg:py-10">
+                  Notre service d'épargne islamique qui ne produit pas d'intérêts, s'adresse à nos clients
+                  qui souhaitent constituer une épargne tout en respectant les
+                  préceptes de la religion islamique.
+                </p>
+              </div>
+
+              <!-- Image -->
+              <div class="w-full lg:w-2/4 order-1 lg:order-2">
+                <div class="relative overflow-hidden rounded-lg shadow-md">
+                  <img
+                      :src="Islamique"
+                      alt="Épargne islamique"
+                      class="w-full h-auto max-h-96 object-cover transition-transform duration-500 hover:scale-105"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div class="py-6 bg-blue-50 lg:px-8 px-5">
-        <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+        <h2 class="text-green-600 font-accent text-3xl md:text-4xl text-center mb-10">
           Compte virement salaire
         </h2>
-        <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
-          Le compte virement salaire permet de recevoir son salaire mensuel mais aussi d’effectuer ses transactions
-          banquières courantes. Il donne droit à un découvert permanent, ainsi qu’à des crédits de plusieurs sortes.
-        </p>
+<!--        <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">-->
+<!--          Le compte virement salaire permet de recevoir son salaire mensuel mais aussi d’effectuer ses transactions-->
+<!--          banquières courantes. Il donne droit à un découvert permanent, ainsi qu’à des crédits de plusieurs sortes.-->
+<!--        </p>-->
+
+        <div class="lg:flex w-full gap-2 justify-between lg:px-10 px-4">
+          <div class="flex w-full lg:max-w-xl h-full lg:min-h-[24rem]" >
+            <img :src="Virement" alt="image" class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105 rounded-xl">
+          </div>
+          <div class="w-full flex flex-col lg:pt-0 pt-5 lg:pl-5 my-auto">
+            <h2 class="lg:text-xl text-lg w-full lg:font-accent text-gray-500 leading-relaxed">
+              Le compte virement salaire permet de recevoir son salaire mensuel mais aussi d’effectuer ses transactions
+              banquières courantes. Il donne droit à un découvert permanent, ainsi qu’à des crédits de plusieurs sortes.
+            </h2>
+          </div>
+        </div>
       </div>
     </main>
     <main id="section5" class="bg-blue-950 px-8 py-12">

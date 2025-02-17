@@ -30,7 +30,7 @@
       </p>
      <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">
        <div class="hidden w-full h-full max-w-lg lg:flex justify-center items-center">
-         <img :src="secretaire" alt="image secrétaire" class="max-w-md h-full ">
+         <img :src="secretaire" alt="image secrétaire" class="max-w-md h-full object-cover transition-transform duration-500 hover:scale-105">
        </div>
        <div class="w-full h-full flex flex-col justify-start px-6 py-1">
          <h3 class="text-2xl pb-4">
@@ -53,7 +53,7 @@
       </p>
      <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">
        <div class="hidden w-full max-h-[450px] max-w-md lg:flex">
-         <img :src="man" alt="image secrétaire" class="max-w-md h-full ">
+         <img :src="man" alt="image secrétaire" class="max-w-md h-full object-cover transition-transform duration-500 hover:scale-105">
        </div>
        <div class="w-full h-full flex flex-col justify-start px-6 py-1">
          <div class="flex justify-between items-stretch w-full py-2 lg:pr-32 gap-2" v-for="(location2, index) in locations2" :key="index">
@@ -68,7 +68,7 @@
     <div id="section3" class="min-h-full flex justify-between items-center w-full flex-wrap lg:px-8 px-1 bg-blue-950 pb-2">
       <div class="flex lg:flex-nowrap flex-wrap px-5 h-full justify-between items-center w-full gap-2">
         <div class="flex flex-col w-full h-full items-start justify-between py-5">
-          <h1 class="text-white lg:text-5xl text-3xl text-center font-primary">Nous misons sur l'avenir</h1>
+          <h1 class="text-white lg:text-5xl text-3xl lg:text-left text-center font-primary w-full">Nous misons sur l'avenir</h1>
           <p class="text-gray-400 text-xl font-sans lg:py-5 pt-5 w-full text-left">
             Nous aspirons à être une force motrice du changement pour transformer et établir le standard du secteur de la microfinance au Cameroun.
           </p>
@@ -82,8 +82,8 @@
           </p>
         </div>
 
-        <div class="flex w-full h-full max-w-lg py-10 justify-start flex-wrap px-5 lg:px-20 gap-2">
-          <img :src="girl" alt="image girl">
+        <div class="flex w-full h-full max-w-lg py-10 justify-start flex-wrap px-5 lg:px-20 gap-2 ">
+          <img :src="girl" alt="image girl" class="object-cover transition-transform duration-500 hover:scale-105">
         </div>
       </div>
     </div>
@@ -95,7 +95,7 @@
       </p>
       <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">
         <div class="hidden w-full max-h-[450px] max-w-md lg:flex">
-          <img :src="sommet" alt="image secrétaire" class="max-w-md h-full ">
+          <img :src="sommet" alt="image secrétaire" class="max-w-md h-full object-cover transition-transform duration-500 hover:scale-105">
         </div>
         <div class="w-full h-full flex flex-col justify-start px-6 py-1">
           <div class="flex justify-between items-stretch w-full py-2 lg:pr-32 gap-2" v-for="(location3, index) in locations3" :key="index">
