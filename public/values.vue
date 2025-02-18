@@ -2,9 +2,9 @@
   <div class="flex flex-col min-h-screen">
     <Header />
 
-    <div class="flex-grow px-8 pt-32 pb-32 min-h-screen">
+    <div class="flex-grow px-8 pt-32 lg:mt-8 pb-32 min-h-screen">
       <div class="min-h-screen flex flex-wrap sm:flex-nowrap">
-        <div v-for="(service, index) in services" :key="index" class="w-full flex flex-col lg:px-10 lg:text-start text-start justify-center lg:items-start">
+        <div v-for="(service, index) in services" :key="index" class="w-full flex flex-col lg:px-10 lg:text-start text-start lg:justify-normal justify-center lg:items-start">
           <h1 class="lg:text-5xl text-3xl font-primary text-white pb-3">
             <span class="text-green-600">{{service.value}}</span>
           </h1>
