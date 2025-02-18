@@ -2,10 +2,10 @@
   <div class="flex flex-col min-h-screen">
     <Header />
 
-    <div class="flex-grow px-8 pt-32 lg:mt-8 pb-32 min-h-screen">
-      <div class="min-h-screen flex flex-wrap sm:flex-nowrap">
+    <div class="flex-grow px-8 pt-32 lg:mt-8 pb-32">
+      <div class="flex flex-wrap sm:flex-nowrap py-10 mt-14">
         <div v-for="(service, index) in services" :key="index" class="w-full flex flex-col lg:px-10 lg:text-start text-start lg:justify-normal justify-center lg:items-start">
-          <h1 class="lg:text-5xl text-3xl font-primary text-white pb-3">
+          <h1 class="lg:text-5xl text-3xl text-center font-primary text-white pb-3">
             <span class="text-green-600">{{service.value}}</span>
           </h1>
           <h5 class="text-gray-600 font-primary text-lg max-w-xl py-3">
@@ -23,9 +23,9 @@
         </div>
       </div>
     </div>
-    <div id="section1" class="bg-blue-50 opacity-90 lg:px-8 flex flex-col py-12 lg:pb-0 justify-start min-h-screen">
+    <div id="section1" class="bg-blue-50 opacity-90 lg:px-8 flex flex-col py-12 lg:pb-0 justify-start ">
       <h1 class="text-green-600 lg:text-5xl text-3xl font-primary text-center">Nos valeurs fondamentales</h1>
-      <p class="text-gray-600 text-xl py-10 w-full text-center lg:px-20 px-5">
+      <p class="text-gray-600 text-xl py-10 w-full lg:px-10 px-5">
         Nos employés partagent des valeurs fortes qui sous-tendent notre engagement et notre responsabilité de fournir à nos clients et partenaires une expérience enrichissante.
       </p>
      <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">
@@ -46,9 +46,9 @@
        </div>
      </div>
     </div>
-    <div id="section2" class="lg:px-8 flex flex-col py-12 lg:pb-0 justify-start min-h-screen">
-      <h1 class="text-green-600 lg:text-5xl text-3xl font-primary text-center">Pourquoi nous faire confiance ?</h1>
-      <p class="text-gray-500 font-sans text-xl py-8 w-full text-center lg:px-20 px-6">
+    <div id="section2" class="lg:px-8 flex flex-col py-12 justify-start ">
+      <h1 class="text-green-600 lg:text-5xl text-2xl font-primary text-center">Pourquoi nous faire confiance ?</h1>
+      <p class="text-gray-500 font-sans text-xl py-8 w-full lg:px-20 px-6">
         Nous disposons d'actifs de qualité que nous employons au profit de nos clients
       </p>
      <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">
@@ -65,7 +65,7 @@
        </div>
      </div>
     </div>
-    <div id="section3" class="min-h-full flex justify-between items-center w-full flex-wrap lg:px-8 px-1 bg-blue-950 pb-2">
+    <div id="section3" class="min-h-full flex justify-between items-center w-full flex-wrap lg:px-8 px-1 bg-blue-950 py-5">
       <div class="flex lg:flex-nowrap flex-wrap px-5 h-full justify-between items-center w-full gap-2">
         <div class="flex flex-col w-full h-full items-start justify-between py-5 lg:px-5">
           <h1 class="text-white lg:text-5xl text-3xl lg:text-left text-center font-primary w-full">Nous misons sur l'avenir</h1>
@@ -88,9 +88,9 @@
       </div>
     </div>
 
-    <div id="section4" class="lg:px-8 flex flex-col lg:py-10 py-12 lg:pb-0 justify-center lg:justify-normal  items-center min-h-screen">
+    <div id="section4" class="lg:px-8 flex flex-col py-12 lg:pb-0 justify-center lg:justify-normal items-center">
       <h1 class="text-green-600 lg:text-5xl text-3xl font-primary text-center">Créons des opportunités pour tous !</h1>
-      <p class="text-gray-500 font-sans text-xl py-8 w-full text-center lg:px-20 px-6">
+      <p class="text-gray-500 font-sans text-xl py-8 w-full lg:px-10 px-6">
         Notre mission se traduit par la mise à disposition de services financiers adaptés aux personnes exclues du secteur bancaire.
       </p>
       <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">

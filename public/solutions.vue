@@ -2,7 +2,8 @@
 import { ref, onMounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
-import CresafSolution from "@/assets/images/solution/solution.jpg"
+import CresafSolution from "@/assets/images/solution/solutions.png"
+// import CresafSolution from "@/assets/images/solution/solution.jpg"
 import Finance from "@/assets/images/solution/finance.jpg"
 import Tresorerie from "@/assets/images/solution/tresorerie.jpg"
 import Exp_Imp from "@/assets/images/solution/export_import.jpg"
