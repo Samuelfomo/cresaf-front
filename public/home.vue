@@ -29,8 +29,8 @@
        </div>
      </div>
     </main>
-    <div class="bg-white px-8 flex flex-col min-h-screen py-20 z-40">
-      <h2 class="text-gray-400 font-light text-lg uppercase text-center pb-10">nos services de transfert d'argent</h2>
+    <div class="bg-white px-8 flex flex-col min-h-screen py-12 z-40">
+      <h2 class="text-gray-400 font-light text-lg uppercase text-center pb-5">nos services de transfert d'argent</h2>
 
       <Image2 />
 
