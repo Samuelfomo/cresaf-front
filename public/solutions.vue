@@ -16,8 +16,8 @@ const solutions = ref([
     image:CresafSolution,
     stats: [
       { value: "5M+", label: "Clients satisfaits" },
-      { value: "15+", label: "Années d'expérience" },
-      { value: "98%", label: "Taux de satisfaction" }
+      { value: "10+", label: "Années d'expérience" },
+      { value: "95%", label: "Taux de satisfaction" }
     ],
   },
 
@@ -156,8 +156,14 @@ const scrollToSection = (sectionId) => {
                :id="solution.id"
                class="relative min-h-screen flex items-center" :class="solution.class">
         <div :id="solution.section" class="container mx-auto px-8 pb-32 ">
-          <h2 class="text-4xl font-accent text-center pt-14 pb-5" :class="{ [solution.font]: solution.font, 'text-green-600': !solution.font }">{{ solution.title }}</h2>
-          <p class="lg:pb-14 pb-5 lg:text-xl text-lg lg:text-center font-sans" :class="{ 'text-white text-opacity-70': solution.font, 'text-gray-700': !solution.font }">{{solution.description}}</p>
+          <h2 class="text-4xl font-accent text-center pt-14 pb-5"
+              :class="{ [solution.font]: solution.font, 'text-green-600': !solution.font }">
+            {{ solution.title }}
+          </h2>
+          <p class="lg:pb-14 pb-5 lg:text-xl text-lg font-sans"
+             :class="{ 'text-white text-opacity-70': solution.font, 'text-gray-700': !solution.font }">
+            {{solution.description}}
+          </p>
           <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <!-- Contenu -->
             <div :class="{ 'order-2': index % 2 === 0, [solution.font]:true }">

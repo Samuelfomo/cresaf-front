@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
-import cash from "@/assets/images/account/caissier.jpg"
+import cash from "@/assets/images/account/caissier.png"
 import Cheque from "@/assets/images/account/cheque.jpg"
 import Epargne from "@/assets/images/account/epargne2.jpg"
 import Depot from "@/assets/images/account/depot.jpg"
@@ -273,15 +273,16 @@ onUnmounted(() => {
 
     </main>
     <main id="section2" class="bg-blue-50 px-8 py-12">
-      <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
-        Bon de caisse
-      </h2>
-      <p class="text-gray-800 font-primary text-lg w-full justify-center lg:text-center pb-10">
-        Notre service en bon de caisse permet  aux entreprises et aux investisseurs d’effectuer des placements de fonds en toute sécurité
-        sur une période minimale d’un an. Le placement a pour vocation  à terme de générer d’importants bénéfices grâce à des taux
-        d’intérêts allant jusqu’à 5%.
-      </p>
-      <div class="lg:flex w-full min-h-screen gap-2 justify-center lg:px-10">
+      <div class="container mx-auto">
+        <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
+          Bon de caisse
+        </h2>
+        <p class="text-gray-800 font-primary text-lg w-full justify-center pb-10">
+          Notre service en bon de caisse permet  aux entreprises et aux investisseurs d’effectuer des placements de fonds en toute sécurité
+          sur une période minimale d’un an. Le placement a pour vocation  à terme de générer d’importants bénéfices grâce à des taux
+          d’intérêts allant jusqu’à 5%.
+        </p>
+        <div class="lg:flex w-full min-h-screen gap-2 justify-center lg:px-10">
         <div class="w-full lg:max-w-xl flex flex-col lg:py-16">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-600">Les placements en bon de caisse offrent les conditions suivantes</h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
@@ -303,7 +304,7 @@ onUnmounted(() => {
           <img :src="cash" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
         </div>
       </div>
-
+      </div>
     </main>
     <main id="section3" class="bg-blue-950 px-8 py-12">
       <div class="container mx-auto">
@@ -502,9 +503,8 @@ onUnmounted(() => {
       <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl pb-4">Collecte journalière </h1>
       <div class="container mx-auto">
         <p class="w-full py-6 text-lg text-gray-300">
-          Collecte journalière/ Collecte journalière bloquée
           Notre service de collecte journalière destiné principalement aux travailleurs indépendants
-          ( commerçants ou autre)  permet de sécuriser l’argent sans avoir à se déplacer.\
+          ( commerçants ou autre)  permet de sécuriser l’argent sans avoir à se déplacer.
           Nos agents déployés sur le terrain collectent les fonds contre reçu et les déposent
           directement sur les  comptes de chaque souscripteur.
         </p>
@@ -547,7 +547,7 @@ onUnmounted(() => {
         <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
           Carte visa
         </h2>
-        <p class="text-gray-800 font-primary text-lg w-full justify-center lg:text-center pb-10">
+        <p class="text-gray-800 font-primary text-lg w-full justify-center leading-relaxed pb-10">
           Les cartes VISA du CRESAF offrent une solution sécurisée pour effectuer des retraits aux guichets automatiques
           et régler des achats de biens ou services, que ce soit via des terminaux de paiement électronique (TPE) ou en ligne.
         </p>

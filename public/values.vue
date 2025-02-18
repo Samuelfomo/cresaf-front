@@ -67,7 +67,7 @@
     </div>
     <div id="section3" class="min-h-full flex justify-between items-center w-full flex-wrap lg:px-8 px-1 bg-blue-950 pb-2">
       <div class="flex lg:flex-nowrap flex-wrap px-5 h-full justify-between items-center w-full gap-2">
-        <div class="flex flex-col w-full h-full items-start justify-between py-5">
+        <div class="flex flex-col w-full h-full items-start justify-between py-5 lg:px-5">
           <h1 class="text-white lg:text-5xl text-3xl lg:text-left text-center font-primary w-full">Nous misons sur l'avenir</h1>
           <p class="text-gray-400 text-xl font-sans lg:py-5 pt-5 w-full text-left">
             Nous aspirons à être une force motrice du changement pour transformer et établir le standard du secteur de la microfinance au Cameroun.
