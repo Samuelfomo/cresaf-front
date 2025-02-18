@@ -237,7 +237,7 @@ onUnmounted(() => {
     </section>
 
     <!-- Sections des produits -->
-    <main id="section1" class="bg-blue-950 px-16 py-12">
+    <main id="section1" class="bg-blue-950 lg:px-16 px-8 py-12">
       <h2 class="text-white font-accent text-4xl w-full justify-center text-center pb-5">
         Compte chèque
       </h2>
@@ -272,7 +272,7 @@ onUnmounted(() => {
       </div>
 
     </main>
-    <main id="section2" class="bg-blue-50 px-16 py-12">
+    <main id="section2" class="bg-blue-50 lg:px-16 px-8 py-12">
         <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
           Bon de caisse
         </h2>
@@ -496,7 +496,7 @@ onUnmounted(() => {
         </div>
       </div>
     </main>
-    <main id="section5" class="bg-blue-950 px-16 py-12">
+    <main id="section5" class="bg-blue-950 lg:px-16 px-8 py-12">
       <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl pb-4">Collecte journalière </h1>
         <p class="w-full py-6 text-lg text-gray-300">
           Notre service de collecte journalière destiné principalement aux travailleurs indépendants
@@ -537,7 +537,7 @@ onUnmounted(() => {
           </div>
         </div>
     </main>
-    <main id="section6" class="bg-blue-50 px-16 py-12">
+    <main id="section6" class="bg-blue-50 lg:px-16 px-8 py-12">
         <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
           Carte visa
         </h2>
