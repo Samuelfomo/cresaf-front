@@ -283,7 +283,7 @@ onUnmounted(() => {
           d’intérêts allant jusqu’à 5%.
         </p>
         <div class="lg:flex w-full min-h-screen gap-2 justify-center lg:px-10">
-        <div class="w-full lg:max-w-xl flex flex-col lg:py-16">
+        <div class="w-full lg:max-w-xl flex flex-col lg:py-16" >
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-600">Les placements en bon de caisse offrent les conditions suivantes</h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">

@@ -1,6 +1,6 @@
 <!-- Footer.vue -->
 <template>
-  <footer class="bg-blue-950 pt-10 lg:pt-20">
+  <footer class="bg-blue-950 pt-10 lg:pt-12">
     <div class="container mx-auto px-4 w-full">
       <!-- Call to Action Section -->
       <div class="flex flex-col items-center text-center lg:mb-36 mb-10">

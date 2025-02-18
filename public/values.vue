@@ -88,7 +88,7 @@
       </div>
     </div>
 
-    <div id="section4" class="lg:px-8 flex flex-col lg:py-0 py-12 lg:pb-0 justify-center items-center min-h-screen">
+    <div id="section4" class="lg:px-8 flex flex-col lg:py-10 py-12 lg:pb-0 justify-center lg:justify-normal  items-center min-h-screen">
       <h1 class="text-green-600 lg:text-5xl text-3xl font-primary text-center">Créons des opportunités pour tous !</h1>
       <p class="text-gray-500 font-sans text-xl py-8 w-full text-center lg:px-20 px-6">
         Notre mission se traduit par la mise à disposition de services financiers adaptés aux personnes exclues du secteur bancaire.
