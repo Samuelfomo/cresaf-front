@@ -1,5 +1,5 @@
 <template>
-  <header class="fixed bg-white p-5 lg:py-3 lg:px-14 flex justify-between items-center w-full flex-wrap border-b z-50">
+  <header class="fixed bg-white p-5 lg:py-3 lg:px-14 flex justify-between items-center w-full flex-row border-b z-50">
     <div class="text-xl font-bold text-blue-600 cursor-pointer" @click="router.push('/')">
       <img :src="logo" alt="Logo" class="w-40 h-12 ">
     </div>
