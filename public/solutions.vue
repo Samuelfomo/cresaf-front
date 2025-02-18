@@ -164,7 +164,8 @@ const scrollToSection = (sectionId) => {
              :class="{ 'text-white text-opacity-70': solution.font, 'text-gray-700': !solution.font }">
             {{solution.description}}
           </p>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div class="flex flex-col lg:flex-row gap-16 items-center hidden">
+<!--          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">-->
             <!-- Contenu -->
             <div :class="{ 'order-2': index % 2 === 0, [solution.font]:true }">
 <!--              <h2 class="text-4xl font-bold mb-6" :class="{ [solution.font]: solution.font, 'text-green-600': !solution.font }">{{ solution.title }}</h2>-->
@@ -207,6 +208,95 @@ const scrollToSection = (sectionId) => {
                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
             </div>
           </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <!-- Conteneur pour petit écran -->
+            <div class="contents lg:hidden">
+              <!-- Image en premier (indépendamment de index) -->
+              <div class="relative h-96 overflow-hidden rounded-lg">
+                <img :src="solution.image" :alt="solution.title"
+                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+              </div>
+              <!-- Contenu en second -->
+              <div :class="[solution.font]">
+                <!-- Le reste du contenu... -->
+                <p class="lg:text-2xl text-xl font-sans lg:mb-12 mb-3" >{{ solution.subtitle }}</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-12">
+                  <div v-for="feature in solution.features" :key="feature.title"
+                       class="p-6 rounded-lg backdrop-blur-sm flex flex-col justify-between"
+                       :class="{ 'bg-white bg-opacity-10': solution.font, 'bg-blue-950 bg-opacity-90 text-white': !solution.font }"
+                  >
+                    <h3 class="text-lg font-semibold mb-2">{{ feature.title }}</h3>
+                    <p>{{ feature.description }} </p>
+                  </div>
+                </div>
+
+                <!-- Process/Tools/Services -->
+                <div class="rounded-lg backdrop-blur-sm p-8"
+                     :class="{ 'bg-white bg-opacity-10': solution.font, 'bg-blue-950 bg-opacity-90 text-white': !solution.font }"
+                >
+                  <h3 class="text-xl font-semibold mb-6">
+                    {{ solution.process ? 'Processus' :
+                      solution.tools ? 'Outils disponibles' :
+                          'Services proposés' }}
+                  </h3>
+                  <ul class="space-y-4">
+                    <li v-for="item in (solution.process || solution.tools || solution.services)"
+                        :key="item"
+                        class="flex items-center">
+                      <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                      {{ item }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Conteneur pour grand écran -->
+            <div class="hidden lg:contents">
+              <!-- Ordre alterné en fonction de index -->
+              <div :class="{ 'order-2 col-start-2': index % 2 === 0, [solution.font]:true }">
+                <!-- Le reste du contenu... -->
+                <p class="lg:text-2xl text-xl font-sans lg:mb-12 mb-3" >{{ solution.subtitle }}</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mb-12">
+                  <div v-for="feature in solution.features" :key="feature.title"
+                       class="p-6 rounded-lg backdrop-blur-sm flex flex-col justify-between"
+                       :class="{ 'bg-white bg-opacity-10': solution.font, 'bg-blue-950 bg-opacity-90 text-white': !solution.font }"
+                  >
+                    <h3 class="text-lg font-semibold mb-2">{{ feature.title }}</h3>
+                    <p>{{ feature.description }} </p>
+                  </div>
+                </div>
+
+                <!-- Process/Tools/Services -->
+                <div class="rounded-lg backdrop-blur-sm p-8"
+                     :class="{ 'bg-white bg-opacity-10': solution.font, 'bg-blue-950 bg-opacity-90 text-white': !solution.font }"
+                >
+                  <h3 class="text-xl font-semibold mb-6">
+                    {{ solution.process ? 'Processus' :
+                      solution.tools ? 'Outils disponibles' :
+                          'Services proposés' }}
+                  </h3>
+                  <ul class="space-y-4">
+                    <li v-for="item in (solution.process || solution.tools || solution.services)"
+                        :key="item"
+                        class="flex items-center">
+                      <span class="w-2 h-2 bg-white rounded-full mr-3"></span>
+                      {{ item }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div :class="{ 'order-1 col-start-1 row-start-1': index % 2 === 0 }"
+                   class="relative h-[600px] overflow-hidden rounded-lg">
+                <img :src="solution.image" :alt="solution.title"
+                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
     </main>

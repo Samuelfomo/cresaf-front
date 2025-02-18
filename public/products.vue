@@ -282,8 +282,8 @@ onUnmounted(() => {
           sur une période minimale d’un an. Le placement a pour vocation  à terme de générer d’importants bénéfices grâce à des taux
           d’intérêts allant jusqu’à 5%.
         </p>
-        <div class="lg:flex w-full min-h-screen gap-2 justify-center lg:px-10">
-        <div class="w-full lg:max-w-xl flex flex-col lg:py-16" >
+        <div class="flex flex-wrap lg:flex-nowrap w-full min-h-screen gap-2 justify-center lg:px-10">
+          <div class="w-full lg:max-w-xl flex flex-col lg:py-16 order-2 lg:order-1" >
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-600">Les placements en bon de caisse offrent les conditions suivantes</h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
@@ -300,10 +300,10 @@ onUnmounted(() => {
             </div>
           </div>
         </div>
-        <div class="flex w-full max-w-xl h-full lg:min-h-[38rem]">
-          <img :src="cash" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
+          <div class="flex w-full max-w-xl h-full lg:min-h-[38rem] order-1 lg:order-2">
+            <img :src="cash" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
+          </div>
         </div>
-      </div>
       </div>
     </main>
     <main id="section3" class="bg-blue-950 px-8 py-12">
@@ -358,7 +358,7 @@ onUnmounted(() => {
         Notre service compte d’épargne association a été mis sur pied afin de permettre aux associations
         de protéger leurs finances grâce à des comptes d’épargnes fiables et sécurisés.
       </p>
-      <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
+      <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4 lg:pb-12">
         <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
           <img :src="Epargne" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
         </div>
@@ -389,8 +389,8 @@ onUnmounted(() => {
         Le compte d’épargne sur livret  est notre service destiné sécuriser les économies de nos clients.
         Le client pourra ainsi faire fructifier l’argent déposé grâce à des taux d’intérêts les plus intéressants du marché.
       </p>
-      <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
-        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5">
+      <div class="flex flex-wrap lg:flex-nowrap w-full gap-2 justify-center lg:px-10 px-4">
+        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5 order-2 lg:order-1">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
             Les règles applicable a l'ouverture d'un compte d'épargne sur livret sont les suivantes :
           </h2>
@@ -405,7 +405,7 @@ onUnmounted(() => {
             </div>
           </div>
         </div>
-        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
+        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] order-1 lg:order-2">
           <img :src="Livret" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
         </div>
       </div>
