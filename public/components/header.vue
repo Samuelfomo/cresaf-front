@@ -22,7 +22,8 @@
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
                 stroke-linejoin="round">
-            <path d="M9 9l6 8l7 -8" />
+            <path v-if="open" d="M9 9l6 8l7 -8" />
+            <path v-if="close" d="M9 18l6 -8l7 8" />
           </svg>
           <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-300 group-hover:w-full"></span>
         </h2>
@@ -99,7 +100,8 @@
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
                 stroke-linejoin="round">
-            <path d="M9 9l6 8l7 -8" />
+            <path v-if="open2" d="M9 9l6 8l7 -8" />
+            <path v-if="close2" d="M9 18l6 -8l7 8" />
           </svg>
           <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
         </h2>
@@ -195,7 +197,8 @@
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24" viewBox="0 0 24 24"  fill="none"
                 stroke="currentColor" stroke-width="1" stroke-linecap="round"
                 stroke-linejoin="round">
-            <path d="M9 9l6 8l7 -8" />
+            <path v-if="open3" d="M9 9l6 8l7 -8" />
+            <path v-if="close3" d="M9 18l6 -8l7 8" />
           </svg>
           <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
         </h2>
@@ -589,6 +592,12 @@ const viewproducts = ref(false)
 const viewproducts2 = ref(true);
 const viewsolutions = ref(false)
 const viewsolutions2 = ref(true);
+const open = ref(true);
+const open2 = ref(true);
+const open3 = ref(true);
+const close = ref(false);
+const close2 = ref(false);
+const close3 = ref(false);
 
 let timeout = null;
 const logo = Logo;
@@ -710,9 +719,6 @@ const closeDrawerAndScrollSolutions3 = () => {
   })
 }
 
-
-
-
 const closeAndScroll1 = () =>{
   closeDropdown1()
   nextTick(() =>{
@@ -825,34 +831,58 @@ const toggleDropdownAboutUs = () => {
   isDropdownOpen1.value = true
   isDropdownOpen2.value = false
   isDropdownOpen3.value = false
+  close.value = true
+  close2.value = false
+  close3.value = false
+  open.value = false
+  open2.value = true
+  open3.value = true
 }
 const toggleDropdownProducts = () => {
   clearTimeout(timeout);
   isDropdownOpen2.value = true
   isDropdownOpen1.value = false
   isDropdownOpen3.value = false
+  open2.value = false
+  open.value = true
+  open3.value = true
+  close2.value = true
+  close.value = false
+  close3.value = false
 }
 const toggleDropdownSolutions = () => {
   clearTimeout(timeout)
   isDropdownOpen3.value = true
   isDropdownOpen1.value = false
   isDropdownOpen2.value = false
+  open3.value = false
+  open.value = true
+  open2.value = true
+  close3.value = true
+  close.value = false
+  close2.value = false
 }
 
 const closeDropdown1 = () =>{
   timeout = setTimeout( ()=>{
     isDropdownOpen1.value = false
+    open.value = true
+    close.value = false
   }, 100);
 }
 const closeDropdown2 = () =>{
   timeout = setTimeout(() =>{
     isDropdownOpen2.value = false
+    open2.value = true
+    close2.value = false
   }, 100);
 
 }
 const closeDropdown3 = () =>{
   timeout = setTimeout(() => {
     isDropdownOpen3.value = false
+    open3.value = true
+    close3.value = false
   }, 100);
 
 }
