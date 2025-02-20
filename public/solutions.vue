@@ -165,7 +165,7 @@ const scrollToSection = (sectionId) => {
              :class="{ 'text-white text-opacity-70': solution.font, 'text-gray-700': !solution.font }">
             {{solution.description}}
           </p>
-          <div class="flex flex-col lg:flex-row gap-16 items-center hidden">
+          <div class="flex-col lg:flex-row gap-16 items-center hidden">
 <!--          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">-->
             <!-- Contenu -->
             <div :class="{ 'order-2': index % 2 === 0, [solution.font]:true }">

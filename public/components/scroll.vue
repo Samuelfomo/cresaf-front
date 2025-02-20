@@ -64,6 +64,7 @@ import 'swiper/css/bundle';
 
 import Woman from"@/assets/images/w3.png"
 import Logo from"@/assets/images/enterprise.png"
+import Image from"@/assets/images/account/logo.png"
 
 // Ajout de Autoplay dans les modules
 const modules = [Pagination, Navigation, Autoplay];
@@ -100,7 +101,7 @@ const locations6 = ref([
     icon:woman,
     name:'⭐Alain D.',
     profession:"Entrepreneur",
-    logo:Logo
+    logo:Image
   },
   {
     titre:'"Avec CRESAF, j’ai pu obtenir un prêt sans complications pour moderniser mon restaurant. Leurs paiements flexibles m’ont permis de gérer mon remboursement sans pression."',
@@ -114,7 +115,7 @@ const locations6 = ref([
     icon:woman,
     name:'⭐Jean-Marc B.',
     profession:"Agriculteur",
-    logo:Logo
+    logo:Image
   },
   {
     titre:'"J’ai enfin trouvé une institution qui comprend les besoins des petites entreprises. CRESAF m’a soutenue dès le début avec des conseils et un financement adapté à mon projet."',
