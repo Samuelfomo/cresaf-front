@@ -26,7 +26,7 @@ const solutions = ref([
     id: 'projets',
     title: "Financement de projets",
     description:'Nous accompagnons les entrepreneurs en général dans le financement de leurs projets à travers' +
-        ' la mise a disposition de fonds de roulement et le suivi de leurs activités.',
+        ' la mise à disposition de fonds de roulement et le suivi de leurs activités.',
     subtitle: "Concrétisez vos ambitions",
     image: Finance,
     // image: "https://picsum.photos/id/1020/800/600",
@@ -48,7 +48,7 @@ const solutions = ref([
   {
     id: 'tresorerie',
     title: "Financement de la trésorerie",
-    description: 'Nous aidons nos entreprises partenaires a faire face aux différentes crises liées aux tensions' +
+    description: 'Nous aidons nos entreprises partenaires à faire face aux différentes crises liées aux tensions' +
         ' de trésorerie (règlement des fournisseurs, paiement des salaires…)',
     subtitle: "Optimisez votre flux de trésorerie",
     image: Tresorerie,
@@ -71,7 +71,7 @@ const solutions = ref([
     id: 'importexport',
     title: "Financement Import/Export",
     description: 'Nous accompagnons les entrepreneurs dans leurs différentes opérations de vente ou d’achat' +
-        ' a l’international (fournisseurs, frais de douane…)',
+        ' à l’international (fournisseurs, frais de douane…)',
     subtitle: "Développez votre activité internationale",
     image: Exp_Imp,
     // image: "https://picsum.photos/id/1015/800/600",

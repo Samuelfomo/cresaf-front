@@ -73,7 +73,7 @@ const products = ref([
     subtitle: "Vous suivre au quotidien",
     subtitle2: "📥 Sécurisez vos revenus quotidiens sans vous déplacer",
     description: "Description de la collecte journalière...",
-    image: Images
+    image: Images    
     // image: Image3
   },
   {
@@ -244,7 +244,7 @@ onUnmounted(() => {
       </h2>
       <p class="text-gray-300 font-primary text-lg w-full justify-start pb-10">
         Notre service de compte chèque à destination des auto-entrepreneurs quel que soit le secteur d’activité,
-        permettra d’effectuer les transactions bancaires courantes lies a leurs activités.
+        permettra d’effectuer les transactions bancaires courantes lies à leurs activités.
       </p>
       <div class="lg:flex w-full gap-2 justify-center lg:px-10">
         <div class="flex w-full max-w-xl h-full lg:min-h-[28rem]">
@@ -265,7 +265,7 @@ onUnmounted(() => {
             </div>
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-white">Déposit minimum </h2>
-              <span class="text-lg font-bold text-white"> 30.000 XCFA</span>
+              <span class="text-lg font-bold text-white"> 30.000 XAF</span>
             </div>
 
           </div>
@@ -278,8 +278,8 @@ onUnmounted(() => {
           Bon de caisse
         </h2>
         <p class="text-gray-800 font-primary text-lg w-full justify-center pb-10">
-          Notre service en bon de caisse permet  aux entreprises et aux investisseurs d’effectuer des placements de fonds en toute sécurité
-          sur une période minimale d’un an. Le placement a pour vocation  à terme de générer d’importants bénéfices grâce à des taux
+          Notre service en bon de caisse permet aux entreprises et aux investisseurs d’effectuer des placements de fonds en toute sécurité
+          sur une période minimale d’un an. Le placement a pour vocation à terme de générer d’importants bénéfices grâce à des taux
           d’intérêts allant jusqu’à 5%.
         </p>
         <div class="flex flex-wrap lg:flex-nowrap w-full gap-2 justify-center lg:px-10">
@@ -287,7 +287,7 @@ onUnmounted(() => {
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-600">Les placements en bon de caisse offrent les conditions suivantes</h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
-              <h2 class="font-light text-white ">dépôt minimum a l’ouverture</h2>
+              <h2 class="font-light text-white ">dépôt minimum à l’ouverture</h2>
               <span class="text-lg font-bold text-white">5.000.000 CFA</span>
             </div>
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
@@ -322,7 +322,7 @@ onUnmounted(() => {
                  class="w-full object-cover">
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">Minimum de dépôt</h3>
-              <p class="text-gray-600 mb-4">5.000.000 XCFA</p>
+              <p class="text-gray-600 mb-4">5.000.000 XAF</p>
             </div>
           </div>
           <div
@@ -342,7 +342,7 @@ onUnmounted(() => {
                  class="w-full object-cover">
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">Taux d’intérêts</h3>
-              <p class="text-gray-600 mb-4">Allant jusqu’à 6%</p>
+              <p class="text-gray-600 mb-4">Allant jusqu’à 5%</p>
             </div>
           </div>
         </div>
@@ -355,7 +355,7 @@ onUnmounted(() => {
       </h2>
       <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
         Notre service compte d’épargne association a été mis sur pied afin de permettre aux associations
-        de protéger leurs finances grâce à des comptes d’épargnes fiables et sécurisés.
+        de protéger leurs finances grâce à des comptes d’épargne fiables et sécurisés.
       </p>
       <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4 lg:pb-12">
         <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
@@ -368,11 +368,11 @@ onUnmounted(() => {
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
-              <span class="text-lg font-bold text-white"> 50.000 XCFA </span>
+              <span class="text-lg font-bold text-white"> 50.000 XAF </span>
             </div>
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Taux d’intérêt</h2>
-              <span class="text-lg font-bold text-white">6% sur l’année</span>
+              <span class="text-lg font-bold text-white">4% sur l’année</span>
             </div>
           </div>
         </div>
@@ -385,22 +385,22 @@ onUnmounted(() => {
         Compte d’épargne sur livret
       </h2>
       <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
-        Le compte d’épargne sur livret  est notre service destiné sécuriser les économies de nos clients.
+        Le compte d’épargne sur livret est notre service destiné sécurisé les économies de nos clients.
         Le client pourra ainsi faire fructifier l’argent déposé grâce à des taux d’intérêts les plus intéressants du marché.
       </p>
       <div class="flex flex-wrap lg:flex-nowrap w-full gap-2 justify-center lg:px-10 px-4">
         <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5 order-2 lg:order-1">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
-            Les règles applicable a l'ouverture d'un compte d'épargne sur livret sont les suivantes :
+            Les règles applicables à l'ouverture d'un compte d'épargne sur livret sont les suivantes :
           </h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
-              <span class="text-lg font-bold text-white"> 15.000 XCFA </span>
+              <span class="text-lg font-bold text-white"> 15.000 XAF </span>
             </div>
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Solde minimum permanent en compte</h2>
-              <span class="text-lg font-bold text-white">15.000 XCFA</span>
+              <span class="text-lg font-bold text-white">15.000 XAF</span>
             </div>
           </div>
         </div>
@@ -414,9 +414,10 @@ onUnmounted(() => {
           Compte courant entreprise
         </h2>
         <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
-          Nos comptes courants entreprise permettent aux entrepreneurs ou entreprises clients d’avoir leurs fonds à disposition
-          et de bénéficier à tout moment de nos services bancaires de base. Les entreprises clients  pourrons  effectuer toutes
-          les transactions financières  courantes liés à leurs fonctionnement  grâce à un service simplifié sur le compte courant.
+          Nos comptes courants entreprise permettent aux entrepreneurs ou aux entreprises clientes
+          d’avoir leurs fonds à disposition et de bénéficier à tout moment de nos services bancaires de base.
+          Les entreprises clientes pourront effectuer toutes les transactions financières courantes liées à leur fonctionnement
+          grâce à un service simplifié sur le compte courant.
         </p>
         <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
           <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
@@ -429,7 +430,7 @@ onUnmounted(() => {
             <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
               <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
                 <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
-                <span class="text-lg font-bold text-white"> 30.000 XCFA </span>
+                <span class="text-lg font-bold text-white"> 30.000 XAF </span>
               </div>
               <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
                 <h2 class="font-light text-lg text-white">Facilité de compensation chèque</h2>
@@ -442,12 +443,12 @@ onUnmounted(() => {
         </div>
       </div>
 
-      <div class="px-4 md:px-0 lg:px-0 bg-white bg-opacity-90">
+      <div class="px-4 md:px-0 lg:px-0 bg-white bg-opacity-90 hidden">
 <!--      <div class="container mx-auto py-12 px-4 md:px-0 lg:px-0 bg-white">-->
         <div class="min-w-6xl mx-auto shadow-sm overflow-hidden p-6 md:py-12 md:px-16">
             <!-- Titre -->
             <h2 class="text-green-600 font-accent text-3xl md:text-4xl text-center mb-10">
-              Epargne islamique
+              Épargne islamique
             </h2>
 
             <!-- Contenu principal -->
@@ -475,7 +476,7 @@ onUnmounted(() => {
         </div>
       </div>
 
-      <div class="py-12 bg-blue-50 lg:px-8 px-5">
+      <div class="py-12 bg-white lg:px-8 px-5">
         <h2 class="text-green-600 font-accent text-3xl md:text-4xl text-center mb-10">
           Compte virement salaire
         </h2>
@@ -486,11 +487,11 @@ onUnmounted(() => {
 
         <div class="lg:flex w-full gap-2 justify-between lg:px-10 px-4">
           <div class="flex w-full lg:max-w-xl h-full lg:min-h-[24rem]" >
-            <img :src="Virement" alt="image" class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105 rounded-xl">
+            <img :src="Virement" alt="image" class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105 rounded-xl border">
           </div>
           <div class="w-full flex flex-col lg:pt-0 pt-5 lg:pl-5 my-auto">
-            <h2 class="lg:text-xl text-lg w-full lg:font-accent text-gray-500 leading-relaxed">
-              Le compte virement salaire permet de recevoir son salaire mensuel mais aussi d’effectuer ses transactions
+            <h2 class="lg:text-xl text-lg w-full lg:font-accent text-gray-700 leading-relaxed">
+              Le compte virement salaire permet de recevoir son salaire mensuel, mais aussi d’effectuer ses transactions
               banquières courantes. Il donne droit à un découvert permanent, ainsi qu’à des crédits de plusieurs sortes.
             </h2>
           </div>
@@ -500,10 +501,10 @@ onUnmounted(() => {
     <main id="section5" class="bg-blue-950 lg:px-16 px-8 py-12">
       <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl pb-4">Collecte journalière </h1>
         <p class="w-full py-6 text-lg text-gray-300">
-          Notre service de collecte journalière destiné principalement aux travailleurs indépendants
-          ( commerçants ou autre)  permet de sécuriser l’argent sans avoir à se déplacer.
-          Nos agents déployés sur le terrain collectent les fonds contre reçu et les déposent
-          directement sur les  comptes de chaque souscripteur.
+          Notre service de collecte journalière destiné principalement aux travailleurs indépendants (commerçants ou autre)
+          permet de sécuriser l’argent sans avoir à se déplacer.
+          Nos agents déployés sur le terrain collectent les fonds contre reçu et les déposent directement
+          sur les comptes de chaque souscripteur.
         </p>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -514,7 +515,7 @@ onUnmounted(() => {
                  class="w-full object-cover">
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">Minimum d’épargne</h3>
-              <p class="text-gray-600 mb-4">200-500fcfa/jour</p>
+              <p class="text-gray-600 mb-4">200-500 XAF/jour</p>
             </div>
           </div>
           <div
@@ -523,7 +524,7 @@ onUnmounted(() => {
                  alt="Refund"
                  class="w-full object-cover">
             <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Décaissable</h3>
+              <h3 class="text-xl font-bold mb-2">Disponible au décaissement</h3>
               <p class="text-gray-600 mb-4">fin du mois/ fin d’année</p>
             </div>
           </div>

@@ -49,6 +49,11 @@
          border rounded-lg p-8 bg-blue-50  hover:bg-blue-950 hover:bg-opacity-90 group-hover:text-white hover:text-white">
           <div class="flex justify-start items-center mb-7">
             <img :src="location.icon" alt="img" class="h-20 w-20 rounded-full border-2 border-white">
+<!--            <p class="text-red-500 w-full flex justify-end font-light text-lg animate-blink">Bientôt disponible...</p>-->
+          </div>
+          <div class="justify-between items-start mb-7 hidden">
+            <img :src="location.icon" alt="img" class="h-20 w-20 rounded-full border-2 border-white">
+            <p class="text-red-500 w-full flex justify-end font-light text-lg animate-blink">Bientôt disponible...</p>
           </div>
             <p class="py-1 text-xl font-semibold">
              {{location.titre}}
@@ -131,7 +136,8 @@
       <div class="lg:px-8 flex flex-col h-full py-12 items-center w-full">
         <h1 class="text-white lg:text-4xl text-3xl text-center font-bold">Produits conçus pour les entreprises de toutes tailles.</h1>
         <p class="text-gray-400 text-lg py-5 w-full text-start">
-          Que vous soyez une petite startup, une PME ou une grande entreprise, nous offrons des solutions financières adaptées à vos besoins :
+          Que vous soyez une petite startup, une PME ou une grande entreprise, nous offrons des solutions
+          financières adaptées à vos besoins :
         </p>
         <div class="container mx-auto py-8 px-4 md:px-6 lg:px-0">
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
@@ -215,14 +221,17 @@ import Arrow from"@/assets/images/svg/arow.svg"
 import Image2 from "@public/components/image2.vue";
 import Scroll from "@public/components/scroll.vue";
 
-import Pdf from "@/assets/pdf/account-conditions.pdf"
-import Pdf1 from "@/assets/pdf/request-card.pdf"
-import Pdf2 from "@/assets/pdf/start-investment.pdf"
+import Pdf from "@/assets/pdf/account-condition.pdf"
+// import Pdf1 from "@/assets/pdf/request-card.pdf"
+// import Pdf2 from "@/assets/pdf/start-investment.pdf"
 
 const openPdf = async (pdf) => {
   try {
     if (pdf){
       window.open(pdf, '_blank')
+    }
+    else {
+      console.log('le document est en cours de production et sera bientôt a votre disposition');
     }
   } catch (error) {
     console.error('Erreur lors de l\'ouverture du PDF:', error)
@@ -250,28 +259,28 @@ const locations = ref([
     titre:'Cartes Bancaire',
     description:'Choisissez une carte bancaire qui vous offre plus de liberté, de sécurité et de fonctionnalités',
     suite:'Demander une carte',
-    pdfContent: Pdf1,
+    // pdfContent: Pdf1,
   },
   {
     icon:icon,
     titre:'Investissement',
     description:'Profiter d\'un suivi et d\'un accompagnement de qualité, de la définition de votre stratégie à sa mise en œuvre',
     suite:'Démarrer un investissement',
-    pdfContent: Pdf2,
+    // pdfContent: Pdf2,
   },
 ])
 const locations2 = ref([
   {
-    titre:'24/7 account monitoring'
+    titre:'24/7 Surveillance du compte'
   },
   {
-    titre:'Protection & peace of mind'
+    titre:'Protection & tranquillité d\'esprit'
   },
   {
-    titre:'Anytime, anywhere support'
+    titre:'Assistance à tout moment et en tout lieu'
   },
   {
-    titre:'Serious security'
+    titre:'Sécurité sérieuse'
   },
 ])
 const locations3 = ref([
@@ -310,17 +319,20 @@ const locations5 = ref([
   {
     icon:arrow,
     titre: 'Créer un compte gratuit',
-    description:'Postulez en ligne sur le site web du bloc et remplissez le formulaire en nous indiquant votre nom, votre adresse et votre date de naissance.'
+    description:'Postulez en ligne sur le site web du bloc et remplissez le formulaire en nous indiquant votre nom,' +
+        ' votre adresse et votre date de naissance.'
   },
   {
     icon:arrow,
     titre: 'Renseignés vos coordonnées vos coordonnées',
-    description:'Commencez en bloc ou connectez-vous à l\'application mobile. Compte bancaire pour transférer de l\'argent sur votre carte de débit.'
+    description:'Commencez en bloc ou connectez-vous à l\'application mobile. Compte bancaire pour transférer' +
+        ' de l\'argent sur votre carte de débit.'
   },
   {
     icon:arrow,
     titre: 'Démarrer la conversion!',
-    description:'Mettez en place un dépôt direct ou connectez votre compte bancaire actuel pour transférer de l\'argent sur votre carte de débit.'
+    description:'Mettez en place un dépôt direct ou connectez votre compte bancaire actuel pour transférer ' +
+        'de l\'argent sur votre carte de débit.'
   },
 ])
 

@@ -18,6 +18,15 @@ export default {
           'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
         ]
       },
+      animation: {
+        blink: "blink 3s infinite",
+      },
+      keyframes: {
+        blink: {
+          "0%, 100%": { opacity: 1 },
+          "50%": { opacity: 0 },
+        },
+      },
       backgroundImage: {
         'login': "url('@/assets/images/background.jpg')",
       },

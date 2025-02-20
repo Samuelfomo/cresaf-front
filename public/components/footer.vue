@@ -17,7 +17,7 @@
           transition-colors duration-300 hover:border-green-600 hover:text-green-600"
         @click="router.push('/login')"
         >
-          Open your account today
+          Ouvrez votre compte aujourd'hui
         </button>
       </div>
 

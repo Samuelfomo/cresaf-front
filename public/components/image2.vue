@@ -73,6 +73,7 @@ import Ria from "@/assets/images/logo/ria.png"
 import Paytop from "@/assets/images/logo/paytop.png"
 import Western from "@/assets/images/logo/western.png"
 import Worldremit from "@/assets/images/logo/worldremit.png"
+import Juba from "@/assets/images/logo/juba.png"
 
 const momo = MoMo
 const sigue = Sigue
@@ -83,6 +84,7 @@ const ria = Ria
 const paytop = Paytop
 const western = Western
 const worldremit = Worldremit
+const juba = Juba
 
 // Données des images
 const images = ref([
@@ -130,6 +132,11 @@ const images = ref([
     url: 'https://www.worldremit.com/en',
     image: worldremit,
     alt: 'Logo worldremit'
+  },
+  {
+    url: 'https://www.jubaexpress.com/',
+    image: juba,
+    alt: 'Logo JUBA'
   },
   // {
   //   url: 'https://picsum.photos/id/1018/800/600',
