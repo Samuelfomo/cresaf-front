@@ -7,6 +7,7 @@ import FaceBook from "@/assets/images/svg/social/facebook.svg"
 import Youtube from "@/assets/images/svg/social/youtube.svg"
 import Twitter from "@/assets/images/svg/social/twitter.svg"
 import Linkedin from "@/assets/images/svg/social/linkedin.svg"
+import Playstore from "@/assets/images/svg/social/playstore1.svg"
 
 const logos = ref([
   {
@@ -65,6 +66,27 @@ const openSocial = (link) =>{
     alert("Réseau social non disponible !");
   }
 }
+
+const mockupImage = Playstore;
+const playStoreIcon = Playstore
+
+const features = ref([
+  {
+    title: "Transactions Rapides",
+    description: "Effectuez vos opérations financières en quelques clics",
+    icon: "⚡"
+  },
+  {
+    title: "Sécurisé",
+    description: "Vos données sont protégées avec les dernières technologies de sécurité",
+    icon: "🔒"
+  },
+  {
+    title: "Disponible 24/7",
+    description: "Accédez à vos services bancaires à tout moment",
+    icon: "🕒"
+  }
+]);
 
 </script>
 
@@ -134,7 +156,71 @@ const openSocial = (link) =>{
           <Image />
         </div>
       </div>
-      <div class="w-full min-h-[30rem] bg-blue-50"></div>
+        <div class="w-full py-8 bg-blue-50 px-10">
+<!--        <div class="w-full py-16 bg-gradient-to-b from-blue-50 to-white">-->
+          <div class="mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <!-- Texte et features -->
+              <div class="space-y-8">
+                <div class="space-y-4">
+                  <h2 class="text-3xl lg:text-4xl font-bold text-blue-950">
+                    CRESAF Mobile
+                  </h2>
+                  <p class="text-lg text-gray-600">
+                    Découvrez une nouvelle façon de gérer vos finances. Notre application mobile vous offre une expérience bancaire simple, rapide et sécurisée.
+                  </p>
+                </div>
+
+                <!-- Features -->
+                <div class="grid gap-6">
+                  <div
+                      v-for="feature in features"
+                      :key="feature.title"
+                      class="flex items-start gap-4 p-4 rounded-lg bg-white shadow-lg hover:shadow-xl transition-shadow"
+                  >
+                    <div class="text-2xl">{{ feature.icon }}</div>
+                    <div>
+                      <h3 class="font-semibold text-lg text-blue-950">{{ feature.title }}</h3>
+                      <p class="text-gray-600">{{ feature.description }}</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Bouton de téléchargement -->
+                <div class="space-y-2 flex w-full justify-start items-center gap-2">
+                  <p class="font-semibold text-gray-700">
+                    Téléchargez maintenant sur :
+                  </p>
+                  <a
+                      href="#"
+                      target="_blank"
+                      class="inline-block"
+                  >
+                    <img
+                        :src="playStoreIcon"
+                        alt="Télécharger sur Google Play"
+                        class="h-10 hover:opacity-90 transition-opacity"
+                    />
+                  </a>
+                </div>
+              </div>
+
+              <!-- Image de l'application -->
+              <div class="flex justify-center lg:justify-end">
+                <div class="relative">
+                  <!-- Effet de brillance -->
+                  <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-green-500 opacity-30 blur-xl rounded-full"></div>
+                  <!-- Mockup de l'application -->
+                  <img
+                      :src="mockupImage"
+                      alt="CRESAF Mobile App"
+                      class="relative w-64 rounded-3xl shadow-2xl"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
     <Footer />
   </div>
