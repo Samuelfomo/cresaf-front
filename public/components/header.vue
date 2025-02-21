@@ -553,11 +553,17 @@
             </div>
           </nav>
             <button type="button"
-                    class="text-lg bg-blue-950 p-2 mt-2 text-white font-semibold border border-white rounded-lg hover:text-green-600 hover:border-green-500"
-                    @click="router.push('/login')"
+                    class="flex justify-center items-center gap-2 text-lg bg-blue-950 p-2 mt-2 font-semibold border border-white rounded-lg hover:text-green-600 hover:border-green-500"
+                    :class="[$route.name === 'contact' ? 'border-green-600 text-green-600' : 'text-white']"
+                    @click="router.push('/contact')"
             >
-              Ouvrir un compte
+              Contactez-nous
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5
+           4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z" />
+              </svg>
             </button>
+
         </div>
       </div>
     </transition>
