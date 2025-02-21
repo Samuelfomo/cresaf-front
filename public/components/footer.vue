@@ -15,7 +15,7 @@
         <button type="button"
                 class="text-white border border-white rounded-lg px-6 py-3 font-semibold
           transition-colors duration-300 hover:border-green-600 hover:text-green-600"
-        @click="router.push('/login')"
+        @click="contact"
         >
           Ouvrez votre compte aujourd'hui
         </button>
@@ -115,6 +115,10 @@ const locations = [
 
 const openImediatis = () => {
   window.open("https://imediatis.cm/", "_blank");
+}
+
+const contact = () => {
+  window.open(`https://api.whatsapp.com/send/?phone=237233421788&text&type=phone_number&app_absent=0`, "_blank");
 }
 
 const openCresafFaceBook = () =>{

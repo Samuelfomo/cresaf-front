@@ -251,13 +251,19 @@
     </div>
     </div>
     <div class=" hidden lg:flex justify-between gap-x-2">
-      <button type="button" class="text-lg bg-gray-100 p-2 font-semibold border rounded-lg" @click="router.push('/login')">
-        Connexion
+      <button type="button" class="flex justify-center items-center text-lg  px-3 font-semibold border rounded-lg hover:border-blue-950"
+              :class="[$route.name === 'contact' ? activeContact : 'bg-gray-100']"
+              @click="router.push('/contact')">
+        Contact
+        <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="currentColor">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5
+           4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z" />
+        </svg>
       </button>
       <button type="button"
               class="text-lg bg-blue-950 p-2 text-white font-semibold border border-white rounded-lg
                hover:text-green-600 hover:border-green-500"
-              @click="router.push('/login')"
+              @click="contact"
       >
         Ouvrir un compte
       </button>
@@ -890,6 +896,7 @@ const closeDropdown3 = () =>{
 const isDrawerOpen = ref(false);
 
 const activeClass = ref(' border-b border-blue-950',)
+const activeContact = ref('border-2 border-green-600',)
 const activeDrawerClass = ref('text-green-600')
 const inactiveClass = ref('',)
 
@@ -917,6 +924,10 @@ const OpenSolutions = () => {
 
 const scrollTo = ({id}: { id: any })=> {
   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+}
+
+const contact = () => {
+  window.open(`https://api.whatsapp.com/send/?phone=237233421788&text&type=phone_number&app_absent=0`, "_blank");
 }
 
 // const handleLogout =  () => {

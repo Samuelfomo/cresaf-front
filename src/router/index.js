@@ -6,6 +6,7 @@ import Solutions from "@public/solutions.vue";
 import Image from "@public/components/image2.vue";
 import SCroll from "@public/components/scroll.vue";
 import Login from "@public/login.vue";
+import Contact from "@public/contact.vue";
 const routes = [
 
   {
@@ -42,6 +43,11 @@ const routes = [
     path: '/scroll',
     name: 'scroll',
     component: SCroll
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: Contact
   },
 ];
 

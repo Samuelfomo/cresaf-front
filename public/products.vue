@@ -9,6 +9,8 @@ import Epargne from "@/assets/images/account/epargne2.jpg"
 import Depot from "@/assets/images/account/depot.jpg"
 import Money from "@/assets/images/account/money.jpg"
 import Argent from "@/assets/images/account/argent.png"
+import Argent1 from "@/assets/images/account/argent1.png"
+import Received from "@/assets/images/account/received.png"
 import Interred from "@/assets/images/account/interrest.jpg"
 // import Guichet from "@/assets/images/account/payement.jpg"
 import Guichet from "@/assets/images/account/guichet.jpg"
@@ -396,7 +398,8 @@ onUnmounted(() => {
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
-              <span class="text-lg font-bold text-white"> 15.000 XAF </span>
+              <span class="text-lg font-bold text-white"> 15.000 XAF<span> Hors Taxes </span></span>
+<!--              <span class="text-lg font-bold text-white"> 16.000 XAF<span> TTC</span></span>-->
             </div>
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Solde minimum permanent en compte</h2>
@@ -506,7 +509,7 @@ onUnmounted(() => {
           Nos agents déployés sur le terrain collectent les fonds contre reçu et les déposent directement
           sur les comptes de chaque souscripteur.
         </p>
-
+      <h1 class="text-green-600 w-full font-accent lg:text-3xl text-2xl text-center lg:text-left pb-4">Collecte journalière mensuelle </h1>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
               class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
@@ -515,7 +518,7 @@ onUnmounted(() => {
                  class="w-full object-cover">
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">Minimum d’épargne</h3>
-              <p class="text-gray-600 mb-4">200-500 XAF/jour</p>
+                <p class="text-gray-600 mb-4">500 XAF/jour</p>
             </div>
           </div>
           <div
@@ -525,7 +528,40 @@ onUnmounted(() => {
                  class="w-full object-cover">
             <div class="p-6">
               <h3 class="text-xl font-bold mb-2">Disponible au décaissement</h3>
-              <p class="text-gray-600 mb-4">fin du mois/ fin d’année</p>
+              <p class="text-gray-600 mb-4">fin du mois</p>
+            </div>
+          </div>
+          <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img :src="Micro"
+                 alt="Micro"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Possibilité de micro-crédit </h3>
+            </div>
+          </div>
+        </div>
+      <br>
+      <h1 class="text-green-600 w-full font-accent lg:text-3xl text-2xl text-center lg:text-left pb-4">Collecte journalière annuelle </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img :src="Argent1"
+                 alt="Argent"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Minimum d’épargne</h3>
+                <p class="text-gray-600 mb-4">200 XAF/jour</p>
+            </div>
+          </div>
+          <div
+              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+            <img :src="Received"
+                 alt="Refund"
+                 class="w-full object-cover">
+            <div class="p-6">
+              <h3 class="text-xl font-bold mb-2">Disponible au décaissement</h3>
+              <p class="text-gray-600 mb-4"> fin d’année</p>
             </div>
           </div>
           <div

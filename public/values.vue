@@ -2,8 +2,8 @@
   <div class="flex flex-col min-h-screen">
     <Header />
 
-    <div class="flex-grow px-8 pt-32 lg:mt-8 pb-32">
-      <div class="flex flex-wrap sm:flex-nowrap py-10 mt-14">
+    <div class="flex-grow px-8 pt-32 lg:mt-0 lg:mb-5 lg:pb-32">
+      <div class="flex flex-wrap sm:flex-nowrap py-10">
         <div v-for="(service, index) in services" :key="index" class="w-full flex flex-col lg:px-10 lg:text-start text-start lg:justify-normal justify-center lg:items-start">
           <h1 class="lg:text-5xl text-3xl text-center font-primary text-white pb-3">
             <span class="text-green-600">{{service.value}}</span>
@@ -18,7 +18,7 @@
             CRESAF s'appuie sur des valeurs de solidarité, de confiance, de transparence et de responsabilité pour renforcer l'inclusion financière, soutenir l'innovation et favoriser le développement durable dans le pays.
           </h5>
         </div>
-        <div class="min-h-44 w-full lg:pt-0 pt-10">
+        <div class="min-h-44 w-full lg:pt-32">
           <Image1 />
         </div>
       </div>
