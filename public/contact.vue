@@ -18,12 +18,12 @@ const logos = ref([
   {
     name :Youtube,
     title: "logo Youtube",
-    // link: "#"
+    link: ""
   },
   {
     name :Twitter,
     title: "logo Twitter",
-    // link: "#"
+    link: ""
   },
   {
     name :Linkedin,
@@ -233,7 +233,7 @@ const openPlaystore = () => {
                   <!-- Mockup de l'application -->
                   <img
                       @click="openPlaystore"
-                      :src="mockupImage"
+                      :src="mockupImages"
                       alt="CRESAF Mobile App"
                       class="relative w-64 rounded-3xl shadow-2xl cursor-pointer transition-transform duration-500 hover:scale-105"
                   />
