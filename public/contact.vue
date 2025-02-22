@@ -18,17 +18,17 @@ const logos = ref([
   {
     name :Youtube,
     title: "logo Youtube",
-    link: "https://www.facebook.com/cresaf.sa"
+    // link: "#"
   },
   {
     name :Twitter,
     title: "logo Twitter",
-    link: "https://www.facebook.com/cresaf.sa"
+    // link: "#"
   },
   {
     name :Linkedin,
     title: "logo Linkedin",
-    link: "https://www.facebook.com/cresaf.sa"
+    link: "https://cm.linkedin.com/company/cr%C3%A9saf-credit-solidaire-d-afrique"
   },
 ])
 
@@ -39,14 +39,19 @@ const locations = ref([
     phone: "+237 233 42 17 88"
   },
   {
+    city: "Douala",
+    address: "Carrefour Anatole, face la station total",
+    phone: "+237 686 037 550"
+  },
+  {
     city: "Yaounde",
     address: "Descente Mokolo Elobi, batiment Dubaï Market",
-    phone: "+237 233 42 17 88"
+    phone: "+237 686 037 564"
   },
   {
     city: "Bafoussam",
     address: "Montée sens interdit, marché A, avant la direction régionale de la Total",
-    phone: "+237 233 42 17 88"
+    phone: "+237 686 037 549"
   }
 ]);
 
@@ -63,7 +68,7 @@ const openSocial = (link) =>{
   if (link) {
     window.open(link, "_blank");
   } else {
-    alert("Réseau social non disponible !");
+    console.log("Réseau social non disponible !");
   }
 }
 
@@ -88,6 +93,10 @@ const features = ref([
   }
 ]);
 
+const openPlaystore = () => {
+  // window.open('https://play.google.com/store/apps/details?id=com.bnpp.easybanking&hl=fr','_blank' )
+}
+
 </script>
 
 <template>
@@ -110,7 +119,7 @@ const features = ref([
           <div class="h-1 w-20 bg-green-500 rounded"></div>
         </div>
         <div class="flex gap-2 lg:py-4 py-10">
-          <div class="flex justify-center items-center rounded-full bg-white h-8 w-8 cursor-pointer"
+          <div class="flex justify-center items-center rounded-full bg-white h-8 w-8 cursor-pointer transition-transform duration-200 hover:scale-105"
                v-for="(logo , index) in logos" :key="index"
                 @click="openSocial(logo.link)"
           >
@@ -192,16 +201,27 @@ const features = ref([
                     Téléchargez maintenant sur :
                   </p>
                   <a
-                      href="#"
-                      target="_blank"
-                      class="inline-block"
+                      @click="openPlaystore"
+                      class="inline-block cursor-pointer"
                   >
                     <img
                         :src="playStoreIcon"
                         alt="Télécharger sur Google Play"
-                        class="h-10 hover:opacity-90 transition-opacity"
+                        class="h-10 hover:opacity-90 transition-opacity duration-500 hover:scale-105"
                     />
                   </a>
+<!--                  <a-->
+<!--                      @click="openPlaystore"-->
+<!--                      href="#"-->
+<!--                      target="_blank"-->
+<!--                      class="inline-block"-->
+<!--                  >-->
+<!--                    <img-->
+<!--                        :src="playStoreIcon"-->
+<!--                        alt="Télécharger sur Google Play"-->
+<!--                        class="h-10 hover:opacity-90 transition-opacity duration-500 hover:scale-105"-->
+<!--                    />-->
+<!--                  </a>-->
                 </div>
               </div>
 
@@ -212,9 +232,10 @@ const features = ref([
                   <div class="absolute -inset-4 bg-gradient-to-r from-blue-500 to-green-500 opacity-30 blur-xl rounded-full"></div>
                   <!-- Mockup de l'application -->
                   <img
+                      @click="openPlaystore"
                       :src="mockupImage"
                       alt="CRESAF Mobile App"
-                      class="relative w-64 rounded-3xl shadow-2xl"
+                      class="relative w-64 rounded-3xl shadow-2xl cursor-pointer transition-transform duration-500 hover:scale-105"
                   />
                 </div>
               </div>

@@ -92,24 +92,24 @@ const phone = Phone
 
 const locations = [
   {
-    title: 'Siège social',
+    title: 'Siège social (Douala)',
     address: 'Bonakouamouang, Akwa, Face Prudential Beneficial Life',
     phone: '+237 233 42 17 88'
   },
   {
     title: 'Agence de Douala',
-    address: 'Bonakouamouang, Akwa, Face Prudential Beneficial Life Insurance',
-    phone: '+237 233 42 17 88'
+    address: 'Carrefour Anatole, face la station total',
+    phone: '+237 686 037 550'
   },
   {
     title: 'Agence de Yaoundé',
     address: 'Descente Mokolo Elobi, batiment Dubaï Market',
-    phone: '+237 233 42 17 88'
+    phone: '+237 686 037 564'
   },
   {
     title: 'Agence de Bafoussam',
     address: 'Montée sens interdit, marché A, avant la direction régionale de la Total',
-    phone: '+237 233 42 17 88'
+    phone: '+237 686 037 549'
   }
 ]
 

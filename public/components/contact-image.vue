@@ -8,10 +8,18 @@
         :class="{'opacity-100': currentIndex === index, 'opacity-0': currentIndex !== index}"
     >
       <img
-          :src="image"
+          :src="image.icon"
           class="rounded-xl"
           alt="Carousel Image"
       />
+      <div class="absolute inset-0 bg-blue-700 bg-opacity-30 hidden">
+        <div class="container mx-auto px-6 h-full flex items-center">
+          <div class="text-white max-w-lg">
+            <h1 class="text-5xl font-accent mb-4">{{image.location}}</h1>
+            <p class="text-xl font-accent">{{image.description}}</p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Slider indicators -->
@@ -54,7 +62,28 @@
 import {ref, onMounted, onUnmounted} from "vue";
 import Image from "@/assets/images/structure.png"
 
-const images = ref([Image]);
+const images = ref([
+  {
+    icon : Image,
+    location : "Siège social (Douala)",
+    description : "Ensemble pour l'émergence de l'Afrique"
+  },
+  // {
+  //   icon : Image,
+  //   location : "Agence de Douala",
+  //   description : ""
+  // },
+  // {
+  //   icon : Image,
+  //   location : "Agence de Yaoundé",
+  //   description : ""
+  // },
+  // {
+  //   icon : Image,
+  //   location : "Agence de Bafoussam",
+  //   description : ""
+  // },
+]);
 const currentIndex = ref(0);
 let interval = null;
 
