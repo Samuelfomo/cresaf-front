@@ -53,10 +53,10 @@
 
 </template>
 
-<script setup lang="ts" >
+<script setup lang="ts">
 import { ref } from 'vue'
 import {useRouter} from "vue-router";
-import Logo from "@/assets/images/logo.png"
+import Logo from "@/assets/images/logo.webp"
 
 const router = useRouter()
 const logo = Logo

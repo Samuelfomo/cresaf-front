@@ -118,10 +118,10 @@ import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 import Image1 from "@public/components/image.vue";
 
-import Secretaire from "@/assets/images/secretaire.png"
-import Man from "@/assets/images/man.png"
-import Girl from "@/assets/images/girl.png"
-import Sommet from "@/assets/images/sommet.png"
+import Secretaire from "@/assets/images/secretaire.webp"
+import Man from "@/assets/images/man.webp"
+import Girl from "@/assets/images/girl.webp"
+import Sommet from "@/assets/images/sommet.webp"
 import Check from"@/assets/images/svg/check-rounded.svg"
 
 const secretaire = Secretaire

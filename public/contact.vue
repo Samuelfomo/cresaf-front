@@ -7,7 +7,8 @@ import FaceBook from "@/assets/images/svg/social/facebook.svg"
 import Youtube from "@/assets/images/svg/social/youtube.svg"
 import Twitter from "@/assets/images/svg/social/twitter.svg"
 import Linkedin from "@/assets/images/svg/social/linkedin.svg"
-import Playstore from "@/assets/images/svg/social/playstore1.svg"
+import Playstore from "@/assets/images/svg/social/playstore.svg"
+import Logo from "@/assets/images/logo-cref.webp"
 
 const logos = ref([
   {
@@ -34,24 +35,28 @@ const logos = ref([
 
 const locations = ref([
   {
-    city: "Douala",
+    city: "Siège Social (Douala)",
     address: "Bonakouamouang, Akwa, Face Prudential Beneficial Life Insurance",
-    phone: "+237 233 42 17 88"
+    phone: "+237 658 794 995",
+    textphone: "658 794 995 / 650 591 548",
   },
   {
     city: "Douala",
     address: "Carrefour Anatole, face la station total",
-    phone: "+237 686 037 550"
+    phone: "+237 233 42 17 88",
+    textphone: "+237 233 42 17 88"
   },
   {
     city: "Yaounde",
     address: "Descente Mokolo Elobi, batiment Dubaï Market",
-    phone: "+237 686 037 564"
+    phone: "+237 692 313 295",
+    textphone: "692 313 295 / 676 976 332"
   },
   {
     city: "Bafoussam",
     address: "Montée sens interdit, marché A, avant la direction régionale de la Total",
-    phone: "+237 686 037 549"
+    phone: "+237 699 477 764",
+    textphone: "699 477 764 / 691 919 624"
   }
 ]);
 
@@ -72,7 +77,7 @@ const openSocial = (link) =>{
   }
 }
 
-const mockupImage = Playstore;
+const mockupImage = Logo;
 const playStoreIcon = Playstore
 
 const features = ref([
@@ -94,7 +99,7 @@ const features = ref([
 ]);
 
 const openPlaystore = () => {
-  // window.open('https://play.google.com/store/apps/details?id=com.bnpp.easybanking&hl=fr','_blank' )
+  window.open('https://play.google.com/store/apps/details?id=net.betterplanning.mobileBanking.cresaf&hl=fr','_blank' )
 }
 
 </script>
@@ -155,7 +160,7 @@ const openPlaystore = () => {
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                 <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
               </svg>
-              <p class="text-sm">{{ location.phone }}</p>
+              <p class="text-sm">{{ location.textphone }}</p>
             </div>
           </div>
         </div>
@@ -196,20 +201,28 @@ const openPlaystore = () => {
                 </div>
 
                 <!-- Bouton de téléchargement -->
-                <div class="space-y-2 flex w-full justify-start items-center gap-2">
-                  <p class="font-semibold text-gray-700">
-                    Téléchargez maintenant sur :
-                  </p>
+                <div class="flex w-full justify-start items-center gap-1 border max-w-[15rem] rounded-xl bg-blue-950
+               px-4 py-1 transition-transform duration-500 hover:scale-105 cursor-pointer hover:bg-green-700"
+                     @click="openPlaystore"
+                >
                   <a
-                      @click="openPlaystore"
-                      class="inline-block cursor-pointer"
+                      class="inline-block"
                   >
                     <img
                         :src="playStoreIcon"
                         alt="Télécharger sur Google Play"
-                        class="h-10 hover:opacity-90 transition-opacity duration-500 hover:scale-105"
+                        class="h-12 hover:opacity-90 transition-opacity"
                     />
                   </a>
+                  <div class="flex flex-col justify-center items-start">
+                    <span class="font-roboto text-lg text-gray-300">
+                      Téléchargez sur
+                    </span>
+                    <span class="font-bold text-white text-2xl">
+                      Google Play
+                    </span>
+                  </div>
+
 <!--                  <a-->
 <!--                      @click="openPlaystore"-->
 <!--                      href="#"-->
@@ -233,7 +246,7 @@ const openPlaystore = () => {
                   <!-- Mockup de l'application -->
                   <img
                       @click="openPlaystore"
-                      :src="mockupImages"
+                      :src="mockupImage"
                       alt="CRESAF Mobile App"
                       class="relative w-64 rounded-3xl shadow-2xl cursor-pointer transition-transform duration-500 hover:scale-105"
                   />

@@ -1,34 +1,27 @@
-<script setup xmlns="http://www.w3.org/1999/html">
+<script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
-import cash from "@/assets/images/account/caissier.jpg"
-import Cheque from "@/assets/images/account/cheque.jpg"
-import Epargne from "@/assets/images/account/epargne2.jpg"
+import cash from "@/assets/images/account/caissier.webp"
+import Cheque from "@/assets/images/account/cheque.webp"
+import Epargne from "@/assets/images/account/epargne2.webp"
 import Depot from "@/assets/images/account/depot.jpg"
-import Money from "@/assets/images/account/money.jpg"
+import Money from "@/assets/images/account/money.webp"
 import Argent from "@/assets/images/account/argent.png"
 import Argent1 from "@/assets/images/account/argent1.png"
 import Received from "@/assets/images/account/received.png"
-import Interred from "@/assets/images/account/interrest.jpg"
-// import Guichet from "@/assets/images/account/payement.jpg"
-import Guichet from "@/assets/images/account/guichet.jpg"
+import Interred from "@/assets/images/account/interrest.webp"
+import Guichet from "@/assets/images/account/guichet.webp"
 import Electronic from "@/assets/images/account/terminaux.png"
 import Order from "@/assets/images/account/autre.png"
 import Refund from "@/assets/images/account/refund.png"
 import Micro from "@/assets/images/account/micro.png"
-import Livret from "@/assets/images/account/epargne.jpg"
-import Courant from "@/assets/images/account/courant.jpg"
+import Livret from "@/assets/images/account/epargne.webp"
+import Courant from "@/assets/images/account/courant.webp"
 import Islamique from "@/assets/images/account/account-islamique.png"
 import Virement from "@/assets/images/account/account-transfer.png"
-// import Compte from "@/assets/images/account/compte1.jpg"
-// import Image from "@/assets/images/account/image.jpg"
-// import Image1 from "@/assets/images/account/img_1.png"
-// import Image2 from "@/assets/images/account/img_2.png"
-// import Image3 from "@/assets/images/account/img_3.png"
-// import Image4 from "@/assets/images/account/img_4.png"
-import Images from "@/assets/images/solution/cresafSolution.jpg"
+import Images from "@/assets/images/solution/cresafSolution.webp"
 
 const products = ref([
   {

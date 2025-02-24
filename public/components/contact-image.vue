@@ -12,9 +12,9 @@
           class="rounded-xl"
           alt="Carousel Image"
       />
-      <div class="absolute inset-0 bg-blue-700 bg-opacity-30 hidden">
-        <div class="container mx-auto px-6 h-full flex items-center">
-          <div class="text-white max-w-lg">
+      <div class="absolute inset-0 bg-blue-700 bg-opacity-30 -top-1/2 hidden">
+        <div class="container mx-auto h-full flex items-center">
+          <div class="text-white w-full flex flex-col justify-center items-end px-5">
             <h1 class="text-5xl font-accent mb-4">{{image.location}}</h1>
             <p class="text-xl font-accent">{{image.description}}</p>
           </div>
@@ -60,7 +60,7 @@
 
 <script setup>
 import {ref, onMounted, onUnmounted} from "vue";
-import Image from "@/assets/images/structure.png"
+import Image from "@/assets/images/structure.webp"
 
 const images = ref([
   {

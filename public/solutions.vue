@@ -2,18 +2,16 @@
 import { ref, onMounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
-import CresafSolution from "@/assets/images/solution/solutions.png"
-// import CresafSolution from "@/assets/images/solution/solution.jpg"
-import Finance from "@/assets/images/solution/finance.jpg"
-import Tresorerie from "@/assets/images/solution/tresorerie.jpg"
-import Exp_Imp from "@/assets/images/solution/export_import.jpg"
+import CresafSolution from "@/assets/images/solution/solutions.webp"
+import Finance from "@/assets/images/solution/finance.webp"
+import Tresorerie from "@/assets/images/solution/tresorerie.webp"
+import Exp_Imp from "@/assets/images/solution/export_import.webp"
 
 const solutions = ref([
   {
     id: 'presentation',
     title: "Solutions CRESAF",
     subtitle: "Des solutions adaptées à vos besoins",
-    // image: "https://picsum.photos/id/1018/800/600",
     image:CresafSolution,
     stats: [
       { value: "5M+", label: "Clients satisfaits" },

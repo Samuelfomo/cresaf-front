@@ -62,8 +62,8 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules'; // Ajout de Autoplay
 import 'swiper/css/bundle';
 
-import Woman from"@/assets/images/w3.png"
-import Logo from"@/assets/images/enterprise.png"
+import Woman from"@/assets/images/w3.webp"
+import Logo from"@/assets/images/enterprise.webp"
 import Image from"@/assets/images/account/logo.png"
 
 // Ajout de Autoplay dans les modules

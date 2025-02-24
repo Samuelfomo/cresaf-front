@@ -576,8 +576,8 @@
 import {ref, nextTick} from 'vue';
 import {useRouter} from "vue-router"
 const router = useRouter()
-import Logo from "@/assets/images/logo.png"
-import LogoDrewa from "@/assets/images/logo-cresaf.png"
+import Logo from "@/assets/images/logo.webp"
+import LogoDrewa from "@/assets/images/logo-cresaf.png";
 
 import database from "@/assets/images/svg/database-up.svg"
 import briefcase from "@/assets/images/svg/briefcase.svg"
@@ -902,7 +902,7 @@ const closeDropdown3 = () =>{
 const isDrawerOpen = ref(false);
 
 const activeClass = ref(' border-b border-blue-950',)
-const activeContact = ref('border-2 border-green-600',)
+const activeContact = ref('border-2 border-blue-950',)
 const activeDrawerClass = ref('text-green-600')
 const inactiveClass = ref('',)
 

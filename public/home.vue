@@ -216,7 +216,7 @@ import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 import Image from "@public/components/image.vue";
 
-import Icon from"@/assets/images/logo-cref.jpg"
+import Icon from"@/assets/images/logo-cref.webp"
 import Arrow from"@/assets/images/svg/arow.svg"
 import Image2 from "@public/components/image2.vue";
 import Scroll from "@public/components/scroll.vue";
