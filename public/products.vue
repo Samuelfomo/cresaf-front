@@ -6,21 +6,21 @@ import Footer from "@public/components/footer.vue";
 import cash from "@/assets/images/account/caissier.webp"
 import Cheque from "@/assets/images/account/cheque.webp"
 import Epargne from "@/assets/images/account/epargne2.webp"
-import Depot from "@/assets/images/account/depot.jpg"
+import Depot from "@/assets/images/account/depot.webp"
 import Money from "@/assets/images/account/money.webp"
-import Argent from "@/assets/images/account/argent.png"
-import Argent1 from "@/assets/images/account/argent1.png"
-import Received from "@/assets/images/account/received.png"
+import Argent from "@/assets/images/account/argent.webp"
+import Argent1 from "@/assets/images/account/argent1.webp"
+import Received from "@/assets/images/account/received.webp"
 import Interred from "@/assets/images/account/interrest.webp"
 import Guichet from "@/assets/images/account/guichet.webp"
-import Electronic from "@/assets/images/account/terminaux.png"
-import Order from "@/assets/images/account/autre.png"
-import Refund from "@/assets/images/account/refund.png"
-import Micro from "@/assets/images/account/micro.png"
+import Electronic from "@/assets/images/account/terminaux.webp"
+import Order from "@/assets/images/account/autre.webp"
+import Refund from "@/assets/images/account/refund.webp"
+import Micro from "@/assets/images/account/micro.webp"
 import Livret from "@/assets/images/account/epargne.webp"
 import Courant from "@/assets/images/account/courant.webp"
-import Islamique from "@/assets/images/account/account-islamique.png"
-import Virement from "@/assets/images/account/account-transfer.png"
+import Islamique from "@/assets/images/account/account-islamique.webp"
+import Virement from "@/assets/images/account/account-transfer.webp"
 import Images from "@/assets/images/solution/cresafSolution.webp"
 
 const products = ref([
@@ -180,7 +180,7 @@ onUnmounted(() => {
                class="absolute inset-0 cursor-pointer">
             <img :src="product.image"
                  :alt="product.title"
-                 class="w-full h-full object-cover">
+                 class="w-full h-full object-cover lg:mt-14">
             <div class="absolute inset-0 bg-blue-700 bg-opacity-30">
               <div class="container mx-auto px-6 h-full flex items-center">
                 <div class="text-white max-w-lg">
@@ -608,6 +608,8 @@ onUnmounted(() => {
             </div>
           </div>
         </div>
+<!--      <div class="absolute inset-0 bg-blue-700 bg-opacity-30">-->
+<!--      </div>-->
     </main>
 
     <!-- Navigation latérale -->

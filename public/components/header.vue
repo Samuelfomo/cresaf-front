@@ -576,7 +576,7 @@
 import {ref, nextTick} from 'vue';
 import {useRouter} from "vue-router"
 const router = useRouter()
-import Logo from "@/assets/images/logo.webp"
+import Logo from "@/assets/images/logo.png"
 import LogoDrewa from "@/assets/images/logo-cresaf.png";
 
 import database from "@/assets/images/svg/database-up.svg"

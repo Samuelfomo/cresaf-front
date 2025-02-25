@@ -201,40 +201,42 @@ const openPlaystore = () => {
                 </div>
 
                 <!-- Bouton de téléchargement -->
-                <div class="flex w-full justify-start items-center gap-1 border max-w-[15rem] rounded-xl bg-blue-950
-               px-4 py-1 transition-transform duration-500 hover:scale-105 cursor-pointer hover:bg-green-700"
-                     @click="openPlaystore"
-                >
-                  <a
-                      class="inline-block"
+                <div class="flex w-full justify-center lg:justify-normal items-center">
+                  <div class="flex w-full justify-start items-center gap-1 border max-w-[15rem] rounded-xl bg-blue-950
+                 px-4 py-1 transition-transform duration-500 hover:scale-105 cursor-pointer hover:bg-green-700"
+                       @click="openPlaystore"
                   >
-                    <img
-                        :src="playStoreIcon"
-                        alt="Télécharger sur Google Play"
-                        class="h-12 hover:opacity-90 transition-opacity"
-                    />
-                  </a>
-                  <div class="flex flex-col justify-center items-start">
-                    <span class="font-roboto text-lg text-gray-300">
-                      Téléchargez sur
-                    </span>
-                    <span class="font-bold text-white text-2xl">
-                      Google Play
-                    </span>
-                  </div>
+                    <a
+                        class="inline-block"
+                    >
+                      <img
+                          :src="playStoreIcon"
+                          alt="Télécharger sur Google Play"
+                          class="h-12 hover:opacity-90 transition-opacity"
+                      />
+                    </a>
+                    <div class="flex flex-col justify-center items-start">
+                      <span class="font-roboto text-lg text-gray-300">
+                        Téléchargez sur
+                      </span>
+                      <span class="font-bold text-white text-2xl">
+                        Google Play
+                      </span>
+                    </div>
 
-<!--                  <a-->
-<!--                      @click="openPlaystore"-->
-<!--                      href="#"-->
-<!--                      target="_blank"-->
-<!--                      class="inline-block"-->
-<!--                  >-->
-<!--                    <img-->
-<!--                        :src="playStoreIcon"-->
-<!--                        alt="Télécharger sur Google Play"-->
-<!--                        class="h-10 hover:opacity-90 transition-opacity duration-500 hover:scale-105"-->
-<!--                    />-->
-<!--                  </a>-->
+  <!--                  <a-->
+  <!--                      @click="openPlaystore"-->
+  <!--                      href="#"-->
+  <!--                      target="_blank"-->
+  <!--                      class="inline-block"-->
+  <!--                  >-->
+  <!--                    <img-->
+  <!--                        :src="playStoreIcon"-->
+  <!--                        alt="Télécharger sur Google Play"-->
+  <!--                        class="h-10 hover:opacity-90 transition-opacity duration-500 hover:scale-105"-->
+  <!--                    />-->
+  <!--                  </a>-->
+                  </div>
                 </div>
               </div>
 

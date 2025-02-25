@@ -64,7 +64,7 @@ import 'swiper/css/bundle';
 
 import Woman from"@/assets/images/w3.webp"
 import Logo from"@/assets/images/enterprise.webp"
-import Image from"@/assets/images/account/logo.png"
+import Image from"@/assets/images/account/logo.webp"
 
 // Ajout de Autoplay dans les modules
 const modules = [Pagination, Navigation, Autoplay];
