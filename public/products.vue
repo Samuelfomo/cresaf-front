@@ -5,7 +5,6 @@ import Footer from "@public/components/footer.vue";
 
 import cash from "@/assets/images/account/caissier.webp"
 import Cheque from "@/assets/images/account/cheque.webp"
-import Epargne from "@/assets/images/account/epargne2.webp"
 import Depot from "@/assets/images/account/depot.webp"
 import Money from "@/assets/images/account/money.webp"
 import Argent from "@/assets/images/account/argent.webp"
@@ -19,9 +18,11 @@ import Refund from "@/assets/images/account/refund.webp"
 import Micro from "@/assets/images/account/micro.webp"
 import Livret from "@/assets/images/account/epargne.webp"
 import Courant from "@/assets/images/account/courant.webp"
+import Courant1 from "@/assets/images/account/enterprise.png"
 import Islamique from "@/assets/images/account/account-islamique.webp"
 import Virement from "@/assets/images/account/account-transfer.webp"
 import Images from "@/assets/images/solution/cresafSolution.webp"
+import Image_compteAss from "@public/components/image_compteAss.vue";
 
 const products = ref([
   {
@@ -91,6 +92,16 @@ const products = ref([
   // }
 ]);
 
+const currentIndex = ref(0);
+const Courants = ref([Courant, Courant1])
+const goToSlide = (index) => {
+  currentIndex.value = index;
+};
+let interval = null;
+const nextSlideCourant = () => {
+  currentIndex.value = (currentIndex.value + 1) % Courants.value.length;
+};
+
 const currentSlide = ref(0);
 const autoPlayInterval = ref(null);
 
@@ -157,11 +168,14 @@ onMounted(() => {
   // document.querySelectorAll('section[id]').forEach(section => {
   //   observer.observe(section);
   // });
+
+  interval = setInterval(nextSlideCourant, 3000);
 });
 
 // Nettoyer l'intervalle lors du démontage
 onUnmounted(() => {
   stopAutoPlay();
+  clearInterval(interval);
 });
 
 </script>
@@ -352,11 +366,12 @@ onUnmounted(() => {
         Notre service compte d’épargne association a été mis sur pied afin de permettre aux associations
         de protéger leurs finances grâce à des comptes d’épargne fiables et sécurisés.
       </p>
-      <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4 lg:pb-12">
-        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
-          <img :src="Epargne" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
+      <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4 lg:pb-20">
+        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] relative">
+<!--          <img :src="Epargne" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">-->
+        <Image_compteAss />
         </div>
-        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5">
+        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-[24rem]">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
             Les associations bénéficient des conditions suivantes pour leur compte d’épargne
           </h2>
@@ -416,10 +431,34 @@ onUnmounted(() => {
           grâce à un service simplifié sur le compte courant.
         </p>
         <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
-          <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem]">
-            <img :src="Courant" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
+          <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] relative">
+<!--            <img :src="Courant" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">-->
+            <div
+                v-for="(Courant, index) in Courants"
+                :key="index"
+                class="transition-opacity duration-700"
+                :class="{'opacity-100': currentIndex === index, 'opacity-0': currentIndex !== index}"
+            >
+              <img
+                  :src="Courant"
+                  class="rounded-lg absolute inset-0 ease-in-out flex items-center justify-center object-cover transition-transform duration-500 hover:scale-105"
+                  alt="Image Compte Courant"
+              />
+            </div>
+
+            <!-- Slider indicators -->
+            <div class="absolute lg:top-[22rem] top-[18rem] left-1/2 transform -translate-x-1/2 flex space-x-3">
+              <button
+                  v-for="(Courant, index) in Courants"
+                  :key="index"
+                  class="w-3 h-3 rounded-full transition-colors duration-300"
+                  :class="currentIndex === index ? 'bg-white' : 'bg-gray-400'"
+                  @click="goToSlide(index)"
+                  :aria-label="`Go to slide ${index + 1}`"
+              ></button>
+            </div>
           </div>
-          <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5">
+          <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-[21rem]">
             <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
               Les entreprises bénéficient des conditions suivantes pour leur compte d’épargne
             </h2>
