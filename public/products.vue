@@ -4,9 +4,10 @@ import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
 import cash from "@/assets/images/account/caissier.webp"
-import Cheque from "@/assets/images/account/cheque.webp"
-import Depot from "@/assets/images/account/depot.webp"
-import Money from "@/assets/images/account/money.webp"
+import Cheque from "@/assets/images/cresaf/compte_cheque.png"
+import Terme from "@/assets/images/cresaf/depot_terme.png"
+// import Depot from "@/assets/images/account/depot.webp"
+// import Money from "@/assets/images/account/money.webp"
 import Argent from "@/assets/images/account/argent.webp"
 import Argent1 from "@/assets/images/account/argent1.webp"
 import Received from "@/assets/images/account/received.webp"
@@ -16,7 +17,7 @@ import Electronic from "@/assets/images/account/terminaux.webp"
 import Order from "@/assets/images/account/autre.webp"
 import Refund from "@/assets/images/account/refund.webp"
 import Micro from "@/assets/images/account/micro.webp"
-import Livret from "@/assets/images/account/epargne.webp"
+import Livret from "@/assets/images/account/epargne1.png"
 import Courant from "@/assets/images/account/courant.webp"
 import Courant1 from "@/assets/images/account/enterprise.png"
 import Islamique from "@/assets/images/account/account-islamique.webp"
@@ -194,7 +195,7 @@ onUnmounted(() => {
                class="absolute inset-0 cursor-pointer">
             <img :src="product.image"
                  :alt="product.title"
-                 class="w-full h-full object-cover lg:mt-14">
+                 class="  object-cover lg:mt-10 mt-20">
             <div class="absolute inset-0 bg-blue-700 bg-opacity-30">
               <div class="container mx-auto px-6 h-full flex items-center">
                 <div class="text-white max-w-lg">
@@ -252,25 +253,25 @@ onUnmounted(() => {
         Compte chèque
       </h2>
       <p class="text-gray-300 font-primary text-lg w-full justify-start pb-10">
-        Notre service de compte chèque à destination des auto-entrepreneurs quel que soit le secteur d’activité,
+        Le compte chèque à destination des entrepreneurs quel que soit le secteur d’activité,
         permettra d’effectuer les transactions bancaires courantes lies à leurs activités.
       </p>
       <div class="lg:flex w-full gap-2 justify-center lg:px-10">
-        <div class="flex w-full max-w-xl h-full lg:min-h-[28rem]">
+        <div class="flex w-full max-w-xl h-full lg:max-h-[28rem]">
           <img :src="Cheque" alt="image" class="object-cover rounded-lg transition-transform duration-500 hover:scale-105">
         </div>
         <div class="w-full max-w-xl flex flex-col">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-300 lg:p-0 pt-5">
-            Ce compte offre plusieurs avantages pour faciliter la gestion financière des auto-entrepreneurs
+            Ce compte offre plusieurs avantages qui facilitent la gestion financière des entrepreneurs
           </h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
-            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
-              <h2 class="font-light text-white">Crédit après 03 mois de fonctionnement</h2>
-              <span class="text-lg font-bold text-white"> à la demande du client </span>
-            </div>
+<!--            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">-->
+<!--              <h2 class="font-light text-white">Crédit après 03 mois de fonctionnement</h2>-->
+<!--              <span class="text-lg font-bold text-white"> à la demande du client </span>-->
+<!--            </div>-->
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-white">Mise en place d’un découvert</h2>
-              <span class="text-lg font-bold text-white"> a la demande du client</span>
+              <span class="text-lg font-bold text-white"> à la demande du client </span>
             </div>
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-white">Déposit minimum </h2>
@@ -287,18 +288,19 @@ onUnmounted(() => {
           Bon de caisse
         </h2>
         <p class="text-gray-800 font-primary text-lg w-full justify-center pb-10">
-          Notre service en bon de caisse permet aux entreprises et aux investisseurs d’effectuer des placements de fonds en toute sécurité
+          Le bon de caisse permet aux entreprises et aux investisseurs d’effectuer des placements de fonds en toute sécurité
           sur une période minimale d’un an. Le placement a pour vocation à terme de générer d’importants bénéfices grâce à des taux
-          d’intérêts allant jusqu’à 5%.
+          d’intérêts négociables.
+          <!--          d’intérêts allant jusqu’à 5%.-->
         </p>
         <div class="flex flex-wrap lg:flex-nowrap w-full gap-2 justify-center lg:px-10">
           <div class="w-full lg:max-w-xl flex flex-col lg:py-16 order-2 lg:order-1" >
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-600">Les placements en bon de caisse offrent les conditions suivantes</h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
-            <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
-              <h2 class="font-light text-white ">dépôt minimum à l’ouverture</h2>
-              <span class="text-lg font-bold text-white">5.000.000 CFA</span>
-            </div>
+<!--            <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">-->
+<!--              <h2 class="font-light text-white ">dépôt minimum à l’ouverture</h2>-->
+<!--              <span class="text-lg font-bold text-white">5.000.000 CFA</span>-->
+<!--            </div>-->
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-white">taux de rémunération</h2>
               <span class="text-lg font-bold text-white"> négociable</span>
@@ -314,48 +316,37 @@ onUnmounted(() => {
           </div>
         </div>
     </main>
-    <main id="section3" class="bg-blue-950 px-8 py-12">
-      <div class="container mx-auto">
-        <h1 class="text-white w-full text-center font-accent text-4xl pb-6">Dépôt à terme </h1>
-        <p class="w-full py-6 text-lg text-gray-300">
-          Notre service de dépôt à terme permet au souscripteur de déposer des fonds sur un compte bloqué afin de
-          bénéficier d’intérêts supérieurs au taux applicable sur un compte d’épargne classique. Le souscripteur
-          pouvant à tout moment disposer des intérêts générés par le compte.
-        </p>
+    <main id="section3" class="bg-blue-950 lg:px-16 px-8 py-12">
+      <h2 class="text-white font-accent text-4xl w-full justify-center text-center pb-5">
+        Dépôt à terme
+      </h2>
+      <p class="text-gray-300 font-primary text-lg w-full justify-start pb-10">
+        Le dépôt à terme permet au souscripteur de déposer des fonds sur un compte bloqué afin de
+        bénéficier d’intérêts supérieurs au taux applicable sur un compte d’épargne classique. Le souscripteur
+        pouvant à tout moment disposer des intérêts générés par le compte.
+      </p>
+      <div class="lg:flex w-full gap-2 justify-center lg:px-10">
+        <div class="flex w-full max-w-xl h-full lg:max-h-[28rem]">
+          <img :src="Terme" alt="image" class="object-cover rounded-lg transition-transform duration-500 hover:scale-105">
+        </div>
+        <div class="w-full max-w-xl flex flex-col">
+          <h2 class="text-xl w-full lg:text-center font-semibold text-gray-300 lg:p-0 pt-5">
+            Ce compte propose de nombreux avantages visant à simplifier et optimiser la gestion financière des souscripteurs.
+          </h2>
+          <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-white">Taux de rémunération</h2>
+              <span class="text-lg font-bold text-white"> négociable </span>
+            </div>
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+              <h2 class="font-light text-white">Taux d’intérêts </h2>
+              <span class="text-lg font-bold text-white"> Allant jusqu’à 5%</span>
+            </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div
-              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-            <img :src="Money"
-                 alt="Money"
-                 class="w-full object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Minimum de dépôt</h3>
-              <p class="text-gray-600 mb-4">5.000.000 XAF</p>
-            </div>
-          </div>
-          <div
-              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-            <img :src="Depot"
-                 alt="Depot a terme"
-                 class="w-full object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Taux de rémunération </h3>
-              <p class="text-gray-600 mb-4">négociable</p>
-            </div>
-          </div>
-          <div
-              class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-            <img :src="Interred"
-                 alt="Interred a terme"
-                 class="w-full object-cover">
-            <div class="p-6">
-              <h3 class="text-xl font-bold mb-2">Taux d’intérêts</h3>
-              <p class="text-gray-600 mb-4">Allant jusqu’à 5%</p>
-            </div>
           </div>
         </div>
       </div>
+
     </main>
     <main id="section4" class="pb-6 bg-blue-50 py-12">
       <div class="bg-blue-50 lg:px-8 px-5">
@@ -363,7 +354,7 @@ onUnmounted(() => {
         Compte d’épargne association
       </h2>
       <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
-        Notre service compte d’épargne association a été mis sur pied afin de permettre aux associations
+        Le compte d’épargne association a été mis sur pied afin de permettre aux associations
         de protéger leurs finances grâce à des comptes d’épargne fiables et sécurisés.
       </p>
       <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4 lg:pb-20">
@@ -373,7 +364,7 @@ onUnmounted(() => {
         </div>
         <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-[24rem]">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
-            Les associations bénéficient des conditions suivantes pour leur compte d’épargne
+            Les associations bénéficient des avantages et conditions suivantes pour leur compte d’épargne
           </h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
@@ -395,28 +386,29 @@ onUnmounted(() => {
         Compte d’épargne sur livret
       </h2>
       <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
-        Le compte d’épargne sur livret est notre service destiné sécurisé les économies de nos clients.
+        Le compte d’épargne sur livret est destiné à sécuriser les économies de nos clients.
         Le client pourra ainsi faire fructifier l’argent déposé grâce à des taux d’intérêts les plus intéressants du marché.
       </p>
       <div class="flex flex-wrap lg:flex-nowrap w-full gap-2 justify-center lg:px-10 px-4">
         <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5 order-2 lg:order-1">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
-            Les règles applicables à l'ouverture d'un compte d'épargne sur livret sont les suivantes :
+<!--            Les règles applicables à l'ouverture d'un compte d'épargne sur livret sont les suivantes :-->
+            Les conditions d'ouverture d'un compte d'épargne sur livret sont les suivantes :
           </h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
-              <span class="text-lg font-bold text-white"> 15.000 XAF<span> Hors Taxes </span></span>
-<!--              <span class="text-lg font-bold text-white"> 16.000 XAF<span> TTC</span></span>-->
+<!--              <span class="text-lg font-bold text-white"> 15.000 XAF<span> Hors Taxes </span></span>-->
+              <span class="text-lg font-bold text-white"> 16.000 XAF<span> TTC</span></span>
             </div>
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Solde minimum permanent en compte</h2>
-              <span class="text-lg font-bold text-white">15.000 XAF</span>
+              <span class="text-lg font-bold text-white">10.000 XAF</span>
             </div>
           </div>
         </div>
         <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] order-1 lg:order-2">
-          <img :src="Livret" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
+          <img :src="Livret" alt="image" class="object-contain transition-transform duration-500 hover:scale-105 rounded-lg">
         </div>
       </div>
       </div>
@@ -425,10 +417,10 @@ onUnmounted(() => {
           Compte courant entreprise
         </h2>
         <p class="text-gray-800 font-primary text-lg w-full lg:px-8 px-4 pb-10">
-          Nos comptes courants entreprise permettent aux entrepreneurs ou aux entreprises clientes
-          d’avoir leurs fonds à disposition et de bénéficier à tout moment de nos services bancaires de base.
+          Le compte courant entreprise permet aux entrepreneurs ou aux entreprises clientes
+          d’avoir leurs fonds à disposition et de bénéficier à tout moment des avantages liés à celui-ci.
           Les entreprises clientes pourront effectuer toutes les transactions financières courantes liées à leur fonctionnement
-          grâce à un service simplifié sur le compte courant.
+          grâce à un service simplifié.
         </p>
         <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
           <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] relative">
@@ -460,7 +452,7 @@ onUnmounted(() => {
           </div>
           <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-[21rem]">
             <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
-              Les entreprises bénéficient des conditions suivantes pour leur compte d’épargne
+              Les entreprises bénéficient des avantages et conditions suivantes pour leur compte courant entreprise
             </h2>
             <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
               <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
@@ -536,12 +528,12 @@ onUnmounted(() => {
     <main id="section5" class="bg-blue-950 lg:px-16 px-8 py-12">
       <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl pb-4">Collecte journalière </h1>
         <p class="w-full py-6 text-lg text-gray-300">
-          Notre service de collecte journalière destiné principalement aux travailleurs indépendants (commerçants ou autre)
+          La collecte journalière destinée principalement aux travailleurs indépendants (commerçants ou autre)
           permet de sécuriser l’argent sans avoir à se déplacer.
-          Nos agents déployés sur le terrain collectent les fonds contre reçu et les déposent directement
+          Nos agents déployés sur le terrain collectent les fonds et les déposent directement
           sur les comptes de chaque souscripteur.
         </p>
-      <h1 class="text-green-600 w-full font-accent lg:text-3xl text-2xl text-center lg:text-left pb-4">Collecte journalière mensuelle </h1>
+      <h1 class="text-white w-full font-accent lg:text-3xl text-2xl text-center lg:text-left pb-4">Collecte journalière mensuelle </h1>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
               class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
@@ -574,7 +566,7 @@ onUnmounted(() => {
           </div>
         </div>
       <br>
-      <h1 class="text-green-600 w-full font-accent lg:text-3xl text-2xl text-center lg:text-left pb-4">Collecte journalière annuelle </h1>
+      <h1 class="text-white w-full font-accent lg:text-3xl text-2xl text-center lg:text-left pb-4">Collecte journalière annuelle </h1>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
               class="bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">

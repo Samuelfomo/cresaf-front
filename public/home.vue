@@ -30,7 +30,7 @@
      </div>
     </main>
     <div class="bg-white px-8 flex flex-col min-h-screen py-12 z-40">
-      <h2 class="text-gray-400 font-light text-lg uppercase text-center pb-5">nos services de transfert d'argent</h2>
+      <h2 class="text-blue-950 font-semibold text-3xl uppercase text-center pb-5">nos services de transfert d'argent</h2>
 
       <Image2 />
 
@@ -59,7 +59,7 @@
              {{location.titre}}
             </p>
             <h3 class="font-sans py-2">{{location.description}}</h3>
-          <div class="flex text-lg font-primary justify-start items-center pt-5 text-green-600 group-hover:text-white" @click="openPdf(location.pdfContent)">
+          <div class="flex text-lg font-primary justify-start items-center pt-5 text-green-600 group-hover:text-white cursor-pointer" @click="openPdf(location.pdfContent)">
             {{location.suite}}
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
                   stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round">
@@ -259,14 +259,14 @@ const locations = ref([
     titre:'Cartes Bancaire',
     description:'Choisissez une carte bancaire qui vous offre plus de liberté, de sécurité et de fonctionnalités',
     suite:'Demander une carte',
-    // pdfContent: Pdf1,
+    pdfContent: null,
   },
   {
     icon:icon,
     titre:'Investissement',
     description:'Profiter d\'un suivi et d\'un accompagnement de qualité, de la définition de votre stratégie à sa mise en œuvre',
     suite:'Démarrer un investissement',
-    // pdfContent: Pdf2,
+    pdfContent: null,
   },
 ])
 const locations2 = ref([

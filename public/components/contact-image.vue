@@ -9,7 +9,7 @@
     >
       <img
           :src="image.icon"
-          class="rounded-xl"
+          class="rounded-xl object-cover"
           alt="Carousel Image"
       />
       <div class="absolute inset-0 bg-blue-700 bg-opacity-30 -top-1/2 hidden">

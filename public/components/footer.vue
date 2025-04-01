@@ -7,7 +7,7 @@
         <h2 class="text-white font-bold text-2xl lg::text-3xl mb-4">
           Construisons ensemble votre avenir financier
         </h2>
-        <p class="text-gray-400 font-roboto text-base lg:text-lg mb-6">
+        <p class="text-gray-200 font-roboto text-base lg:text-lg mb-6">
           CRESAF s'engage à vos côtés pour concrétiser vos projets grâce à des solutions de financement adaptées
           et un accompagnement personnalisé. Que vous soyez commerçant, entrepreneur ou agriculteur, nous sommes
           là pour soutenir votre réussite.
@@ -30,7 +30,7 @@
           </p>
           <div class="flex md:justify-normal justify-center items-center space-x-2 italic font-bold">
             <img :src="phone" alt="phone icon" class="w-4 h-4" />
-            <span class="cursor-pointer text-sm font-bold text-white" @click="openWhatsApp(location.phone) ">{{ location.phone }}</span>
+            <span class="cursor-pointer text-sm font-bold text-white" @click="openWhatsApp(location.phone) ">{{ location.textPhone }}</span>
           </div>
         </div>
       </div>
@@ -38,26 +38,26 @@
       <!-- Footer Bottom -->
       <div class="border-t border-white pt-6 pb-2">
         <div class="lg:flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <div class="w-full lg:flex flex-wrap lg:justify-center justify-start gap-x-4 text-sm text-gray-400 lg:space-x-0 space-x-4 lg:leading-none leading-7">
+          <div class="w-full lg:flex flex-wrap lg:justify-start justify-start gap-x-4 text-sm text-gray-300 lg:space-x-0 space-x-4 leading-8">
             <span>Copyright © 2023 - 2025</span>
-            <span class="hover:text-yellow-500 transition-colors cursor-pointer font-bold" @click="router.push('/')">
+            <span class="hover:text-green-600 transition-colors cursor-pointer font-bold" @click="router.push('/')">
               Crédit Solidaire D'Afrique S.A
             </span>
             <span class="hidden md:inline">|</span>
             <span>Designed by</span>
-            <span class="hover:text-yellow-500 transition-colors cursor-pointer font-bold" @click="openImediatis">
+            <span class="hover:text-green-600 transition-colors cursor-pointer font-bold" @click="openImediatis">
               IMEDIATIS
             </span>
           </div>
 
-          <div class="flex w-full lg:justify-center justify-around">
-            <a href="#" class="rounded-full h-10 w-10 flex items-center justify-center
-              border border-white bg-yellow-500"
-               @click="openCresafFaceBook"
-            >
-              <img :src="facebookIcon" alt="Facebook" class="w-6 h-6" />
-            </a>
-          </div>
+<!--          <div class="flex w-full lg:justify-center justify-around">-->
+<!--            <a href="#" class="rounded-full h-10 w-10 flex items-center justify-center-->
+<!--              border border-white bg-yellow-500"-->
+<!--               @click="openCresafFaceBook"-->
+<!--            >-->
+<!--              <img :src="facebookIcon" alt="Facebook" class="w-6 h-6" />-->
+<!--            </a>-->
+<!--          </div>-->
         </div>
       </div>
     </div>
@@ -82,34 +82,38 @@
 
 <script setup>
 import {useRouter} from "vue-router";
-import FaceBook from "@/assets/images/svg/facebook.svg"
+// import FaceBook from "@/assets/images/svg/facebook.svg"
 import Phone from "@/assets/images/svg/phone.svg"
 
 const router = useRouter()
 
-const facebookIcon = FaceBook
+// const facebookIcon = FaceBook
 const phone = Phone
 
 const locations = [
   {
     title: 'Siège social (Douala)',
     address: 'Bonakouamouang, Akwa, Face Prudential Beneficial Life',
-    phone: '+237 233 42 17 88'
+    phone: '+237 658 794 995',
+    textPhone: '+237 658 794 995'
   },
   {
     title: 'Agence de Douala',
     address: 'Carrefour Anatole, face la station total',
-    phone: '+237 686 037 550'
+    phone: null,
+    textPhone: '+237 *** *** ***'
   },
   {
     title: 'Agence de Yaoundé',
     address: 'Descente Mokolo Elobi, batiment Dubaï Market',
-    phone: '+237 686 037 564'
+    phone: '+237 692 313 295',
+    textPhone: '+237 692 313 295'
   },
   {
     title: 'Agence de Bafoussam',
     address: 'Montée sens interdit, marché A, avant la direction régionale de la Total',
-    phone: '+237 686 037 549'
+    phone: '+237 699 477 764',
+    textPhone: '+237 699 477 764'
   }
 ]
 
@@ -121,9 +125,9 @@ const contact = () => {
   window.open(`https://api.whatsapp.com/send/?phone=237233421788&text&type=phone_number&app_absent=0`, "_blank");
 }
 
-const openCresafFaceBook = () =>{
-  window.open("https://www.facebook.com/cresaf.sa", "blank");
-}
+// const openCresafFaceBook = () =>{
+//   window.open("https://www.facebook.com/cresaf.sa", "blank");
+// }
 
 const openWhatsApp = (phone) =>{
   // window.open(`https://api.whatsapp.com/send/?phone=${phone}&text&type=phone_number&app_absent=0`, "_blank");
@@ -132,7 +136,7 @@ const openWhatsApp = (phone) =>{
     const url = `https://api.whatsapp.com/send/?phone=${phoneExemple}&image&type=phone_number&app_absent=0`;
     window.open(url, "_blank");
   } else {
-    alert("Numéro de téléphone non disponible !");
+    console.error("Numéro de téléphone non disponible !");
   }
 }
 

@@ -8,13 +8,13 @@
           <h1 class="lg:text-5xl text-3xl text-center font-primary text-white pb-3">
             <span class="text-green-600">{{service.value}}</span>
           </h1>
-          <h5 class="text-gray-600 font-primary text-lg max-w-xl py-3">
+          <h5 class="text-gray-700 font-primary text-xl py-3 leading-relaxed">
             Notre objectif est de répondre aux besoins de tous ceux qui, dans le secteur informel ou non, ont besoin d'une assistance financière fiable, directe et personnalisée, en devenant le premier pourvoyeur de microcrédits.
           </h5>
-          <h5 class="text-gray-700 font-primary text-xl max-w-xl py-3 leading-8">
+          <h5 class="text-gray-700 font-primary text-xl py-3 leading-relaxed">
             Le Crédit Solidaire d'Afrique (CRESAF) est une société anonyme créée par un groupe d'entrepreneurs locaux désireux de contribuer au progrès économique et social du Cameroun en proposant des solutions de financement adaptées aux besoins des micros, petites et moyennes entreprises.
           </h5>
-          <h5 class="text-gray-700 font-primary text-xl max-w-xl py-3 leading-8">
+          <h5 class="text-gray-700 font-primary text-xl py-3 leading-relaxed">
             CRESAF s'appuie sur des valeurs de solidarité, de confiance, de transparence et de responsabilité pour renforcer l'inclusion financière, soutenir l'innovation et favoriser le développement durable dans le pays.
           </h5>
         </div>
@@ -25,7 +25,7 @@
     </div>
     <div id="section1" class="bg-blue-50 opacity-90 lg:px-8 flex flex-col py-12 lg:pb-0 justify-start ">
       <h1 class="text-green-600 lg:text-5xl text-3xl font-primary text-center">Nos valeurs fondamentales</h1>
-      <p class="text-gray-600 text-xl py-10 w-full lg:px-10 px-5">
+      <p class="text-black text-xl py-10 w-full lg:px-10 px-5 font-primary">
         Nos employés partagent des valeurs fortes qui sous-tendent notre engagement et notre responsabilité de fournir à nos clients et partenaires une expérience enrichissante.
       </p>
      <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">
@@ -33,7 +33,7 @@
          <img :src="secretaire" alt="image secrétaire" class="max-w-md h-full object-cover transition-transform duration-500 hover:scale-105">
        </div>
        <div class="w-full h-full flex flex-col justify-start px-6 py-1">
-         <h3 class="text-2xl pb-4">
+         <h3 class="text-2xl pb-4 text-gray-800 font-roboto">
            Ces valeurs sont les suivantes :
          </h3>
          <div class="flex justify-between items-start w-full py-2 lg:pr-32" v-for="(location, index) in locations" :key="index">
@@ -69,7 +69,7 @@
       <div class="flex lg:flex-nowrap flex-wrap px-5 h-full justify-between items-center w-full gap-2">
         <div class="flex flex-col w-full h-full items-start justify-between py-5 lg:px-5">
           <h1 class="text-white lg:text-5xl text-3xl lg:text-left text-center font-primary w-full">Nous misons sur l'avenir</h1>
-          <p class="text-gray-400 text-xl font-sans lg:py-5 pt-5 w-full text-left">
+          <p class="text-white text-xl font-sans lg:py-5 pt-5 w-full text-left">
             Nous aspirons à être une force motrice du changement pour transformer et établir le standard du secteur de la microfinance au Cameroun.
           </p>
           <p class="text-white text-xl font-sans lg:py-5 py-3 w-full text-left">

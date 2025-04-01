@@ -3,12 +3,12 @@
     <div
         v-for="(image, index) in images"
         :key="index"
-        class="transition-opacity duration-700"
+        class="transition-opacity duration-700 w-full"
         :class="{'opacity-100': currentIndex === index, 'opacity-0': currentIndex !== index}"
     >
       <img
           :src="image"
-          class="rounded-lg absolute inset-0 ease-in-out flex items-center justify-center object-cover transition-transform duration-500 hover:scale-105"
+          class="rounded-lg absolute inset-0 ease-in-out items-center justify-center object-cover transition-transform duration-500 hover:scale-105"
           alt="Image Compte Epargne"
       />
     </div>

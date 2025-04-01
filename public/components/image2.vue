@@ -65,23 +65,23 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import MoMo from "@/assets/images/logo/mtn.png"
-import Sigue from "@/assets/images/logo/sigue.png"
+// import Sigue from "@/assets/images/logo/sigue.png"
 import MoneyGram from "@/assets/images/logo/moneygram.png"
 import MoneyTrans from "@/assets/images/logo/moneytrans.png"
 import OM from "@/assets/images/logo/orange.png"
 import Ria from "@/assets/images/logo/ria.png"
-import Paytop from "@/assets/images/logo/paytop.png"
+// import Paytop from "@/assets/images/logo/paytop.png"
 import Western from "@/assets/images/logo/western.png"
 import Worldremit from "@/assets/images/logo/worldremit.png"
 import Juba from "@/assets/images/logo/juba.png"
 
 const momo = MoMo
-const sigue = Sigue
+// const sigue = Sigue
 const moneygram = MoneyGram
 const moneytrans = MoneyTrans
 const om = OM
 const ria = Ria
-const paytop = Paytop
+// const paytop = Paytop
 const western = Western
 const worldremit = Worldremit
 const juba = Juba
@@ -93,11 +93,11 @@ const images = ref([
     image: momo,
     alt: 'logo MoMo'
   },
-  {
-    url: 'https://sigue.com/',
-    image: sigue,
-    alt: 'logo Sigue'
-  },
+  // {
+  //   url: 'https://sigue.com/',
+  //   image: sigue,
+  //   alt: 'logo Sigue'
+  // },
   {
     url: 'https://moneygram.cm/',
     image: moneygram,
@@ -118,11 +118,11 @@ const images = ref([
     image: ria,
     alt: 'Logo ria'
   },
-  {
-    url: 'https://www.paytop.com/',
-    image: paytop,
-    alt: 'Logo paytop'
-  },
+  // {
+  //   url: 'https://www.paytop.com/',
+  //   image: paytop,
+  //   alt: 'Logo paytop'
+  // },
   {
     url: 'https://www.westernunion.com/be/fr/home.html',
     image: western,

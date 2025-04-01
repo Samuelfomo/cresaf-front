@@ -43,8 +43,8 @@ const locations = ref([
   {
     city: "Douala",
     address: "Carrefour Anatole, face la station total",
-    phone: "+237 233 42 17 88",
-    textphone: "+237 233 42 17 88"
+    phone: null,
+    textphone: "+237 *** *** ***"
   },
   {
     city: "Yaounde",
@@ -66,7 +66,7 @@ const openWhatsApp = (phone) =>{
     const url = `https://api.whatsapp.com/send/?phone=${phoneExemple}&image&type=phone_number&app_absent=0`;
     window.open(url, "_blank");
   } else {
-    alert("Numéro de téléphone non disponible !");
+    console.error("Numéro de téléphone non disponible !");
   }
 }
 const openSocial = (link) =>{
@@ -108,7 +108,7 @@ const openPlaystore = () => {
   <div class="min-h-screen bg-blue-950">
     <Header />
     <main class="flex flex-col lg:pt-24 pt-32">
-      <div class="min-h-screen flex flex-wrap sm:flex-nowrap lg:pt-8 lg:pb-10">
+      <div class="min-h-screen flex flex-wrap lg:flex-nowrap lg:pt-8 lg:pb-10">
       <div class="w-full flex flex-col
        lg:px-10 px-5 lg:text-start text-center justify-start lg:items-start items-center">
         <h1 class="text-4xl font-accent text-white lg:pb-6">Contactez nous</h1>
