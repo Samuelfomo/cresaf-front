@@ -131,7 +131,7 @@
                          :class="[$route.name === '#' ? activeClass : inactiveClass]"
                          @click="closeAndScrollProducts2"
             >
-              <h2 class="relative group">Bon de caisse
+              <h2 class="relative group">Bons de caisse
                 <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
               </h2>
               <span class="text-xs text-gray-500">Bon plan pour votre épargne</span>

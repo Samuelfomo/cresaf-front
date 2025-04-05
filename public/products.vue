@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
-import cash from "@/assets/images/account/caissier.webp"
+import cash from "@/assets/images/cresaf/dd.png"
 import Cheque from "@/assets/images/cresaf/compte_cheque.png"
 import Terme from "@/assets/images/cresaf/depot_terme.png"
 // import Depot from "@/assets/images/account/depot.webp"
@@ -11,7 +11,7 @@ import Terme from "@/assets/images/cresaf/depot_terme.png"
 import Argent from "@/assets/images/account/argent.webp"
 import Argent1 from "@/assets/images/account/argent1.webp"
 import Received from "@/assets/images/account/received.webp"
-import Interred from "@/assets/images/account/interrest.webp"
+// import Interred from "@/assets/images/account/interrest.webp"
 import Guichet from "@/assets/images/account/guichet.webp"
 import Electronic from "@/assets/images/account/terminaux.webp"
 import Order from "@/assets/images/account/autre.webp"
@@ -24,6 +24,12 @@ import Islamique from "@/assets/images/account/account-islamique.webp"
 import Virement from "@/assets/images/account/account-transfer.webp"
 import Images from "@/assets/images/solution/cresafSolution.webp"
 import Image_compteAss from "@public/components/image_compteAss.vue";
+import Epargne from "@/assets/images/account/epargne1.png"
+import Epargne1 from "@/assets/images/account/epargne.png"
+
+const imagesList = [Epargne, Epargne1];
+
+
 
 const products = ref([
   {
@@ -250,7 +256,7 @@ onUnmounted(() => {
     <!-- Sections des produits -->
     <main id="section1" class="bg-blue-950 lg:px-16 px-8 py-12">
       <h2 class="text-white font-accent text-4xl w-full justify-center text-center pb-5">
-        Compte chèque
+        Compte chèque particulier
       </h2>
       <p class="text-gray-300 font-primary text-lg w-full justify-start pb-10">
         Le compte chèque à destination des entrepreneurs quel que soit le secteur d’activité,
@@ -311,8 +317,11 @@ onUnmounted(() => {
             </div>
           </div>
         </div>
-          <div class="flex w-full max-w-xl h-full lg:min-h-[28rem] order-1 lg:order-2">
+          <div class="flex w-full max-w-xl h-full items-center justify-center lg:min-h-[28rem] order-1 lg:order-2 relative">
+<!--              <Image_compteAss :images="imagesList" />-->
+
             <img :src="cash" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
+
           </div>
         </div>
     </main>
@@ -358,9 +367,10 @@ onUnmounted(() => {
         de protéger leurs finances grâce à des comptes d’épargne fiables et sécurisés.
       </p>
       <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4 lg:pb-20">
-        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] relative">
+        <div class="flex w-full max-w-xl h-full lg:min-h-[28rem] order-1 lg:order-2 relative bg-black">
+<!--        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] relative">-->
 <!--          <img :src="Epargne" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">-->
-        <Image_compteAss />
+        <Image_compteAss :images="imagesList" />
         </div>
         <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-[24rem]">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
@@ -526,7 +536,7 @@ onUnmounted(() => {
       </div>
     </main>
     <main id="section5" class="bg-blue-950 lg:px-16 px-8 py-12">
-      <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl pb-4">Collecte journalière </h1>
+      <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl pb-4">Collecte journalière</h1>
         <p class="w-full py-6 text-lg text-gray-300">
           La collecte journalière destinée principalement aux travailleurs indépendants (commerçants ou autre)
           permet de sécuriser l’argent sans avoir à se déplacer.

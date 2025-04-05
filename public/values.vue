@@ -23,21 +23,22 @@
         </div>
       </div>
     </div>
-    <div id="section1" class="bg-blue-50 opacity-90 lg:px-8 flex flex-col py-12 lg:pb-0 justify-start ">
+    <div id="section1" class="bg-blue-50 opacity-90 lg:px-8 flex flex-col py-12  justify-start ">
       <h1 class="text-green-600 lg:text-5xl text-3xl font-primary text-center">Nos valeurs fondamentales</h1>
       <p class="text-black text-xl py-10 w-full lg:px-10 px-5 font-primary">
         Nos employés partagent des valeurs fortes qui sous-tendent notre engagement et notre responsabilité de fournir à nos clients et partenaires une expérience enrichissante.
       </p>
      <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">
-       <div class="hidden w-full h-full max-w-lg lg:flex justify-center items-center">
-         <img :src="secretaire" alt="image secrétaire" class="max-w-md h-full object-cover transition-transform duration-500 hover:scale-105">
+       <div class="hidden w-full max-h-[450px] max-w-md lg:flex">
+<!--       <div class="hidden w-full h-full max-w-lg lg:flex justify-center items-center lg:pb-10">-->
+         <img :src="valeurs" alt="image secrétaire" class="object-cover rounded-lg transition-transform duration-500 hover:scale-105">
        </div>
        <div class="w-full h-full flex flex-col justify-start px-6 py-1">
          <h3 class="text-2xl pb-4 text-gray-800 font-roboto">
            Ces valeurs sont les suivantes :
          </h3>
-         <div class="flex justify-between items-start w-full py-2 lg:pr-32" v-for="(location, index) in locations" :key="index">
-           <h1 class="text-xl font-bold text-black w-full">{{ location.titre }}
+         <div class="flex justify-between items-start w-full py-2" v-for="(location, index) in locations" :key="index">
+           <h1 class="text-xl font-bold leading-relaxed text-black w-full">{{ location.titre }}
            <span>
             {{location.description}}
            </span>
@@ -53,12 +54,12 @@
       </p>
      <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">
        <div class="hidden w-full max-h-[450px] max-w-md lg:flex">
-         <img :src="man" alt="image secrétaire" class="max-w-md h-full object-cover transition-transform duration-500 hover:scale-105">
+         <img :src="confiance" alt="image secrétaire" class="w-full h-full rounded-lg object-cover transition-transform duration-500 hover:scale-105">
        </div>
-       <div class="w-full h-full flex flex-col justify-start px-6 py-1">
-         <div class="flex justify-between items-stretch w-full py-2 lg:pr-32 gap-2" v-for="(location2, index) in locations2" :key="index">
+       <div class="w-full h-full flex flex-col justify-start px-6 py-6">
+         <div class="flex justify-between items-stretch w-full py-2 gap-2" v-for="(location2, index) in locations2" :key="index">
            <img :src="check" alt="checked rounded" class="w-8 h-8">
-           <h1 class="text-xl w-full leading-8 font-light">
+           <h1 class="text-xl w-full leading-10 font-light">
             {{location2.description}}
            </h1>
          </div>
@@ -118,14 +119,16 @@ import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 import Image1 from "@public/components/image.vue";
 
-import Secretaire from "@/assets/images/secretaire.webp"
-import Man from "@/assets/images/man.webp"
+import Valeur from "@/assets/images/cresaf/nos_valeurs_fondamentales.png"
+// import Secretaire from "@/assets/images/secretaire.webp"
+import Confiance from "@/assets/images/cresaf/confiance.png"
+// import Man from "@/assets/images/man.webp"
 import Girl from "@/assets/images/girl.webp"
 import Sommet from "@/assets/images/sommet.webp"
 import Check from"@/assets/images/svg/check-rounded.svg"
 
-const secretaire = Secretaire
-const man = Man
+const valeurs = Valeur
+const confiance = Confiance
 const girl = Girl
 const sommet = Sommet
 const check = Check
