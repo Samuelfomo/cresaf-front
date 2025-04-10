@@ -5,7 +5,7 @@ import Footer from "@public/components/footer.vue";
 
 import cash from "@/assets/images/cresaf/dd.png"
 import Cheque from "@/assets/images/cresaf/compte_cheque.png"
-import Terme from "@/assets/images/cresaf/depot_terme.png"
+// import Terme from "@/assets/images/cresaf/depot_terme.png"
 // import Depot from "@/assets/images/account/depot.webp"
 // import Money from "@/assets/images/account/money.webp"
 import Argent from "@/assets/images/account/argent.webp"
@@ -26,6 +26,13 @@ import Images from "@/assets/images/solution/cresafSolution.webp"
 import Image_compteAss from "@public/components/image_compteAss.vue";
 import Epargne from "@/assets/images/account/epargne1.png"
 import Epargne1 from "@/assets/images/account/epargne.png"
+import Caisse1 from "@/assets/images/cresaf/cref/bon_caisse.png"
+import Caisse2 from "@/assets/images/cresaf/cref/bon_caisse2.png"
+import Terme1 from "@/assets/images/cresaf/cref/depot_terme.png"
+import Terme2 from "@/assets/images/cresaf/cref/depot_terme2.png"
+
+const Caisse = [Caisse1, Caisse2]
+const Terme = [Terme1, Terme2]
 
 const imagesList = [Epargne, Epargne1];
 
@@ -254,6 +261,7 @@ onUnmounted(() => {
     </section>
 
     <!-- Sections des produits -->
+    <!--Compte chèque particulier-->
     <main id="section1" class="bg-blue-950 lg:px-16 px-8 py-12">
       <h2 class="text-white font-accent text-4xl w-full justify-center text-center pb-5">
         Compte chèque particulier
@@ -289,6 +297,7 @@ onUnmounted(() => {
       </div>
 
     </main>
+    <!--Bon de caisse-->
     <main id="section2" class="bg-blue-50 lg:px-16 px-8 py-12">
         <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
           Bon de caisse
@@ -318,13 +327,14 @@ onUnmounted(() => {
           </div>
         </div>
           <div class="flex w-full max-w-xl h-full items-center justify-center lg:min-h-[28rem] order-1 lg:order-2 relative">
-<!--              <Image_compteAss :images="imagesList" />-->
+              <Image_compteAss :images="Caisse" />
 
-            <img :src="cash" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
+<!--            <img :src="cash" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">-->
 
           </div>
         </div>
     </main>
+    <!--Dépôt à terme-->
     <main id="section3" class="bg-blue-950 lg:px-16 px-8 py-12">
       <h2 class="text-white font-accent text-4xl w-full justify-center text-center pb-5">
         Dépôt à terme
@@ -335,8 +345,9 @@ onUnmounted(() => {
         pouvant à tout moment disposer des intérêts générés par le compte.
       </p>
       <div class="lg:flex w-full gap-2 justify-center lg:px-10">
-        <div class="flex w-full max-w-xl h-full lg:max-h-[28rem]">
-          <img :src="Terme" alt="image" class="object-cover rounded-lg transition-transform duration-500 hover:scale-105">
+        <div class="flex w-full max-w-xl h-full items-center justify-center lg:min-h-[28rem] order-1 lg:order-2 relative">
+          <Image_compteAss :images="Terme" />
+
         </div>
         <div class="w-full max-w-xl flex flex-col">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-300 lg:p-0 pt-5">
@@ -357,6 +368,7 @@ onUnmounted(() => {
       </div>
 
     </main>
+    <!--Compte d’épargne association-->
     <main id="section4" class="pb-6 bg-blue-50 py-12">
       <div class="bg-blue-50 lg:px-8 px-5">
       <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-8">
@@ -535,6 +547,7 @@ onUnmounted(() => {
         </div>
       </div>
     </main>
+    <!--Collecte journalière-->
     <main id="section5" class="bg-blue-950 lg:px-16 px-8 py-12">
       <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl pb-4">Collecte journalière</h1>
         <p class="w-full py-6 text-lg text-gray-300">
@@ -609,6 +622,7 @@ onUnmounted(() => {
           </div>
         </div>
     </main>
+    <!--Carte visa-->
     <main id="section6" class="bg-blue-50 lg:px-16 px-8 py-12">
         <h2 class="text-green-600 font-accent text-4xl w-full justify-center text-center pb-5">
           Carte visa
