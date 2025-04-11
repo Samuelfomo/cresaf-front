@@ -4,7 +4,7 @@ import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
 import cash from "@/assets/images/cresaf/dd.png"
-import Cheque from "@/assets/images/cresaf/compte_cheque.png"
+import Cheque1 from "@/assets/images/cresaf/cref/cheque_particulier.png"
 // import Terme from "@/assets/images/cresaf/depot_terme.png"
 // import Depot from "@/assets/images/account/depot.webp"
 // import Money from "@/assets/images/account/money.webp"
@@ -24,19 +24,27 @@ import Islamique from "@/assets/images/account/account-islamique.webp"
 import Virement from "@/assets/images/account/account-transfer.webp"
 import Images from "@/assets/images/solution/cresafSolution.webp"
 import Image_compteAss from "@public/components/image_compteAss.vue";
-import Epargne from "@/assets/images/account/epargne1.png"
-import Epargne1 from "@/assets/images/account/epargne.png"
+import Epargne1 from "@/assets/images/cresaf/cref/compte_epargne.png"
+import Epargne2 from "@/assets/images/cresaf/cref/compte_epargne1.png"
 import Caisse1 from "@/assets/images/cresaf/cref/bon_caisse.png"
 import Caisse2 from "@/assets/images/cresaf/cref/bon_caisse2.png"
 import Terme1 from "@/assets/images/cresaf/cref/depot_terme.png"
 import Terme2 from "@/assets/images/cresaf/cref/depot_terme2.png"
 import Collecte1 from "@/assets/images/cresaf/cref/collecte3.png"
-import Collecte2 from "@/assets/images/cresaf/cref/collecte5.png"
+import Entreprise1 from "@/assets/images/cresaf/cref/compte_entreprise.png"
+import Entreprise2 from "@/assets/images/cresaf/cref/compte_entreprise2.png"
+import Salaire1 from "@/assets/images/cresaf/cref/compte_salaire1.png"
+import Salaire2 from "@/assets/images/cresaf/cref/compte_salaire2.png"
+import Association1 from "@/assets/images/cresaf/cref/association1.png"
+import Association2 from "@/assets/images/cresaf/cref/association2.png"
 
 const Caisse = [Caisse1, Caisse2]
 const Terme = [Terme1, Terme2]
-
-const imagesList = [Epargne, Epargne1];
+const Cheque = [Cheque1]
+const Epargne = [Epargne1, Epargne2];
+const Entreprise = [Entreprise1, Entreprise2];
+const Salaire = [Salaire1, Salaire2];
+const Association = [Association1, Association2];
 
 
 
@@ -48,7 +56,7 @@ const products = ref([
     subtitle: "Particulier, entreprise & salaire",
     subtitle2: "✅ Gérez vos finances au quotidien avec facilité et rapidité ",
     description: "Description du compte chèque...",
-    image: Images
+    image: Cheque1
     // image: Image4
   },
   {
@@ -76,7 +84,7 @@ const products = ref([
     subtitle: "Livret & Association",
     subtitle2: "💳 Épargnez sereinement et faites grandir vos projets avec CRESAF !",
     description: "Description du compte d'épargne...",
-    image: Images
+    image:Epargne1
     // image: Image2
   },
   {
@@ -88,15 +96,15 @@ const products = ref([
     image: Collecte1
     // image: Image3
   },
-  {
-    id: 6,
-    title: "Carte VISA",
-    subtitle: "Vous ouvrir au monde",
-    subtitle2: "🌍 Payez et retirez de l’argent partout, en toute simplicité !",
-    description: "Description de la carte VISA...",
-    image: Images
-    // image: Compte
-  },
+  // {
+  //   id: 6,
+  //   title: "Carte VISA",
+  //   subtitle: "Vous ouvrir au monde",
+  //   subtitle2: "🌍 Payez et retirez de l’argent partout, en toute simplicité !",
+  //   description: "Description de la carte VISA...",
+  //   image: Images
+  //   // image: Compte
+  // },
   // {
   //   id: 7,
   //   // title: "Carte VISA",
@@ -273,8 +281,11 @@ onUnmounted(() => {
         permettra d’effectuer les transactions bancaires courantes lies à leurs activités.
       </p>
       <div class="lg:flex w-full gap-2 justify-center lg:px-10">
-        <div class="flex w-full max-w-xl h-full lg:max-h-[28rem]">
-          <img :src="Cheque" alt="image" class="object-cover rounded-lg transition-transform duration-500 hover:scale-105">
+<!--        <div class="flex w-full max-w-xl h-full lg:max-h-[28rem]">-->
+<!--          <img :src="Cheque" alt="image" class="object-cover rounded-lg transition-transform duration-500 hover:scale-105">-->
+<!--        </div>-->
+        <div class="flex w-full max-w-xl h-full items-center justify-center lg:min-h-[28rem] relative">
+          <Image_compteAss :images="Cheque" />
         </div>
         <div class="w-full max-w-xl flex flex-col">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-300 lg:p-0 pt-5">
@@ -347,7 +358,7 @@ onUnmounted(() => {
         pouvant à tout moment disposer des intérêts générés par le compte.
       </p>
       <div class="lg:flex w-full gap-2 justify-center lg:px-10">
-        <div class="flex w-full max-w-xl h-full items-center justify-center lg:min-h-[28rem] order-1 lg:order-2 relative">
+        <div class="flex w-full max-w-xl h-full items-center justify-center lg:min-h-[28rem] relative">
           <Image_compteAss :images="Terme" />
 
         </div>
@@ -381,10 +392,14 @@ onUnmounted(() => {
         de protéger leurs finances grâce à des comptes d’épargne fiables et sécurisés.
       </p>
       <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4 lg:pb-20">
-        <div class="flex w-full max-w-xl h-full lg:min-h-[28rem] order-1 lg:order-2 relative bg-black">
-<!--        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] relative">-->
-<!--          <img :src="Epargne" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">-->
-        <Image_compteAss :images="imagesList" />
+<!--        <div class="flex w-full max-w-xl h-full lg:min-h-[28rem] order-1 lg:order-2 relative bg-black">-->
+<!--&lt;!&ndash;        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] relative">&ndash;&gt;-->
+<!--&lt;!&ndash;          <img :src="Epargne" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">&ndash;&gt;-->
+<!--        <Image_compteAss :images="imagesList" />-->
+<!--        </div>-->
+        <div class="flex w-full h-full items-center justify-center lg:min-h-[28rem] order-1 lg:order-2 relative">
+          <Image_compteAss :images="Association" />
+
         </div>
         <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-[24rem]">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
@@ -431,8 +446,12 @@ onUnmounted(() => {
             </div>
           </div>
         </div>
-        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] order-1 lg:order-2">
-          <img :src="Livret" alt="image" class="object-contain transition-transform duration-500 hover:scale-105 rounded-lg">
+<!--        <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] order-1 lg:order-2">-->
+<!--          <img :src="Livret" alt="image" class="object-contain transition-transform duration-500 hover:scale-105 rounded-lg">-->
+<!--        </div>-->
+        <div class="flex w-full h-full items-center justify-center lg:min-h-[28rem] order-1 lg:order-2 relative">
+          <Image_compteAss :images="Epargne" />
+
         </div>
       </div>
       </div>
@@ -446,9 +465,13 @@ onUnmounted(() => {
           Les entreprises clientes pourront effectuer toutes les transactions financières courantes liées à leur fonctionnement
           grâce à un service simplifié.
         </p>
-        <div class="lg:flex w-full gap-2 justify-center lg:px-10 px-4">
-          <div class="flex w-full lg:max-w-sm h-full lg:min-h-[24rem] relative">
-<!--            <img :src="Courant" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">-->
+        <div class="lg:flex w-full gap-2 justify-center lg:px-10">
+          <div class="flex w-full h-full items-center justify-center lg:min-h-[28rem] order-1 lg:order-2 relative">
+            <Image_compteAss :images="Entreprise" />
+
+          </div>
+          <div class=" w-full lg:max-w-sm h-full lg:min-h-[24rem] relative hidden">
+            <img :src="Courant" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
             <div
                 v-for="(Courant, index) in Courants"
                 :key="index"
@@ -537,8 +560,12 @@ onUnmounted(() => {
 <!--        </p>-->
 
         <div class="lg:flex w-full gap-2 justify-between lg:px-10 px-4">
-          <div class="flex w-full lg:max-w-xl h-full lg:min-h-[24rem]" >
+          <div class="w-full lg:max-w-xl h-full lg:min-h-[24rem] hidden" >
             <img :src="Virement" alt="image" class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105 rounded-xl border">
+          </div>
+          <div class="flex w-full h-full items-center justify-center lg:min-h-[28rem] relative">
+            <Image_compteAss :images="Salaire" />
+
           </div>
           <div class="w-full flex flex-col lg:pt-0 pt-5 lg:pl-5 my-auto">
             <h2 class="lg:text-xl text-lg w-full lg:font-accent text-gray-700 leading-relaxed">

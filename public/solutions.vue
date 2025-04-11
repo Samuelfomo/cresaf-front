@@ -67,22 +67,23 @@ const solutions = ref([
   },
   {
     id: 'importexport',
-    title: "Financement Import/Export",
+    title: "Financement Import",
     description: 'Nous accompagnons les entrepreneurs dans leurs différentes opérations de vente ou d’achat' +
-        ' à l’international (fournisseurs, frais de douane…)',
-    subtitle: "Développez votre activité internationale",
+        ' à l’international',
+    subtitle: "Concrétisez vos ambitions",
+    // subtitle: "Développez votre activité internationale",
     image: Exp_Imp,
     // image: "https://picsum.photos/id/1015/800/600",
     features: [
-      { title: "Expertise internationale", description: "Maîtrise des opérations transfrontalières" },
-      { title: "Sécurisation", description: "Garantie des transactions internationales" },
+      { title: "Expertise internationale", description: "Maîtrise des opérations d'importations ou de dédouanements" },
+      // { title: "Sécurisation", description: "Garantie des transactions internationales" },
       { title: "Réseau global", description: "Partenaires dans le monde entier" }
     ],
     services: [
-      "Crédit documentaire",
-      "Garantie internationale",
-      "Préfinancement export",
-      "Remise documentaire"
+      // "Crédit documentaire",
+      "Garantie régionale",
+      "Préfinancement import",
+      // "Remise documentaire"
     ],
     class: "bg-blue-950",
     font:'text-white',
