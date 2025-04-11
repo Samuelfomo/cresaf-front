@@ -30,6 +30,8 @@ import Caisse1 from "@/assets/images/cresaf/cref/bon_caisse.png"
 import Caisse2 from "@/assets/images/cresaf/cref/bon_caisse2.png"
 import Terme1 from "@/assets/images/cresaf/cref/depot_terme.png"
 import Terme2 from "@/assets/images/cresaf/cref/depot_terme2.png"
+import Collecte1 from "@/assets/images/cresaf/cref/collecte3.png"
+import Collecte2 from "@/assets/images/cresaf/cref/collecte5.png"
 
 const Caisse = [Caisse1, Caisse2]
 const Terme = [Terme1, Terme2]
@@ -55,7 +57,7 @@ const products = ref([
     subtitle: "Bon plan pour votre épargne",
     subtitle2: "💰 Investissez en toute sécurité avec un rendement garanti chez CRESAF !",
     description: "Description du Bon de caisse...",
-    image: Images
+    image: Caisse2
     // image: Image
   },
   {
@@ -65,7 +67,7 @@ const products = ref([
     subtitle: "Fructifier votre argent",
     subtitle2: "🤑 Faites fructifier votre argent avec des taux avantageux et sans risque !",
     // subtitle2: "💵 💸🤑 Faites fructifier votre argent avec des taux avantageux et sans risque !",
-    image: Images
+    image: Terme1
     // image: Image1
   },
   {
@@ -83,7 +85,7 @@ const products = ref([
     subtitle: "Vous suivre au quotidien",
     subtitle2: "📥 Sécurisez vos revenus quotidiens sans vous déplacer",
     description: "Description de la collecte journalière...",
-    image: Images    
+    image: Collecte1
     // image: Image3
   },
   {
@@ -208,7 +210,7 @@ onUnmounted(() => {
                class="absolute inset-0 cursor-pointer">
             <img :src="product.image"
                  :alt="product.title"
-                 class="  object-cover lg:mt-10 mt-20">
+                 class="object-cover lg:mt-10 mt-20">
             <div class="absolute inset-0 bg-blue-700 bg-opacity-30">
               <div class="container mx-auto px-6 h-full flex items-center">
                 <div class="text-white max-w-lg">
