@@ -161,7 +161,7 @@ const scrollToSection = (sectionId) => {
             {{ solution.title }}
           </h2>
           <p class="lg:pb-14 pb-5 lg:text-xl text-lg font-sans"
-             :class="{ 'text-white text-opacity-70': solution.font, 'text-gray-700': !solution.font }">
+             :class="{ 'text-white text-opacity-70': solution.font, 'text-gray-700': !solution.font, 'text-center':solution.id === 'importexport'}">
             {{solution.description}}
           </p>
           <div class="flex-col lg:flex-row gap-16 items-center hidden">

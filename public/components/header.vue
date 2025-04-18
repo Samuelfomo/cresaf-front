@@ -1,7 +1,7 @@
 <template>
   <header class="fixed bg-white p-5 lg:py-3 lg:px-14 flex justify-between items-center w-full flex-row border-b z-50">
     <div class="text-xl font-bold text-blue-600 cursor-pointer" @click="router.push('/')">
-      <img :src="logo" alt="Logo" class="w-40 h-12 ">
+      <img :src="logo" alt="Logo" class="w-14 h-14">
     </div>
 
     <!-- Bouton pour afficher le menu mobile -->
@@ -576,7 +576,9 @@
 import {ref, nextTick} from 'vue';
 import {useRouter} from "vue-router"
 const router = useRouter()
-import Logo from "@/assets/images/logo.png"
+import Logo from "@/assets/images/cresaf.png"
+// import Logo from "@/assets/images/logo.png"
+// import LogoDrewa from "@/assets/images/cresaf-white.png";
 import LogoDrewa from "@/assets/images/logo-cresaf.png";
 
 import database from "@/assets/images/svg/database-up.svg"
@@ -933,7 +935,8 @@ const scrollTo = ({id}: { id: any })=> {
 }
 
 const contact = () => {
-  window.open(`https://api.whatsapp.com/send/?phone=237233421788&text&type=phone_number&app_absent=0`, "_blank");
+  const contactValue = 237658794995
+  window.open(`https://api.whatsapp.com/send/?phone=${contactValue}&text&type=phone_number&app_absent=0`, "_blank");
 }
 
 // const handleLogout =  () => {

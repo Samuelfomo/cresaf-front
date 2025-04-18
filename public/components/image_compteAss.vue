@@ -19,7 +19,7 @@
     </div>
 
     <!-- Slider indicators -->
-    <div class="absolute lg:top-[26rem] top-[21rem] left-[36%] rounded-lg transform -translate-x-1/2 flex space-x-3">
+    <div class="absolute lg:top-[26rem] top-[12rem] left-[36%] rounded-lg transform -translate-x-1/2 flex space-x-3">
       <button
           v-for="(image, index) in images"
           :key="index"

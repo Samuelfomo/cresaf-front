@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
-import cash from "@/assets/images/cresaf/dd.png"
+// import cash from "@/assets/images/cresaf/dd.png"
 import Cheque1 from "@/assets/images/cresaf/cref/cheque_particulier.png"
 // import Terme from "@/assets/images/cresaf/depot_terme.png"
 // import Depot from "@/assets/images/account/depot.webp"
@@ -17,12 +17,12 @@ import Electronic from "@/assets/images/account/terminaux.webp"
 import Order from "@/assets/images/account/autre.webp"
 import Refund from "@/assets/images/account/refund.webp"
 import Micro from "@/assets/images/account/micro.webp"
-import Livret from "@/assets/images/account/epargne1.png"
+// import Livret from "@/assets/images/account/epargne1.png"
 import Courant from "@/assets/images/account/courant.webp"
 import Courant1 from "@/assets/images/account/enterprise.png"
 import Islamique from "@/assets/images/account/account-islamique.webp"
-import Virement from "@/assets/images/account/account-transfer.webp"
-import Images from "@/assets/images/solution/cresafSolution.webp"
+// import Virement from "@/assets/images/account/account-transfer.webp"
+// import Images from "@/assets/images/solution/cresafSolution.webp"
 import Image_compteAss from "@public/components/image_compteAss.vue";
 import Epargne1 from "@/assets/images/cresaf/cref/compte_epargne.png"
 import Epargne2 from "@/assets/images/cresaf/cref/compte_epargne1.png"
@@ -287,7 +287,7 @@ onUnmounted(() => {
         <div class="flex w-full max-w-xl h-full items-center justify-center lg:min-h-[28rem] relative">
           <Image_compteAss :images="Cheque" />
         </div>
-        <div class="w-full max-w-xl flex flex-col">
+        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-64">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-300 lg:p-0 pt-5">
             Ce compte offre plusieurs avantages qui facilitent la gestion financière des entrepreneurs
           </h2>
@@ -298,11 +298,11 @@ onUnmounted(() => {
 <!--            </div>-->
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-white">Mise en place d’un découvert</h2>
-              <span class="text-lg font-bold text-white"> à la demande du client </span>
+              <span class="text-lg font-bold text-white"> À la demande du client </span>
             </div>
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
-              <h2 class="font-light text-white">Déposit minimum </h2>
-              <span class="text-lg font-bold text-white"> 30.000 XAF</span>
+              <h2 class="font-light text-white">Dépôt minimum </h2>
+              <span class="text-lg font-bold text-white my-auto"> 30.000 XAF</span>
             </div>
 
           </div>
@@ -322,7 +322,7 @@ onUnmounted(() => {
           <!--          d’intérêts allant jusqu’à 5%.-->
         </p>
         <div class="flex flex-wrap lg:flex-nowrap w-full gap-2 justify-center lg:px-10">
-          <div class="w-full lg:max-w-xl flex flex-col lg:py-16 order-2 lg:order-1" >
+          <div class="w-full lg:max-w-xl flex flex-col lg:py-16 pt-64 order-2 lg:order-1" >
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-600">Les placements en bon de caisse offrent les conditions suivantes</h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
 <!--            <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">-->
@@ -330,12 +330,12 @@ onUnmounted(() => {
 <!--              <span class="text-lg font-bold text-white">5.000.000 CFA</span>-->
 <!--            </div>-->
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
-              <h2 class="font-light text-white">taux de rémunération</h2>
-              <span class="text-lg font-bold text-white"> négociable</span>
+              <h2 class="font-light text-white">Taux de rémunération</h2>
+              <span class="text-lg font-bold text-white my-auto"> Négociable</span>
             </div>
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-blue-950 border opacity-90 justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-white">Intérêt  précompte ou post compte</h2>
-              <span class="text-lg font-bold text-white"> à la demande du client</span>
+              <span class="text-lg font-bold text-white"> À la demande du client</span>
             </div>
           </div>
         </div>
@@ -362,14 +362,14 @@ onUnmounted(() => {
           <Image_compteAss :images="Terme" />
 
         </div>
-        <div class="w-full max-w-xl flex flex-col">
+        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-64">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-300 lg:p-0 pt-5">
             Ce compte propose de nombreux avantages visant à simplifier et optimiser la gestion financière des souscripteurs.
           </h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
-            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
+            <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-2 gap-5">
               <h2 class="font-light text-white">Taux de rémunération</h2>
-              <span class="text-lg font-bold text-white"> négociable </span>
+              <span class="text-lg font-bold text-white"> Négociable </span>
             </div>
             <div class="flex w-full lg:max-w-[12rem] flex-col bg-white border bg-opacity-10 justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-white">Taux d’intérêts </h2>
@@ -401,18 +401,18 @@ onUnmounted(() => {
           <Image_compteAss :images="Association" />
 
         </div>
-        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-[24rem]">
+        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-64">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
             Les associations bénéficient des avantages et conditions suivantes pour leur compte d’épargne
           </h2>
           <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
-            <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
+            <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-2 gap-5">
               <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
-              <span class="text-lg font-bold text-white"> 50.000 XAF </span>
+              <span class="text-lg font-bold text-white my-auto"> 50.000 XAF </span>
             </div>
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Taux d’intérêt</h2>
-              <span class="text-lg font-bold text-white">4% sur l’année</span>
+              <span class="text-lg font-bold text-white my-auto">4% sur l’année</span>
             </div>
           </div>
         </div>
@@ -429,7 +429,7 @@ onUnmounted(() => {
         Le client pourra ainsi faire fructifier l’argent déposé grâce à des taux d’intérêts les plus intéressants du marché.
       </p>
       <div class="flex flex-wrap lg:flex-nowrap w-full gap-2 justify-center lg:px-10 px-4">
-        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-5 order-2 lg:order-1">
+        <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-64 order-2 lg:order-1">
           <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
 <!--            Les règles applicables à l'ouverture d'un compte d'épargne sur livret sont les suivantes :-->
             Les conditions d'ouverture d'un compte d'épargne sur livret sont les suivantes :
@@ -438,11 +438,11 @@ onUnmounted(() => {
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
 <!--              <span class="text-lg font-bold text-white"> 15.000 XAF<span> Hors Taxes </span></span>-->
-              <span class="text-lg font-bold text-white"> 16.000 XAF<span> TTC</span></span>
+              <span class="text-lg font-bold text-white my-auto"> 16.000 XAF<span> TTC</span></span>
             </div>
             <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
               <h2 class="font-light text-lg text-white">Solde minimum permanent en compte</h2>
-              <span class="text-lg font-bold text-white">10.000 XAF</span>
+              <span class="text-lg font-bold text-white my-auto">10.000 XAF</span>
             </div>
           </div>
         </div>
@@ -470,41 +470,41 @@ onUnmounted(() => {
             <Image_compteAss :images="Entreprise" />
 
           </div>
-          <div class=" w-full lg:max-w-sm h-full lg:min-h-[24rem] relative hidden">
-            <img :src="Courant" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">
-            <div
-                v-for="(Courant, index) in Courants"
-                :key="index"
-                class="transition-opacity duration-700"
-                :class="{'opacity-100': currentIndex === index, 'opacity-0': currentIndex !== index}"
-            >
-              <img
-                  :src="Courant"
-                  class="rounded-lg absolute inset-0 ease-in-out flex items-center justify-center object-cover transition-transform duration-500 hover:scale-105"
-                  alt="Image Compte Courant"
-              />
-            </div>
+<!--          <div class=" w-full lg:max-w-sm h-full lg:min-h-[24rem] relative hidden">-->
+<!--            <img :src="Courant" alt="image" class="object-cover transition-transform duration-500 hover:scale-105 rounded-lg">-->
+<!--            <div-->
+<!--                v-for="(Courant, index) in Courants"-->
+<!--                :key="index"-->
+<!--                class="transition-opacity duration-700"-->
+<!--                :class="{'opacity-100': currentIndex === index, 'opacity-0': currentIndex !== index}"-->
+<!--            >-->
+<!--              <img-->
+<!--                  :src="Courant"-->
+<!--                  class="rounded-lg absolute inset-0 ease-in-out flex items-center justify-center object-cover transition-transform duration-500 hover:scale-105"-->
+<!--                  alt="Image Compte Courant"-->
+<!--              />-->
+<!--            </div>-->
 
-            <!-- Slider indicators -->
-            <div class="absolute lg:top-[22rem] top-[18rem] left-1/2 transform -translate-x-1/2 flex space-x-3">
-              <button
-                  v-for="(Courant, index) in Courants"
-                  :key="index"
-                  class="w-3 h-3 rounded-full transition-colors duration-300"
-                  :class="currentIndex === index ? 'bg-white' : 'bg-gray-400'"
-                  @click="goToSlide(index)"
-                  :aria-label="`Go to slide ${index + 1}`"
-              ></button>
-            </div>
-          </div>
-          <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-[21rem]">
+<!--            &lt;!&ndash; Slider indicators &ndash;&gt;-->
+<!--            <div class="absolute lg:top-[22rem] top-[18rem] left-1/2 transform -translate-x-1/2 flex space-x-3">-->
+<!--              <button-->
+<!--                  v-for="(Courant, index) in Courants"-->
+<!--                  :key="index"-->
+<!--                  class="w-3 h-3 rounded-full transition-colors duration-300"-->
+<!--                  :class="currentIndex === index ? 'bg-white' : 'bg-gray-400'"-->
+<!--                  @click="goToSlide(index)"-->
+<!--                  :aria-label="`Go to slide ${index + 1}`"-->
+<!--              ></button>-->
+<!--            </div>-->
+<!--          </div>-->
+          <div class="w-full max-w-xl flex flex-col lg:pt-0 pt-[17rem]">
             <h2 class="text-xl w-full lg:text-center font-semibold text-gray-500">
               Les entreprises bénéficient des avantages et conditions suivantes pour leur compte courant entreprise
             </h2>
             <div class="w-full flex justify-center lg:p-6 py-6 gap-2 lg:flex-nowrap flex-wrap">
               <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
                 <h2 class="font-light text-lg text-white">Dépôt minimum à l’ouverture</h2>
-                <span class="text-lg font-bold text-white"> 30.000 XAF </span>
+                <span class="text-lg font-bold text-white my-auto"> 30.000 XAF </span>
               </div>
               <div class="bg-blue-950 bg-opacity-90 flex w-full lg:max-w-[12rem] flex-col shadow border justify-between p-4 rounded-lg lg:gap-0 gap-5">
                 <h2 class="font-light text-lg text-white">Facilité de compensation chèque</h2>
@@ -560,15 +560,15 @@ onUnmounted(() => {
 <!--        </p>-->
 
         <div class="lg:flex w-full gap-2 justify-between lg:px-10 px-4">
-          <div class="w-full lg:max-w-xl h-full lg:min-h-[24rem] hidden" >
-            <img :src="Virement" alt="image" class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105 rounded-xl border">
-          </div>
+<!--          <div class="w-full lg:max-w-xl h-full lg:min-h-[24rem] hidden" >-->
+<!--            <img :src="Virement" alt="image" class="w-full h-auto object-cover transition-transform duration-500 hover:scale-105 rounded-xl border">-->
+<!--          </div>-->
           <div class="flex w-full h-full items-center justify-center lg:min-h-[28rem] relative">
             <Image_compteAss :images="Salaire" />
 
           </div>
-          <div class="w-full flex flex-col lg:pt-0 pt-5 lg:pl-5 my-auto">
-            <h2 class="lg:text-xl text-lg w-full lg:font-accent text-gray-700 leading-relaxed">
+          <div class="w-full flex flex-col pt-64 lg:pl-5 lg:py-16">
+            <h2 class="lg:text-xl text-lg w-full font-serif text-gray-700 leading-relaxed">
               Le compte virement salaire permet de recevoir son salaire mensuel, mais aussi d’effectuer ses transactions
               banquières courantes. Il donne droit à un découvert permanent, ainsi qu’à des crédits de plusieurs sortes.
             </h2>
@@ -578,8 +578,8 @@ onUnmounted(() => {
     </main>
     <!--Collecte journalière-->
     <main id="section5" class="bg-blue-950 lg:px-16 px-8 py-12">
-      <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl pb-4">Collecte journalière</h1>
-        <p class="w-full py-6 text-lg text-gray-300">
+      <h1 class="text-white w-full text-center font-accent lg:text-4xl text-3xl lg:pb-4">Collecte journalière</h1>
+        <p class="w-full py-6 text-lg text-gray-200">
           La collecte journalière destinée principalement aux travailleurs indépendants (commerçants ou autre)
           permet de sécuriser l’argent sans avoir à se déplacer.
           Nos agents déployés sur le terrain collectent les fonds et les déposent directement

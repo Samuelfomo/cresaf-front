@@ -324,13 +324,13 @@ const locations5 = ref([
   },
   {
     icon:arrow,
-    titre: 'Renseignés vos coordonnées vos coordonnées',
+    titre: 'Renseignez vos coordonnées',
     description:'Commencez en bloc ou connectez-vous à l\'application mobile. Compte bancaire pour transférer' +
         ' de l\'argent sur votre carte de débit.'
   },
   {
     icon:arrow,
-    titre: 'Démarrer la conversion!',
+    titre: 'Démarrer la conversion !',
     description:'Mettez en place un dépôt direct ou connectez votre compte bancaire actuel pour transférer ' +
         'de l\'argent sur votre carte de débit.'
   },

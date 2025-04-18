@@ -111,7 +111,7 @@ const openPlaystore = () => {
       <div class="min-h-screen flex flex-wrap lg:flex-nowrap lg:pt-8 lg:pb-10">
       <div class="w-full flex flex-col
        lg:px-10 px-5 lg:text-start text-center justify-start lg:items-start items-center">
-        <h1 class="text-4xl font-accent text-white lg:pb-6">Contactez nous</h1>
+        <h1 class="text-4xl font-accent text-white lg:pb-6">Contactez-nous</h1>
         <h5 class="text-gray-300 font-accent text-lg max-w-xl py-6 text-start">
           Vous souhaitez en savoir plus sur le CRESAF, nos réussites et les avantages d’une collaboration avec nous ?
           Envie de devenir partenaire ? Contactez-nous dès aujourd’hui !
@@ -133,7 +133,7 @@ const openPlaystore = () => {
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-2 cursor-pointer mt-auto">
-        <div
+          <div
             v-for="location in locations"
             :key="location.city"
             class="bg-blue-900/50 py-6 pl-6 rounded-lg backdrop-blur-sm hover:bg-blue-900/70 transition-colors"
@@ -152,7 +152,7 @@ const openPlaystore = () => {
               </svg>
               </div>
 
-              <p class="text-sm text-left">{{ location.address }}</p>
+                <p class="text-base text-left leading-6 font-serif pr-1">{{ location.address }}</p>
             </div>
             <div class="flex items-center gap-1">
               <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"
