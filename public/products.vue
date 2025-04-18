@@ -3,9 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
-// import cash from "@/assets/images/cresaf/dd.png"
-import Cheque1 from "@/assets/images/cresaf/cref/cheque_particulier.png"
-// import Terme from "@/assets/images/cresaf/depot_terme.png"
+import Cheque1 from "@/assets/images/cresaf/cheque_particulier.png"
 // import Depot from "@/assets/images/account/depot.webp"
 // import Money from "@/assets/images/account/money.webp"
 import Argent from "@/assets/images/account/argent.webp"
@@ -24,19 +22,19 @@ import Islamique from "@/assets/images/account/account-islamique.webp"
 // import Virement from "@/assets/images/account/account-transfer.webp"
 // import Images from "@/assets/images/solution/cresafSolution.webp"
 import Image_compteAss from "@public/components/image_compteAss.vue";
-import Epargne1 from "@/assets/images/cresaf/cref/compte_epargne.png"
-import Epargne2 from "@/assets/images/cresaf/cref/compte_epargne1.png"
-import Caisse1 from "@/assets/images/cresaf/cref/bon_caisse.png"
-import Caisse2 from "@/assets/images/cresaf/cref/bon_caisse2.png"
-import Terme1 from "@/assets/images/cresaf/cref/depot_terme.png"
-import Terme2 from "@/assets/images/cresaf/cref/depot_terme2.png"
-import Collecte1 from "@/assets/images/cresaf/cref/collecte3.png"
-import Entreprise1 from "@/assets/images/cresaf/cref/compte_entreprise.png"
-import Entreprise2 from "@/assets/images/cresaf/cref/compte_entreprise2.png"
-import Salaire1 from "@/assets/images/cresaf/cref/compte_salaire1.png"
-import Salaire2 from "@/assets/images/cresaf/cref/compte_salaire2.png"
-import Association1 from "@/assets/images/cresaf/cref/association1.png"
-import Association2 from "@/assets/images/cresaf/cref/association2.png"
+import Epargne1 from "@/assets/images/cresaf/compte_epargne.png"
+import Epargne2 from "@/assets/images/cresaf/compte_epargne1.png"
+import Caisse1 from "@/assets/images/cresaf/bon_caisse.png"
+import Caisse2 from "@/assets/images/cresaf/bon_caisse2.png"
+import Terme1 from "@/assets/images/cresaf/depot_terme.png"
+import Terme2 from "@/assets/images/cresaf/depot_terme2.png"
+import Collecte1 from "@/assets/images/cresaf/collecte3.png"
+import Entreprise1 from "@/assets/images/cresaf/compte_entreprise.png"
+import Entreprise2 from "@/assets/images/cresaf/compte_entreprise2.png"
+import Salaire1 from "@/assets/images/cresaf/compte_salaire1.png"
+import Salaire2 from "@/assets/images/cresaf/compte_salaire2.png"
+import Association1 from "@/assets/images/cresaf/association1.png"
+import Association2 from "@/assets/images/cresaf/association2.png"
 
 const Caisse = [Caisse1, Caisse2]
 const Terme = [Terme1, Terme2]

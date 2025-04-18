@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 import CresafSolution from "@/assets/images/solution/solutions.webp"
-import Finance from "@/assets/images/solution/finance.webp"
+import Finance from "@/assets/images/cresaf/financement_projets.png"
 import Tresorerie from "@/assets/images/solution/tresorerie.webp"
 import Exp_Imp from "@/assets/images/solution/export_import.webp"
 
@@ -292,7 +292,7 @@ const scrollToSection = (sectionId) => {
               <div :class="{ 'order-1 col-start-1 row-start-1': index % 2 === 0 }"
                    class="relative h-[600px] overflow-hidden rounded-lg">
                 <img :src="solution.image" :alt="solution.title"
-                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                     class="h-full w-full object-cover transition-transform duration-500 hover:scale-105">
               </div>
             </div>
           </div>
