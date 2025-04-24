@@ -1,7 +1,7 @@
 <template>
-  <header class="fixed bg-white px-5 py-2 lg:py-3 lg:px-14 flex justify-between items-center w-full flex-row border-b z-50">
-    <div class="text-xl font-bold text-blue-600 cursor-pointer" @click="router.push('/')">
-      <img :src="logo" alt="Logo" class="w-14 h-14">
+  <header class="fixed bg-white px-5 py-2 lg:pb-5 lg:px-14 flex justify-between items-center w-full flex-row border-b z-50">
+    <div class="text-xl font-bold text-blue-600 cursor-pointer h-[4.5rem] w-[4.5rem]" @click="router.push('/')">
+      <img :src="logo" alt="Logo" class="object-scale-down">
     </div>
 
     <!-- Bouton pour afficher le menu mobile -->
@@ -66,7 +66,7 @@
               <h2 class="group relative">Notre vision
                 <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
               </h2>
-              <span class="text-xs text-gray-500">Misé sur l'avenir </span>
+              <span class="text-xs text-gray-500">Miser sur l'avenir </span>
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600" :class="[$route.name === '#' ? activeClass : inactiveClass]">
@@ -170,7 +170,7 @@
               <h2 class="group relative">Collecte journalière
                 <span class="absolute bottom-0 left-0 w-0 h-px bg-blue-950 transition-all duration-500 group-hover:w-full"></span>
               </h2>
-              <span class="text-xs text-gray-500">Vous suivre a quotidien</span>
+              <span class="text-xs text-gray-500">Nous suivre au quotidien</span>
             </router-link>
           </div>
           <div class="flex items-center hover:text-green-600">
@@ -334,7 +334,7 @@
                              @click="closeDrawerAndScroll3"
                 >
                   <h1>Notre vision</h1>
-                  <span class="text-xs text-gray-400">Misé sur l'avenir </span>
+                  <span class="text-xs text-gray-400">Miser sur l'avenir </span>
                 </router-link>
               </div>
               <div class="w-full flex items-center">
@@ -454,7 +454,7 @@
                              :class="[$route.name === '#' ? activeClass : inactiveClass]"
                 >
                   <h2>Collecte journalière</h2>
-                  <span class="text-xs text-gray-400">Vous suivre a quotidien</span>
+                  <span class="text-xs text-gray-400">Nous suivre au quotidien</span>
                 </router-link>
               </div>
               <div class="w-full flex items-center"
