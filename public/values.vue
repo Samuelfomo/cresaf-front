@@ -29,7 +29,7 @@
         Nos employés partagent des valeurs fortes qui sous-tendent notre engagement et notre responsabilité de fournir à nos clients et partenaires une expérience enrichissante.
       </p>
      <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">
-       <div class="hidden w-full max-h-[450px] max-w-md lg:flex">
+       <div class="hidden w-full max-w-md lg:flex">
 <!--       <div class="hidden w-full h-full max-w-lg lg:flex justify-center items-center lg:pb-10">-->
          <img :src="valeurs" alt="image secrétaire" class="object-cover rounded-lg transition-transform duration-500 hover:scale-105">
        </div>
@@ -38,8 +38,8 @@
            Ces valeurs sont les suivantes :
          </h3>
          <div class="flex justify-between items-start w-full py-2" v-for="(location, index) in locations" :key="index">
-           <h1 class="text-xl font-bold leading-relaxed text-black w-full">{{ location.titre }}
-           <span>
+           <h1 class="text-xl font-semibold font-roboto leading-relaxed text-gray-950 w-full">{{ location.titre }}
+           <span class="font-serif">
             {{location.description}}
            </span>
            </h1>
@@ -89,19 +89,22 @@
       </div>
     </div>
 
-    <div id="section4" class="lg:px-8 flex flex-col py-12 lg:pb-0 justify-center lg:justify-normal items-center">
+    <div id="section4" class="lg:px-8 flex flex-col py-12 justify-center lg:justify-normal items-center">
       <h1 class="text-green-600 lg:text-5xl text-3xl font-primary text-center">Créons des opportunités pour tous !</h1>
-      <p class="text-gray-500 font-sans text-xl py-8 w-full lg:px-10 px-6">
-        Notre mission se traduit par la mise à disposition de services financiers adaptés aux personnes exclues du secteur bancaire.
+<!--      <p class="text-gray-500 font-sans text-xl py-8 w-full lg:px-10 px-6">-->
+<!--        Notre mission se traduit par la mise à disposition de services financiers adaptés aux personnes exclues du secteur bancaire.-->
+<!--      </p>-->
+      <p class="text-gray-500 font-roboto text-xl py-8 w-full lg:px-10 px-6">
+        Notre mission, « développer des produits financiers capables de changer l’avenir des entrepreneurs », s’inscrit dans la vision d’entreprise telle qu’énoncée plus haut. À ce titre, les missions de CRESAF S.A peuvent aisément se deviner :
       </p>
       <div class="w-full h-full flex justify-between gap-2 lg:flex-nowrap flex-wrap">
-        <div class="hidden w-full max-h-[450px] max-w-md lg:flex">
-          <img :src="sommet" alt="image secrétaire" class="max-w-md h-full object-cover transition-transform duration-500 hover:scale-105">
+        <div class="hidden w-full max-w-md lg:flex">
+          <img :src="sommet" alt="image secrétaire" class="max-w-md h-full object-cover shadow shadow-blue-200 rounded-lg transition-transform duration-500 hover:scale-105">
         </div>
         <div class="w-full h-full flex flex-col justify-start px-6 py-1">
-          <div class="flex justify-between items-stretch w-full py-2 lg:pr-32 gap-2" v-for="(location3, index) in locations3" :key="index">
+          <div class="flex justify-between items-stretch w-full py-2 gap-2" v-for="(location3, index) in locations3" :key="index">
             <img :src="check" alt="checked rounded" class="w-8 h-8">
-            <h1 class="text-xl w-full leading-8 font-roboto text-gray-600">
+            <h1 class="text-xl w-full leading-relaxed font-sans text-gray-600">
               {{location3.description}}
             </h1>
           </div>
@@ -140,25 +143,56 @@ const services =ref( [
 ])
 const locations = ref([
   {
+    titre: 'La responsabilité :',
+    description:'La responsabilité vis-à-vis des engagements pris\n' +
+        'et dans la conduite des projets.'
+  },
+  {
     titre: 'L\'excellence :',
-    description:'Nous visons à dépasser les attentes de nos clients et partenaires en leur offrant des solutions innovantes, personnalisées et de qualité.'
+    description:'La recherche constante de l\'excellence à travers la\n' +
+        'qualité des services rendus.'
   },
   {
-    titre: 'L\'intégrité :',
-    description:'Nous agissons avec honnêteté, transparence et respect envers nos clients, partenaires, collègues et l\'environnement.'
+    titre: 'La Sécurité :',
+    description:'Fort de notre esprit de conquérant, nous ne ménageons\n' +
+        'aucun effort en vue de fournir à nos membres des services et des\n' +
+        'solutions de qualité, dans un esprit de confiance mutuelle et de\n' +
+        'sécurité des transactions.'
   },
   {
-    titre: 'La collaboration :',
-    description:'Nous favorisons la coopération, la communication et la confiance au sein de nos équipes et avec nos clients et partenaires.'
+    titre: 'La Confidentialité :',
+    description:'Nous reconnaissons que le client qui domicilie une\n' +
+        'partie de son patrimoine nous fait confiance. En retour nous lui\n' +
+        'garantissons la protection de ce patrimoine en toute confidentialité\n' +
+        'grâce à notre professionnalisme.'
   },
   {
-    titre: 'La diversité :',
-    description:'Nous reconnaissons et valorisons la richesse des différences culturelles, professionnelles et personnelles de nos employés, clients et partenaires.'
+    titre: 'La Fiabilité :',
+    description:'Valeurs personnelles de toutes les personnes exerçant\n' +
+        'dans notre entreprise en vue d’une conduite et d’un caractère\n' +
+        'professionnel irréprochable. Nous sommes loyaux vis-à-vis de notre\n' +
+        'entreprise ainsi que toutes les parties prenantes.'
   },
-  {
-    titre: 'La passion :',
-    description:'Nous nous impliquons pleinement dans notre travail et nous nous efforçons de créer de la valeur ajoutée pour nos clients et partenaires.'
-  },
+  // {
+  //   titre: 'L\'excellence :',
+  //   description:'Nous visons à dépasser les attentes de nos clients et partenaires en leur offrant des solutions innovantes, personnalisées et de qualité.'
+  // },
+  // {
+  //   titre: 'L\'intégrité :',
+  //   description:'Nous agissons avec honnêteté, transparence et respect envers nos clients, partenaires, collègues et l\'environnement.'
+  // },
+  // {
+  //   titre: 'La collaboration :',
+  //   description:'Nous favorisons la coopération, la communication et la confiance au sein de nos équipes et avec nos clients et partenaires.'
+  // },
+  // {
+  //   titre: 'La diversité :',
+  //   description:'Nous reconnaissons et valorisons la richesse des différences culturelles, professionnelles et personnelles de nos employés, clients et partenaires.'
+  // },
+  // {
+  //   titre: 'La passion :',
+  //   description:'Nous nous impliquons pleinement dans notre travail et nous nous efforçons de créer de la valeur ajoutée pour nos clients et partenaires.'
+  // },
 ])
 const locations2 = ref([
   {
@@ -176,14 +210,45 @@ const locations2 = ref([
 ])
 const locations3 = ref([
   {
-    description:'Développer un système de financement qui répond à la réalité entrepreneuriale du contexte économique sous-régional, en encourageant l\'inclusion financière, bancaire et sociale des personnes vulnérables, notamment les femmes, les jeunes, les ruraux et les micro-entrepreneurs.'
+    description:'Encourager la collecte de l’épargne,'
   },
   {
-    description:'Contribuer au développement économique et à la réduction de la pauvreté, principalement au Cameroun et dans la sous-région d\'Afrique centrale.'
+    description:'Favoriser le développement des petites et moyennes entreprises à\n' +
+        'travers l’octroi des crédits,'
   },
   {
-    description:'Soutenir l\'action des pouvoirs publics en matière d\'emploi, de promotion de l\'égalité des genres et d\'insertion professionnelle de la femme.'
-  }
+    description:'Faciliter l’accès aux services financiers de proximité et adapté aux\n' +
+        'personnes à faibles revenus,'
+  },
+  {
+    description:'Encourager l’entreprenariat féminin,'
+  },
+  {
+    description:'Encourager l’entreprenariat JEUNE,'
+  },
+  {
+    description:'Renforcer de façon continue les capacités des employés,'
+  },
+  {
+    description:'Concevoir des produits financiers (PF) adaptés aux cibles de la\n' +
+        'communauté éducative ; du commerce et de l’artisanat,'
+  },
+  {
+    description:'Concevoir les PF pour les professionnels du transport et de\n' +
+        'l’informel en général,'
+  },
+  {
+    description:'Renforcer les capacités de ses clients par l’éducation financière,'
+  },
+  // {
+  //   description:'Développer un système de financement qui répond à la réalité entrepreneuriale du contexte économique sous-régional, en encourageant l\'inclusion financière, bancaire et sociale des personnes vulnérables, notamment les femmes, les jeunes, les ruraux et les micro-entrepreneurs.'
+  // },
+  // {
+  //   description:'Contribuer au développement économique et à la réduction de la pauvreté, principalement au Cameroun et dans la sous-région d\'Afrique centrale.'
+  // },
+  // {
+  //   description:'Soutenir l\'action des pouvoirs publics en matière d\'emploi, de promotion de l\'égalité des genres et d\'insertion professionnelle de la femme.'
+  // }
 ])
 
 
