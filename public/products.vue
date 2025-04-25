@@ -3,7 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 
-import Cheque1 from "@/assets/images/cresaf/cheque_particulier.png"
+import Cheque1 from "@/assets/images/cresaf/cheque_particulier.webp"
 // import Depot from "@/assets/images/account/depot.webp"
 // import Money from "@/assets/images/account/money.webp"
 import Argent from "@/assets/images/account/argent.webp"
@@ -16,25 +16,25 @@ import Order from "@/assets/images/account/autre.webp"
 import Refund from "@/assets/images/account/refund.webp"
 import Micro from "@/assets/images/account/micro.webp"
 // import Livret from "@/assets/images/account/epargne1.png"
-import Courant from "@/assets/images/account/courant.webp"
-import Courant1 from "@/assets/images/account/enterprise.png"
+// import Courant from "@/assets/images/account/courant.webp"
+// import Courant1 from "@/assets/images/account/enterprise.png"
 import Islamique from "@/assets/images/account/account-islamique.webp"
 // import Virement from "@/assets/images/account/account-transfer.webp"
 // import Images from "@/assets/images/solution/cresafSolution.webp"
 import Image_compteAss from "@public/components/image_compteAss.vue";
-import Epargne1 from "@/assets/images/cresaf/compte_epargne.png"
-import Epargne2 from "@/assets/images/cresaf/compte_epargne1.png"
-import Caisse1 from "@/assets/images/cresaf/bon_caisse.png"
-import Caisse2 from "@/assets/images/cresaf/bon_caisse2.png"
-import Terme1 from "@/assets/images/cresaf/depot_terme.png"
-import Terme2 from "@/assets/images/cresaf/depot_terme2.png"
-import Collecte1 from "@/assets/images/cresaf/collecte3.png"
-import Entreprise1 from "@/assets/images/cresaf/compte_entreprise.png"
-import Entreprise2 from "@/assets/images/cresaf/compte_entreprise2.png"
-import Salaire1 from "@/assets/images/cresaf/compte_salaire1.png"
-import Salaire2 from "@/assets/images/cresaf/compte_salaire2.png"
-import Association1 from "@/assets/images/cresaf/association1.png"
-import Association2 from "@/assets/images/cresaf/association2.png"
+import Epargne1 from "@/assets/images/cresaf/compte_epargne.webp"
+import Epargne2 from "@/assets/images/cresaf/compte_epargne1.webp"
+import Caisse1 from "@/assets/images/cresaf/bon_caisse.webp"
+import Caisse2 from "@/assets/images/cresaf/bon_caisse2.webp"
+import Terme1 from "@/assets/images/cresaf/depot_terme.webp"
+import Terme2 from "@/assets/images/cresaf/depot_terme2.webp"
+import Collecte1 from "@/assets/images/cresaf/collecte3.webp"
+import Entreprise1 from "@/assets/images/cresaf/compte_entreprise.webp"
+import Entreprise2 from "@/assets/images/cresaf/compte_entreprise2.webp"
+import Salaire1 from "@/assets/images/cresaf/compte_salaire1.webp"
+import Salaire2 from "@/assets/images/cresaf/compte_salaire2.webp"
+import Association1 from "@/assets/images/cresaf/association1.webp"
+import Association2 from "@/assets/images/cresaf/association2.webp"
 
 const Caisse = [Caisse1, Caisse2]
 const Terme = [Terme1, Terme2]
@@ -115,14 +115,14 @@ const products = ref([
 ]);
 
 const currentIndex = ref(0);
-const Courants = ref([Courant, Courant1])
+// const Courants = ref([Courant, Courant1])
 const goToSlide = (index) => {
   currentIndex.value = index;
 };
 let interval = null;
-const nextSlideCourant = () => {
-  currentIndex.value = (currentIndex.value + 1) % Courants.value.length;
-};
+// const nextSlideCourant = () => {
+//   currentIndex.value = (currentIndex.value + 1) % Courants.value.length;
+// };
 
 const currentSlide = ref(0);
 const autoPlayInterval = ref(null);
@@ -191,7 +191,7 @@ onMounted(() => {
   //   observer.observe(section);
   // });
 
-  interval = setInterval(nextSlideCourant, 3000);
+  // interval = setInterval(nextSlideCourant, 3000);
 });
 
 // Nettoyer l'intervalle lors du démontage

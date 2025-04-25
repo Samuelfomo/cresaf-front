@@ -3,7 +3,7 @@ import { ref, onMounted } from 'vue';
 import Header from "@public/components/header.vue";
 import Footer from "@public/components/footer.vue";
 import CresafSolution from "@/assets/images/solution/solutions.webp"
-import Finance from "@/assets/images/cresaf/financement_projets.png"
+import Finance from "@/assets/images/cresaf/financement_projets.webp"
 import Tresorerie from "@/assets/images/solution/tresorerie.webp"
 import Exp_Imp from "@/assets/images/solution/export_import.webp"
 

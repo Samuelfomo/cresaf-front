@@ -52,9 +52,9 @@
 
 <script setup>
 import {ref, onMounted, onUnmounted} from "vue";
-import Image from "@/assets/images/woman.webp";
-import Image1 from "@/assets/images/w3.webp";
-import Image2 from "@/assets/images/w.webp";
+import Image from "@/assets/images/woman3.webp";
+import Image1 from "@/assets/images/woman2.webp";
+import Image2 from "@/assets/images/woman1.webp";
 
 const images = ref([Image, Image1, Image2]);
 const currentIndex = ref(0);
