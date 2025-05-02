@@ -16,7 +16,8 @@ export default {
         'Montserrat', '-apple-system', 'BlinkMacSystemFont',
           'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif',
           'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'
-        ]
+        ],
+        openSans: ['Open Sans','sans-serif']
       },
       animation: {
         blink: "blink 3s infinite",

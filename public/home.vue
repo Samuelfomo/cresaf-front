@@ -3,12 +3,12 @@
   <div class="flex flex-col min-h-screen">
     <Header />
 
-    <main class="flex-grow bg-blue-950 px-8 pt-32 pb-12">
+    <main class="flex-grow bg-blue-950 px-8 lg:pt-32 pb-12">
      <div class="min-h-screen flex flex-wrap sm:flex-nowrap">
        <div v-for="(service, index) in services" :key="index" class="w-full flex flex-col lg:px-10 lg:text-start text-center justify-center lg:items-start items-center">
-         <h1 class="text-6xl font-accent text-white pb-6">
+         <h1 class="text-6xl font-openSans text-white pb-6">
            Découvrez la nouvelle génération de
-           <span class="text-green-600 font-bold">{{service.value}}</span>
+           <span class="text-green-600">{{service.value}}</span>
          </h1>
          <h5 class="text-white font-accent text-xl max-w-lg py-6">
            Favoriser le développement économique par l'épargne, l'octroi de crédits et la facilitation des services financiers
@@ -24,7 +24,7 @@
            Parlons-en
          </button>
        </div>
-       <div class="min-h-44 w-full">
+       <div class="w-full">
          <Image />
        </div>
      </div>

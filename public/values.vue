@@ -18,7 +18,7 @@
             CRESAF s'appuie sur des valeurs de solidarité, de confiance, de transparence et de responsabilité pour renforcer l'inclusion financière, soutenir l'innovation et favoriser le développement durable dans le pays.
           </h5>
         </div>
-        <div class="min-h-44 w-full lg:pt-32">
+        <div class="w-full lg:pt-32">
           <Image1 />
         </div>
       </div>

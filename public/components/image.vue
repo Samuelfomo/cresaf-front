@@ -9,7 +9,7 @@
       >
         <img
             :src="image"
-            class="rounded-xl"
+            class="rounded-xl object-cover object-center"
             alt="Carousel Image"
         />
       </div>
